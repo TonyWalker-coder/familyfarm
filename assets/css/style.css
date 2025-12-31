@@ -93,6 +93,15 @@ eliminate random spacing everything has a consistent scale
   --brand-sky-blue: #D8E4F0;
   --brand-earth-brown: #3A2A1E;
 
+  --light-bg: #F9F3E6;
+  --light-surface: #F4E9D2;
+  --light-text: #3A2A1E;
+  --light-heading:#5A0F0F;
+  --light-border: #E8C9A1;
+  --light-accent: #C7D7A4;
+  --light-accent-hover: #AFC48B;
+  --light-surface-hover: #EDE1C8;
+
 /* Default to light theme tokens */
   --color-heading: var(--light-heading);
   --color-text: var(--light-text);
@@ -100,6 +109,7 @@ eliminate random spacing everything has a consistent scale
   --color-border: var(--light-border);
   --color-surface: var(--light-surface);
   --color-bg: var(--light-bg);
+
 }
 
 /*Border radius
@@ -123,11 +133,12 @@ use @media (prefers-color-scheme: dark) to follow OS theme
   --light-bg: #F9F3E6;
   --light-surface: #F4E9D2;
   --light-text: #3A2A1E;
-  --light-heading: #5A0F0F;
+  --light-heading:#5A0F0F;
   --light-border: #E8C9A1;
   --light-accent: #C7D7A4;
   --light-accent-hover: #AFC48B;
   --light-surface-hover: #EDE1C8;
+  
 }
 
 :root[data-theme="dark"] {
@@ -141,7 +152,7 @@ use @media (prefers-color-scheme: dark) to follow OS theme
   --dark-surface-hover: #3A4A5C;
 
 
-  /* Override semantic tokens for dark mode */
+  /* Override semantic tokens for dark mode*/ 
   --color-heading: var(--dark-heading);
   --color-text: var(--dark-text);
   --color-accent: var(--dark-accent);
@@ -371,7 +382,19 @@ full use of tokens to follow site design
   background-color: var(--color-surface);
   color: var(--color-heading);
   text-align: center;
+  background-image: url('/assets/images/hero.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 55vh; 
+
 }
+@media (min-width: 1024px) {
+  .hero {
+    min-height: 40vh; /* or 35vh */
+  }
+}
+
+
 
 .hero h1 {
   margin-bottom: var(--space-4);
