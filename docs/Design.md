@@ -119,7 +119,7 @@ All images used in this project are sourced from copyright‑free or permissivel
 
 ### Image Source List
 
-- [placeholder](Unsplash.com)
+- [i stock photo](https://www.istockphoto.com/search/2/image-film?phrase=agriculture&page=2)
 - [Pexels](Pexels.com)
 
 ## Usage Guidelines

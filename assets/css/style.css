@@ -4,7 +4,7 @@
 ROOT TOKENS — COLOURS, TYPOGRAPHY, SPACING, RADII, ETC.
 */
 :root {
-/* Typography
+  /* Typography
   
 Create semantic tokens (--font-heading , --font-body )
 Components will use these tokens, to change fonts later, you only update them here
@@ -13,19 +13,19 @@ Components will use these tokens, to change fonts later, you only update them he
   --font-heading: "Bree Serif", serif;
   --font-body: "Nunito", sans-serif;
 
-/* Typography Scale 
+  /* Typography Scale 
 
 A consistent scale and a predictable spacing between text
 A single source for all typography
 */
 
-  --font-size-xs: 0.75rem;   /* 12px */
-  --font-size-sm: 0.875rem;  /* 14px */
-  --font-size-md: 1rem;      /* 16px (base) */
-  --font-size-lg: 1.25rem;   /* 20px */
-  --font-size-xl: 1.5rem;    /* 24px */
-  --font-size-2xl: 2rem;     /* 32px */
-  --font-size-3xl: 3rem;     /* 48px */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.875rem; /* 14px */
+  --font-size-md: 1rem; /* 16px (base) */
+  --font-size-lg: 1.25rem; /* 20px */
+  --font-size-xl: 1.5rem; /* 24px */
+  --font-size-2xl: 2rem; /* 32px */
+  --font-size-3xl: 3rem; /* 48px */
 
   --line-height-tight: 1.1;
   --line-height-normal: 1.5;
@@ -35,12 +35,11 @@ A single source for all typography
   --font-weight-medium: 500;
   --font-weight-bold: 700;
 
-/* Heading Tokens 
+  /* Heading Tokens 
 change entire heading scale in one place
 
 all heading are defined here 
 */
-
 
   --heading-1-size: var(--font-size-3xl);
   --heading-2-size: var(--font-size-2xl);
@@ -51,7 +50,7 @@ all heading are defined here
   --heading-weight: var(--font-weight-bold);
   --heading-font: var(--font-heading);
 
-/* Body Text Tokens
+  /* Body Text Tokens
 
 fix text sizing here 
 */
@@ -63,7 +62,7 @@ fix text sizing here
   --body-size-small: var(--font-size-sm);
   --body-size-large: var(--font-size-lg);
 
-/* Responsive Typography 
+  /* Responsive Typography 
 The CSS clamp() function is used to set a value that will adjust responsively between a minimum value and a maximum value depending on the size of the viewport.
 reference www.w3schools.com if stuck
 */
@@ -73,43 +72,42 @@ reference www.w3schools.com if stuck
   --heading-4-size: clamp(1.125rem, 2.5vw, 1.25rem);
   --body-size: clamp(1rem, 1.5vw, 1.125rem);
 
-/* Spacing Scale
+  /* Spacing Scale
 eliminate random spacing everything has a consistent scale
 */
   --space-0: 0;
-  --space-1: 0.25rem;  /* 4px */
-  --space-2: 0.5rem;   /* 8px */
-  --space-3: 0.75rem;  /* 12px */
-  --space-4: 1rem;     /* 16px */
-  --space-5: 1.5rem;   /* 24px */
-  --space-6: 2rem;     /* 32px */
-  --space-7: 3rem;     /* 48px */
-  --space-8: 4rem;     /* 64px */
+  --space-1: 0.25rem; /* 4px */
+  --space-2: 0.5rem; /* 8px */
+  --space-3: 0.75rem; /* 12px */
+  --space-4: 1rem; /* 16px */
+  --space-5: 1.5rem; /* 24px */
+  --space-6: 2rem; /* 32px */
+  --space-7: 3rem; /* 48px */
+  --space-8: 4rem; /* 64px */
 
-/* Brand Colours (Shared Across Themes) */
-  --brand-barn-red: #5A0F0F;
-  --brand-sun-gold: #E8C9A1;
-  --brand-grass-green: #C7D7A4;
-  --brand-sky-blue: #D8E4F0;
-  --brand-earth-brown: #3A2A1E;
+  /* Brand Colours (Shared Across Themes) */
+  --brand-barn-red: #5a0f0f;
+  --brand-sun-gold: #e8c9a1;
+  --brand-grass-green: #c7d7a4;
+  --brand-sky-blue: #d8e4f0;
+  --brand-earth-brown: #3a2a1e;
 
-  --light-bg: #F9F3E6;
-  --light-surface: #F4E9D2;
-  --light-text: #3A2A1E;
-  --light-heading:#5A0F0F;
-  --light-border: #E8C9A1;
-  --light-accent: #C7D7A4;
-  --light-accent-hover: #AFC48B;
-  --light-surface-hover: #EDE1C8;
+  --light-bg: #f9f3e6;
+  --light-surface: #f4e9d2;
+  --light-text: #3a2a1e;
+  --light-heading: #5a0f0f;
+  --light-border: #e8c9a1;
+  --light-accent: #c7d7a4;
+  --light-accent-hover: #afc48b;
+  --light-surface-hover: #ede1c8;
 
-/* Default to light theme tokens */
+  /* Default to light theme tokens */
   --color-heading: var(--light-heading);
   --color-text: var(--light-text);
   --color-accent: var(--light-accent);
   --color-border: var(--light-border);
   --color-surface: var(--light-surface);
   --color-bg: var(--light-bg);
-
 }
 
 /*Border radius
@@ -130,29 +128,27 @@ The cascade resolves the final value
 use @media (prefers-color-scheme: dark) to follow OS theme
 */
 :root[data-theme="light"] {
-  --light-bg: #F9F3E6;
-  --light-surface: #F4E9D2;
-  --light-text: #3A2A1E;
-  --light-heading:#5A0F0F;
-  --light-border: #E8C9A1;
-  --light-accent: #C7D7A4;
-  --light-accent-hover: #AFC48B;
-  --light-surface-hover: #EDE1C8;
-  
+  --light-bg: #f9f3e6;
+  --light-surface: #f4e9d2;
+  --light-text: #3a2a1e;
+  --light-heading: #5a0f0f;
+  --light-border: #e8c9a1;
+  --light-accent: #c7d7a4;
+  --light-accent-hover: #afc48b;
+  --light-surface-hover: #ede1c8;
 }
 
 :root[data-theme="dark"] {
-  --dark-bg: #1F2E1A;
-  --dark-surface: #2D3F52;
-  --dark-text: #F4E9D2;
-  --dark-heading: #E8C9A1;
-  --dark-border: #3A2A1E;
-  --dark-accent: #C7D7A4;
-  --dark-accent-hover: #D8E4F0;
-  --dark-surface-hover: #3A4A5C;
+  --dark-bg: #1f2e1a;
+  --dark-surface: #2d3f52;
+  --dark-text: #f4e9d2;
+  --dark-heading: #e8c9a1;
+  --dark-border: #3a2a1e;
+  --dark-accent: #c7d7a4;
+  --dark-accent-hover: #d8e4f0;
+  --dark-surface-hover: #3a4a5c;
 
-
-  /* Override semantic tokens for dark mode*/ 
+  /* Override semantic tokens for dark mode*/
   --color-heading: var(--dark-heading);
   --color-text: var(--dark-text);
   --color-accent: var(--dark-accent);
@@ -160,7 +156,6 @@ use @media (prefers-color-scheme: dark) to follow OS theme
   --color-surface: var(--dark-surface);
   --color-bg: var(--dark-bg);
   --color-surface-hover: var(--light-surface-hover);
-
 }
 
 /* Component Defaults: Headings
@@ -289,7 +284,7 @@ consistent cards to mach design forms & cards should now blend into pages and no
   background-color: var(--color-surface);
   color: var(--color-text);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-md); 
+  border-radius: var(--radius-md);
 
   padding: var(--space-5);
   margin-bottom: var(--space-6);
@@ -299,7 +294,8 @@ consistent cards to mach design forms & cards should now blend into pages and no
 }
 
 .card:hover {
-  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-border) 30%, transparent);
+  box-shadow: 0 4px 12px
+    color-mix(in srgb, var(--color-border) 30%, transparent);
   transform: translateY(-2px);
 }
 
@@ -364,15 +360,29 @@ keep all containers looking clean and centered
 
 make sure our style overrides any utilities 
 */
-.mt-4 { margin-top: var(--space-4); }
-.mb-4 { margin-bottom: var(--space-4); }
-.pt-4 { padding-top: var(--space-4); }
-.pb-4 { padding-bottom: var(--space-4); }
+.mt-4 {
+  margin-top: var(--space-4);
+}
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+.pt-4 {
+  padding-top: var(--space-4);
+}
+.pb-4 {
+  padding-bottom: var(--space-4);
+}
 
 /* Text Alignment */
-.text-center { text-align: center; }
-.text-right { text-align: right; }
-.text-left { text-align: left; }
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
 
 /* Hero Section
 full use of tokens to follow site design
@@ -382,22 +392,15 @@ full use of tokens to follow site design
   background-color: var(--color-surface);
   color: var(--color-heading);
   text-align: center;
-  background-image: url('/assets/images/hero.png');
+  background-image: url("/assets/images/hero.png");
   background-size: cover;
   background-position: center;
-  min-height: 55vh; 
-
-}
-@media (min-width: 1024px) {
-  .hero {
-    min-height: 40vh; /* or 35vh */
-  }
+  min-height: 55vh;
 }
 
 .hero h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
-
 }
 
 .hero p {
@@ -420,16 +423,24 @@ full use of tokens to follow site design
   font-weight: 600;
 }
 
+/* make logo responsive */
 #logo img {
   height: auto;
-  width: 50px; /* or whatever your desktop size is */
+  width: 50px;
   max-width: 100%;
-    vertical-align: middle;
+  vertical-align: middle;
   position: relative;
-  top: -6px; /* tiny tweak */
+  top: -6px;
+}
+/* home page introduction */
 
-
-
+#intro img {
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  vertical-align: middle;
+  position: relative;
+  top: -6px;
 }
 
 /* Grid Layout */
@@ -478,11 +489,18 @@ body {
 
 /* trap for screens < 759px wide */
 @media (max-width: 1198px) {
+  /*reduce nav links to hamburger on tablets & mobiles */
   .nav-links {
     display: none;
   }
-
   .nav-toggle {
     display: block;
+  }
+}
+/* trap for screens > 1024px */
+@media (min-width: 1024px) {
+  /* hero image needs some help on large screens */
+  .hero {
+    min-height: 40vh; /* or 35vh */
   }
 }
