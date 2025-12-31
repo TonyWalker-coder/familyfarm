@@ -1,0 +1,424 @@
+/* google fonts*/
+@import url('href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* 
+ROOT TOKENS — COLOURS, TYPOGRAPHY, SPACING, RADII, ETC.
+*/
+:root {
+/* Typography
+  
+Create semantic tokens (--font-heading , --font-body )
+Components will use these tokens, to change fonts later, you only update them here
+
+*/
+  --font-heading: "Bree Serif", serif;
+  --font-body: "Nunito", sans-serif;
+
+/* Typography Scale 
+
+A consistent scale and a predictable spacing between text
+A single source for all typography
+*/
+
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-md: 1rem;      /* 16px (base) */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 2rem;     /* 32px */
+  --font-size-3xl: 3rem;     /* 48px */
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.7;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+/* Heading Tokens 
+change entire heading scale in one place
+
+all heading are defined here 
+*/
+
+
+  --heading-1-size: var(--font-size-3xl);
+  --heading-2-size: var(--font-size-2xl);
+  --heading-3-size: var(--font-size-xl);
+  --heading-4-size: var(--font-size-lg);
+
+  --heading-line-height: var(--line-height-tight);
+  --heading-weight: var(--font-weight-bold);
+  --heading-font: var(--font-heading);
+
+/* Body Text Tokens
+
+fix text sizing here 
+*/
+  --body-font: var(--font-body);
+  --body-size: var(--font-size-md);
+  --body-line-height: var(--line-height-normal);
+  --body-weight: var(--font-weight-regular);
+
+  --body-size-small: var(--font-size-sm);
+  --body-size-large: var(--font-size-lg);
+
+/* Responsive Typography 
+The CSS clamp() function is used to set a value that will adjust responsively between a minimum value and a maximum value depending on the size of the viewport.
+reference www.w3schools.com if stuck
+*/
+  --heading-1-size: clamp(2rem, 5vw, 3rem);
+  --heading-2-size: clamp(1.5rem, 4vw, 2rem);
+  --heading-3-size: clamp(1.25rem, 3vw, 1.5rem);
+  --heading-4-size: clamp(1.125rem, 2.5vw, 1.25rem);
+  --body-size: clamp(1rem, 1.5vw, 1.125rem);
+
+/* Spacing Scale
+eliminate random spacing everything has a consistent scale
+*/
+  --space-0: 0;
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+
+/* Brand Colours (Shared Across Themes) */
+  --brand-barn-red: #5A0F0F;
+  --brand-sun-gold: #E8C9A1;
+  --brand-grass-green: #C7D7A4;
+  --brand-sky-blue: #D8E4F0;
+  --brand-earth-brown: #3A2A1E;
+
+/* Default to light theme tokens */
+  --color-heading: var(--light-heading);
+  --color-text: var(--light-text);
+  --color-accent: var(--light-accent);
+  --color-border: var(--light-border);
+  --color-surface: var(--light-surface);
+  --color-bg: var(--light-bg);
+}
+
+/*Border radius
+keep a consistent radius across the sight
+*/
+--radius-sm: 0.375rem;
+--radius-md: 0.5rem;
+
+/*Conditional scopes
+These activate only when the selector matches dark or light theme
+
+Browser checks if the  element matches any of your theme selectors
+ 	If it has  data-theme="light" → apply the light block
+ 	If it has  data-theme="dark" → apply the dark block
+ 	If neither → only the base ':root' applies
+
+The cascade resolves the final value
+use @media (prefers-color-scheme: dark) to follow OS theme
+*/
+:root[data-theme="light"] {
+  --light-bg: #F9F3E6;
+  --light-surface: #F4E9D2;
+  --light-text: #3A2A1E;
+  --light-heading: #5A0F0F;
+  --light-border: #E8C9A1;
+  --light-accent: #C7D7A4;
+  --light-accent-hover: #AFC48B;
+  --light-surface-hover: #EDE1C8;
+}
+
+:root[data-theme="dark"] {
+  --dark-bg: #1F2E1A;
+  --dark-surface: #2D3F52;
+  --dark-text: #F4E9D2;
+  --dark-heading: #E8C9A1;
+  --dark-border: #3A2A1E;
+  --dark-accent: #C7D7A4;
+  --dark-accent-hover: #D8E4F0;
+  --dark-surface-hover: #3A4A5C;
+
+
+  /* Override semantic tokens for dark mode */
+  --color-heading: var(--dark-heading);
+  --color-text: var(--dark-text);
+  --color-accent: var(--dark-accent);
+  --color-border: var(--dark-border);
+  --color-surface: var(--dark-surface);
+  --color-bg: var(--dark-bg);
+  --color-surface-hover: var(--light-surface-hover);
+
+}
+
+/* Component Defaults: Headings
+this will ensure all heading always look the same
+*/
+h1 {
+  font-family: var(--heading-font);
+  font-size: var(--heading-1-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-weight);
+  color: var(--color-heading);
+}
+
+h2 {
+  font-family: var(--heading-font);
+  font-size: var(--heading-2-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-weight);
+  color: var(--color-heading);
+}
+
+h3 {
+  font-family: var(--heading-font);
+  font-size: var(--heading-3-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-weight);
+  color: var(--color-heading);
+}
+
+h4 {
+  font-family: var(--heading-font);
+  font-size: var(--heading-4-size);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-weight);
+  color: var(--color-heading);
+}
+
+/* Component Defaults: Paragraphs */
+p {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  font-weight: var(--body-weight);
+  color: var(--color-text);
+}
+
+/* Buttons
+
+consistent buttons using design tokens
+padding uses your spacing scale, colours use your semantic tokens, font uses your typography tokens
+
+*/
+
+button {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--body-line-height);
+
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+
+  background-color: var(--color-accent);
+  color: var(--color-heading);
+
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--light-accent-hover);
+}
+
+:root[data-theme="dark"] button:hover {
+  background-color: var(--dark-accent-hover);
+}
+
+/* Form Inputs
+
+forms designed to look like they are part of the same design using predefined tokens
+*/
+input,
+textarea,
+select {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  font-weight: var(--body-weight);
+
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+
+  background-color: var(--color-surface);
+  color: var(--color-text);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 40%, transparent);
+  outline: none;
+}
+
+/* Labels */
+label {
+  font-family: var(--body-font);
+  font-size: var(--body-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-heading);
+  margin-bottom: var(--space-1);
+  display: block;
+}
+
+/* Card / Panel 
+consistent cards to mach design forms & cards should now blend into pages and not look detached
+*/
+.card {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md); 
+
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+
+  box-shadow: 0 2px 4px color-mix(in srgb, var(--color-border) 20%, transparent);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--color-border) 30%, transparent);
+  transform: translateY(-2px);
+}
+
+/* Header / Navigation 
+the header and links uses the design tokens to feel integrated into the system
+*/
+header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-6);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+nav a {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-heading);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent);
+}
+
+/* Visually Hidden (accessible)
+this hides content visually but keeps it available to screen readers, dont make accessability look like an after thought follow the current theme
+*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Layout Container 
+
+keep all containers looking clean and centered
+*/
+.container {
+  max-width: 70rem; /* ~1120px */
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* Spacing Utilities 
+
+make sure our style overrides any utilities 
+*/
+.mt-4 { margin-top: var(--space-4); }
+.mb-4 { margin-bottom: var(--space-4); }
+.pt-4 { padding-top: var(--space-4); }
+.pb-4 { padding-bottom: var(--space-4); }
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* Hero Section
+full use of tokens to follow site design
+*/
+.hero {
+  padding: var(--space-8) 0;
+  background-color: var(--color-surface);
+  color: var(--color-heading);
+  text-align: center;
+}
+
+.hero h1 {
+  margin-bottom: var(--space-4);
+}
+
+.hero p {
+  margin-bottom: var(--space-6);
+  font-size: var(--body-size-large);
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Footer */
+footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+  color: var(--color-text);
+  font-size: var(--body-size-small);
+}
+
+footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/*body styling*/
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
