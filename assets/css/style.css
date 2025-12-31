@@ -394,15 +394,42 @@ full use of tokens to follow site design
   }
 }
 
-
-
 .hero h1 {
   margin-bottom: var(--space-4);
+  font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
+
 }
 
 .hero p {
   margin-bottom: var(--space-6);
   font-size: var(--body-size-large);
+}
+/* nav bar section*/
+
+/* hamburg button for mobile */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-heading);
+}
+
+.nav a.active {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+#logo img {
+  height: auto;
+  width: 50px; /* or whatever your desktop size is */
+  max-width: 100%;
+    vertical-align: middle;
+  position: relative;
+  top: -6px; /* tiny tweak */
+
+
+
 }
 
 /* Grid Layout */
@@ -444,4 +471,15 @@ footer a:hover {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+}
+
+/* trap for screens < 759px wide */
+@media (max-width: 1198px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
 }
