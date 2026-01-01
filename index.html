@@ -81,16 +81,27 @@
         <button>View More</button>
       </div>
 
-      <div class="card">
-        <h3>Homemade Jams</h3>
-        <p>Made in small batches using traditional recipes.</p>
-        <button>View More</button>
-      </div>
+<div class="activity-card">
+  <div class="activity-card__image-wrapper">
+    <img src="/assets/images/petting.jpg" alt="Children meeting animals" class="activity-card__image">
+  </div>
+
+  <div class="activity-card__content">
+    <h3 class="activity-card__title">Children’s Barn</h3>
+    <p class="activity-card__text">
+      Come and meet the animals in the Children’s Barn!
+    </p>
+    <a href="#" class="button">Learn more</a>
+  </div>
+</div>
+
+
+
 
     </div>
   </section>
   <!-- Footer -->
-  <footer >
+  <footer>
     <div class="grid grid-3">
       <div class="text-center">
         <p><strong>Opening Hours</strong></p>
@@ -100,6 +111,8 @@
       <div class="text-center">
         <p>&copy; 2025 The Waltons Farm</p>
         <button>SignUp To Our Newsletter</button>
+        <button id="theme-toggle">Toggle theme</button>
+
       </div>
       <div class="text-center">
         <p><strong>Contact Us</strong></p>
@@ -112,9 +125,20 @@
 
     </div>
   </footer>
+
   <!-- Font Awesome kit -->
   <!--source of icons-->
   <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    });
+  </script>
+
 </body>
 
 </html>
