@@ -49,12 +49,13 @@ The farming show is an ideal example where the farm act as a community event whi
 
 As a first‑time visitor to the farm’s website, I want a visually engaging homepage with clear activity cards and community links so that I can quickly understand what the farm offers and explore activities that interest me.
 
-### Accessibility acceptance criteria examples
+### Accessibility acceptance criteria
 
 - All inputs have associated <label> elements
 - Component is fully keyboard navigable.
 - Screen readers can identify the purpose of the element.
 - Colour contrast meets WCAG AA.
+
 - The site must be fully responsive over all major platforms.
 - Users must experience the same aspects of the site no matter what platform they are using.
 - Styles must be consistent across the site.

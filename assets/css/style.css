@@ -85,6 +85,11 @@ eliminate random spacing everything has a consistent scale
   --space-7: 3rem; /* 48px */
   --space-8: 4rem; /* 64px */
 
+/*padding to account for fixed header which changes on >md-screen*/
+
+  --body-pad-lg: 76px;
+  --body-pad-md: 97px;
+
   /* Brand Colours (Shared Across Themes) */
   --brand-barn-red: #5a0f0f;
   --brand-sun-gold: #e8c9a1;
@@ -306,6 +311,13 @@ header {
   background-color: var(--color-surface);
   border-bottom: 1px solid var(--color-border);
   padding: var(--space-4) var(--space-6);
+  /*fix header to top of page to keep navbar at top*/
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
 }
 
 nav {
@@ -485,6 +497,7 @@ footer a:hover {
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
+  padding-top: var(--body-pad-lg);
 }
 
 /* trap for screens < 759px wide */
