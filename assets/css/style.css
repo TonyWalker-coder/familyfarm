@@ -418,7 +418,7 @@ full use of tokens to follow site design
   background-color: var(--color-surface);
   color: var(--color-heading);
   text-align: center;
-  background-image: url("../images/hero.png");
+  background-image: url("../images/hero.webp");
   background-size: cover;
   background-position: center;
   min-height: 55vh;
