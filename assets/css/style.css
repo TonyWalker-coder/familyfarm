@@ -273,6 +273,13 @@ consistent cards to mach design forms & cards should now blend into pages and no
   color-mix(in srgb, var(--color-border) 30%, transparent);
   transform: translateY(-4px);
 }
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* the activity cards are meant to be visually exciting so we have create a whole set of 
    wrappers just for them but still using the existing tokens */
 
@@ -508,6 +515,23 @@ footer a:hover {
   text-decoration: underline;
 }
 
+footer p {
+  margin: var(--space-2) 0; /* or 0 if you want it tight */
+}
+
+.newsletter-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* lets it break nicely on small screens */
+}
+
+.newsletter-cta p {
+  margin: 0;
+}
+
+
+
 /*body styling*/
 
 body {
@@ -516,29 +540,69 @@ body {
   padding-top: var(--header-height);
 }
 
-/* trap for screens < 759px wide */
-@media (max-width: 1198px) {
-  /*reduce nav links to hamburger on tablets & mobiles */
-  .nav-links {
-    display: none;
-  }
-  .nav-toggle {
-    display: block;
-  }
+/* modal for newsletter */
+.modal-wrapper {
+  all: unset;
 }
-/* trap for screens > 1024px */
-@media (min-width: 1024px) {
-  /* hero image needs some help on large screens */
-  .hero {
-    min-height: 40vh; /* or 35vh */
-  }
+/* Backdrop */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+  z-index: 999;
 }
-/* query to trap user dark mode and implement it */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    /* dark overrides here */
-  }
+
+/* Modal container */
+.modal {
+  background: var(--color-surface);
+  color: var(--color-text);
+  width: min(500px, 100%);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+  animation: modal-in 0.2s ease-out;
+}
+
+/* Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-hover);
 }
 
 
+.modal-header h2 {
+  margin: 0;
+  color: var(--color-heading);
+}
 
+/* Close button */
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-heading);
+}
+
+/* Body */
+.modal-body {
+  padding: var(--space-5);
+}
+
+/* Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-top: 1px solid var(--color-border);
+}

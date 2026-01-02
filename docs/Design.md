@@ -1,10 +1,31 @@
-# Design System — Foundations
+# Design Reference
 
-These foundations define the core principles, styles, and assets that shape the visual and functional identity of the project. They ensure consistency, accessibility, and a shared language across design and development.
+## Table of contents
+
+- About This Documentation
+- Design System — Foundations
+- Accessibility Standards
+  - Reference Material
+- Typography
+  - Headings — *Bree Serif*
+  - Body Text — *Nunito*
+- Colour Palette
+  - Brand Colours (*Shared Across Themes*)
+  - Light Theme
+  - Dark Theme
+  - Semantic Tokens
+  - Design Notes
+
+
+- - External references
 
 ## About This Documentation
 
 This design system and README follow common industry expectations for project documentation. A good README explains what the project is, how to use it, and how it’s structured. A design document goes further by outlining the decisions behind the work — accessibility standards, typography, colour choices, assets, and usage guidelines. This level of documentation supports maintainability, transparency, and assessment criteria such as Merit+, where clear justification and traceability of design decisions are required.
+
+## Design System — Foundations
+
+These foundations define the core principles, styles, and assets that shape the visual and functional identity of the project. They ensure consistency, accessibility, and a shared language across design and development.
 
 ### External references
 
@@ -43,7 +64,7 @@ Modern, clean, and highly readable across devices and sizes.
 
 ## Colour Palette
 
-The colour palette was chosen based on the images being used on the site to ensure a level of contrast on the pages.
+The colour palette was chosen based on the images being used on the site to ensure a level of contrast on the pages. The site will also make use of a light and dark theme, toggle or OS driven.
 
 ### Brand Colours (Shared Across Themes)
 
@@ -83,7 +104,7 @@ Semantic tokens represent meaning (e.g., “heading colour”) rather than speci
 --color-border → light: --light-border / dark: --dark-border  
 --color-surface → light: --light-surface / dark: --dark-surface  
 
-## Design Notes
+### Design Notes
 
 The idea behind this colour palette
 
@@ -225,3 +246,32 @@ Images support the brand’s warmth and storytelling, but they must remain acces
 - Headings use brand colours (barn red in light mode, sun gold in dark mode)
 - Body text must always meet WCAG AA contrast
 - Never use accent colours for long‑form text
+
+## Design Decisions
+
+### Responsive Grid: Uneven Rows on Small Breakpoints
+
+Our layout uses a custom CSS Grid with responsive  values. At the  breakpoint (based on **Bootstrap‑style** sizing, but implemented in pure CSS), three cards naturally form a 2 + 1 layout. This happens because the available column width supports two cards per row, leaving the third to wrap onto its own line.  
+We intentionally keep this behavior. It avoids forced stretching, preserves consistent card proportions, and maintains predictable, readable layouts across breakpoints. At the smallest sizes (**xs**), cards stack vertically for clarity.
+
+lg:  
+[1][2][3]
+
+md:  
+[1][2][3]
+
+sm:  
+[1][2]  
+[3]
+
+xs:  
+[1]  
+[2]  
+[3]  
+
+### Modal irregular design
+
+Using a standard **\<header>** element inside the modal caused unexpected behaviour: the browser attempted to merge it with the site’s main **\<header>**, resulting in layout distortion.
+To avoid this, the modal uses a custom element **\<modal-header>** instead of the native **\<header>** tag.
+
+This is an intentional and permanent design choice to ensure stable modal behaviour across browsers.

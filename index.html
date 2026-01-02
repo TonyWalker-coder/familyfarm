@@ -8,20 +8,21 @@
   <title>The Waltons Family Farm</title>
   <meta name="description" content="Milestone project 1.0">
   <meta name="author" content="Tony Walker">
-  <link rel="preload" as="image" href="assets/images/hero.webp">
+  <link rel="preload" as="image" href="assets/images/heroR.png">
   <!--favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
   <!-- Header / Navigation -->
   <header>
     <nav class="container nav">
       <div id="logo">
-        <h2 id="logo" style="margin: 0;"><img src="assets/images/logo.webp"
-            fetchpriority="high" alt="Front facing barn which is the logo for The waltons Farm">The Waltons Farm</h2>
+        <h2 id="logo" style="margin: 0;"><img src="assets/images/logo.webp" fetchpriority="high"
+            alt="Front facing barn which is the logo for The waltons Farm">The Waltons Farm</h2>
       </div>
 
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
@@ -47,10 +48,11 @@
   <!-- Grid Section -->
   <section class="container mt-4">
 
-    <div id="intro" class="grid grid-3">
+    <div class="grid grid-3">
 
       <div class="card">
-        <img src="assets/images/intro1.webp" fetchpriority="high" alt="two proud farmers tending to a new born calf in a barn">
+        <img src="assets/images/intro1.webp" fetchpriority="high"
+          alt="two proud farmers tending to a new born calf in a barn">
       </div>
 
       <div class="card">
@@ -60,57 +62,57 @@
       </div>
 
       <div class="card">
-        <img src="assets/images/intro2.webp" fetchpriority="high" alt="young lady arranging fresh produce in a farm field">
+        <img src="assets/images/intro2.webp" fetchpriority="high"
+          alt="young lady arranging fresh produce in a farm field">
       </div>
 
     </div>
 
     <div class="grid grid-3">
 
-<div class="activity-card">
-  <div class="activity-card__image-wrapper">
-    <img src="assets/images/shop2.webp" fetchpriority="high" alt="lady showing of fresh produce in a farm shop" class="activity-card__image">
-  </div>
+      <div class="activity-card">
+        <div class="activity-card__image-wrapper">
+          <img src="assets/images/shop2.webp" fetchpriority="high" alt="lady showing of fresh produce in a farm shop"
+            class="activity-card__image">
+        </div>
 
-  <div class="activity-card__content">
-    <h3 class="activity-card__title">Farm Shop and Café</h3>
-    <p class="activity-card__text">
-      visit our shop and café and sample our fresh produce 
-    </p>
-  </div>
-</div>
+        <div class="activity-card__content">
+          <h3 class="activity-card__title">Farm Shop and Café</h3>
+          <p class="activity-card__text">
+            visit our shop and café and sample our fresh produce
+          </p>
+        </div>
+      </div>
 
       <div class="activity-card">
-  <div class="activity-card__image-wrapper">
-    <img src="assets/images/seasonal1.webp" fetchpriority="high" alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
-  </div>
+        <div class="activity-card__image-wrapper">
+          <img src="assets/images/seasonal1.webp" fetchpriority="high"
+            alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
+        </div>
 
-  <div class="activity-card__content">
-    <h3 class="activity-card__title">Seasonal Activities</h3>
-    <p class="activity-card__text">
-      the farm is active all year round, why not visit one of our seasonal events
-    </p>
-  </div>
-</div>
-
-<div class="activity-card">
-  <div class="activity-card__image-wrapper">
-    <img src="assets/images/petting.webp" fetchpriority="high" alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
-  </div>
-
-  <div class="activity-card__content">
-    <h3 class="activity-card__title">Children’s Barn</h3>
-    <p class="activity-card__text">
-      meet greet and feed the animals<br>
-      they love it!
-    </p>
-  </div>
-</div>
+        <div class="activity-card__content">
+          <h3 class="activity-card__title">Seasonal Activities</h3>
+          <p class="activity-card__text">
+            the farm is active all year round, why not visit one of our seasonal events
+          </p>
+        </div>
+      </div>
 
 
+      <div class="activity-card">
+        <div class="activity-card__image-wrapper">
+          <img src="assets/images/petting.webp" fetchpriority="high"
+            alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
+        </div>
 
-
-    </div>
+        <div class="activity-card__content">
+          <h3 class="activity-card__title">Children’s Barn</h3>
+          <p class="activity-card__text">
+            meet greet and feed the animals<br>
+            they love it!
+          </p>
+        </div>
+      </div>
   </section>
   <!-- Footer -->
   <footer>
@@ -120,27 +122,71 @@
         <p>Mon - Fri: 12pm - 4pm</p>
         <p>Sat - Sun: 9am - 5pm</p>
       </div>
+
       <div class="text-center">
         <p>&copy; 2025 The Waltons Farm</p>
-        <button>SignUp To Our Newsletter</button>
-        <button id="theme-toggle">Toggle theme</button>
 
+        <div class="text-and-button">
+          <div class="newsletter-cta">
+            <p>Sign up to our newsletter for fun facts and upcoming events.</p>
+            <button type="button" data-open-modal>Sign Up</button>
+          </div>
+
+          <button type="button" id="theme-toggle">Toggle theme</button>
+        </div>
       </div>
+
       <div class="text-center">
         <p><strong>Contact Us</strong></p>
         <p>The Farmhouse</p>
         <p>Muddy Field, Peterborough</p>
         <p><strong>Tel:</strong> 01234 567890</p>
-
       </div>
-
-
     </div>
   </footer>
 
-  <!-- Font Awesome kit -->
-  <!--source of icons-->
-  <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
+
+  <!-- Modal Template -->
+<template id="newsletter-modal">
+  <div class="modal-wrapper">
+    <div class="modal-backdrop" data-modal>
+      <div class="modal" role="dialog" aria-modal="true">
+        <modal-header class="modal-header">
+          <h2>Join Our Newsletter</h2>
+          <button class="modal-close" data-close-modal aria-label="Close modal">×</button>
+        </modal-header>
+
+        <div class="modal-body">
+          <p>Stay updated with farm news, events, and seasonal goodies.</p>
+          <input type="email" placeholder="Your email">
+        </div>
+
+        <footer class="modal-footer">
+          <button class="btn-secondary" data-close-modal>Cancel</button>
+          <button class="btn-primary">Subscribe</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+</template>
+
+  <!-- JS -->
+  <script>
+    document.addEventListener("click", (e) => {
+
+      // OPEN
+      if (e.target.matches("[data-open-modal]")) {
+        const tpl = document.querySelector("#newsletter-modal");
+        document.body.appendChild(tpl.content.cloneNode(true));
+      }
+
+      // CLOSE (button or backdrop)
+      if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
+        document.querySelector("[data-modal]")?.remove();
+      }
+    });
+  </script>
+
   <script>
     const toggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
@@ -150,7 +196,6 @@
       root.setAttribute('data-theme', isDark ? 'light' : 'dark');
     });
   </script>
-
 </body>
 
 </html>
