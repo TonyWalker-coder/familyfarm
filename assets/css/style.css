@@ -530,8 +530,6 @@ footer p {
   margin: 0;
 }
 
-
-
 /*body styling*/
 
 body {
@@ -541,9 +539,7 @@ body {
 }
 
 /* modal for newsletter */
-.modal-wrapper {
-  all: unset;
-}
+
 /* Backdrop */
 .modal-backdrop {
   position: fixed;

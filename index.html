@@ -147,8 +147,7 @@
 
 
   <!-- Modal Template -->
-<template id="newsletter-modal">
-  <div class="modal-wrapper">
+  <template id="newsletter-modal">
     <div class="modal-backdrop" data-modal>
       <div class="modal" role="dialog" aria-modal="true">
         <modal-header class="modal-header">
@@ -158,23 +157,30 @@
 
         <div class="modal-body">
           <p>Stay updated with farm news, events, and seasonal goodies.</p>
-          <input type="email" placeholder="Your email">
-        </div>
+<form action="https://formdump.codeinstitute.net" method="POST">
+  <label for="email">Enter your email:</label>
+  <input type="email" id="email" name="email" placeholder="Your email" required>
 
-        <footer class="modal-footer">
-          <button class="btn-secondary" data-close-modal>Cancel</button>
-          <button class="btn-primary">Subscribe</button>
-        </footer>
+  <footer class="modal-footer">
+    <button class="btn-secondary" data-close-modal>Cancel</button>
+    <button class="btn-primary" type="submit">Subscribe</button>
+  </footer>
+</form>
+
+
       </div>
     </div>
-  </div>
-</template>
+  </template>
 
   <!-- JS -->
+
+  <!--Simple little bit of java to open and close the newsletter mobile 
+    https://www.java-scripts.net/ used for inspiration -->
+
   <script>
     document.addEventListener("click", (e) => {
 
-      // OPEN
+      // Open 
       if (e.target.matches("[data-open-modal]")) {
         const tpl = document.querySelector("#newsletter-modal");
         document.body.appendChild(tpl.content.cloneNode(true));
@@ -186,6 +192,8 @@
       }
     });
   </script>
+  <!--Simple bit of java to populate data-theme for toggle 
+https://www.java-scripts.net/ used for inspiration -->
 
   <script>
     const toggle = document.getElementById('theme-toggle');
