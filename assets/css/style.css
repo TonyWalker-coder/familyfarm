@@ -448,45 +448,41 @@ nav a:hover {
 .theme-toggle {
   flex-shrink: 0;
 }
-/* Parent container for drop down menu
-we need a drop down because we have to much going on */
-
+/* we need a drop down because we have to much going on the navbar*/
+/*The dropdown menu */
 .dropdown {
-  position: relative;
+  position: relative; /* anchor point */
 }
 
-/* Hidden by default */
 .dropdown-menu {
-  display: none;
-  position: absolute;
+  position: absolute; /* remove from flex layout */
   top: 100%;
-  right: 0;
+  left: 0;
   margin-top: var(--space-2);
-  padding-top: var(--space-2); /* invisible buffer */
 
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+  min-width: 160px;
   padding: var(--space-2) 0;
-  min-width: 120px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  z-index: 10;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity .15s ease, transform .15s ease;
 }
 
-/* Show on hover */
 .dropdown:hover .dropdown-menu {
-  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* Dropdown links */
 .dropdown-menu a {
   display: block;
-  padding: var(--space-2) var(--space-4);
   white-space: nowrap;
-}
-
-.dropdown-menu a:hover {
-  background: var(--color-surface-hover);
+  padding: var(--space-2) var(--space-4);
 }
 
 
