@@ -23,27 +23,38 @@
       <div id="logo">
         <h2 id="logo" style="margin: 0;"><img src="assets/images/logo.webp" fetchpriority="high"
             alt="Front facing barn which is the logo for The waltons Farm">The Waltons Farm</h2>
+
       </div>
-
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-
-      <div class="nav-links">
+      <div class="nav-links dropdown">
         <a class="active" href="index.html">Home</a>
         <a href="#">About Us</a>
         <a href="#">Activities</a>
-        <a href="#">Seasonal</a>
-        <a href="#">Shop & Cafe</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
+        <div class="dropdown-menu">
+          <a href="#">Seasonal</a>
+          <a href="#">Shop & Cafe</a>
+          <a href="#">Gallery</a>
+        </div>
+        <a href="#footer">Contact</a>
       </div>
+      <button type="button" class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <img src="assets/svg/darkmode.svg" alt="" id="theme-icon">
+      </button>
+
+      
+
     </nav>
   </header>
 
+
+
   <!-- Hero Section -->
   <section class="hero">
+
     <div class="container">
       <h1>Welcome to Our Family Farm</h1>
     </div>
+
   </section>
   <!-- Grid Section -->
   <section class="container mt-4">
@@ -98,7 +109,6 @@
         </div>
       </div>
 
-
       <div class="activity-card">
         <div class="activity-card__image-wrapper">
           <img src="assets/images/petting.webp" fetchpriority="high"
@@ -115,7 +125,7 @@
       </div>
   </section>
   <!-- Footer -->
-  <footer>
+  <footer id="footer">
     <div class="grid grid-3">
       <div class="text-center">
         <p><strong>Opening Hours</strong></p>
@@ -126,13 +136,9 @@
       <div class="text-center">
         <p>&copy; 2025 The Waltons Farm</p>
 
-        <div class="text-and-button">
-          <div class="newsletter-cta">
-            <p>Sign up to our newsletter for fun facts and upcoming events.</p>
-            <button type="button" data-open-modal>Sign Up</button>
-          </div>
-
-          <button type="button" id="theme-toggle">Toggle theme</button>
+        <div>
+          <p>Sign up to our newsletter for fun facts and upcoming events.</p>
+          <button type="button" data-open-modal>Sign Up</button>
         </div>
       </div>
 
@@ -145,11 +151,10 @@
     </div>
   </footer>
 
-
   <!-- Modal Template -->
   <template id="newsletter-modal">
     <div class="modal-backdrop" data-modal>
-      <div class="modal" role="dialog" aria-modal="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="newsletter-title">
         <modal-header class="modal-header">
           <h2>Join Our Newsletter</h2>
           <button class="modal-close" data-close-modal aria-label="Close modal">×</button>
@@ -157,19 +162,16 @@
 
         <div class="modal-body">
           <p>Stay updated with farm news, events, and seasonal goodies.</p>
-<form action="https://formdump.codeinstitute.net" method="POST">
-  <label for="email">Enter your email:</label>
-  <input type="email" id="email" name="email" placeholder="Your email" required>
-
-  <footer class="modal-footer">
-    <button class="btn-secondary" data-close-modal>Cancel</button>
-    <button class="btn-primary" type="submit">Subscribe</button>
-  </footer>
-</form>
-
-
+          <form action="https://formdump.codeinstitute.net" method="POST">
+            <label for="email">Enter your email:</label>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+            <footer class="modal-footer">
+              <button class="btn-secondary" data-close-modal>Cancel</button>
+              <button class="btn-primary" type="submit">Subscribe</button>
+            </footer>
+          </form>
+        </div>
       </div>
-    </div>
   </template>
 
   <!-- JS -->
@@ -178,17 +180,27 @@
     https://www.java-scripts.net/ used for inspiration -->
 
   <script>
+    let lastFocusedElement = null;
+
     document.addEventListener("click", (e) => {
 
-      // Open 
+      // OPEN
       if (e.target.matches("[data-open-modal]")) {
+        lastFocusedElement = e.target;
+
         const tpl = document.querySelector("#newsletter-modal");
         document.body.appendChild(tpl.content.cloneNode(true));
+
+        const modal = document.querySelector("[data-modal]");
+        modal.querySelector(".modal-close").focus();
       }
 
       // CLOSE (button or backdrop)
       if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
         document.querySelector("[data-modal]")?.remove();
+
+        // return focus to opener
+        lastFocusedElement?.focus();
       }
     });
   </script>
@@ -204,6 +216,15 @@ https://www.java-scripts.net/ used for inspiration -->
       root.setAttribute('data-theme', isDark ? 'light' : 'dark');
     });
   </script>
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-open');
+    });
+  </script>
+
 </body>
 
 </html>

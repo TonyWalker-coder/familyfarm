@@ -70,7 +70,7 @@ reference www.w3schools.com if stuck
   --heading-2-size: clamp(1.5rem, 4vw, 2rem);
   --heading-3-size: clamp(1.25rem, 3vw, 1.5rem);
   --heading-4-size: clamp(1.125rem, 2.5vw, 1.25rem);
-  --body-size: clamp(1rem, 1.5vw, 1.125rem);
+  --body-size: clamp(0.9rem, 1.5vw, 1.125rem);
 
   /* Spacing Scale
 eliminate random spacing everything has a consistent scale
@@ -86,7 +86,8 @@ eliminate random spacing everything has a consistent scale
   --space-8: 4rem; /* 64px */
 
 /*lets make a variable to set header height and body padding will keep both in sync */
---header-height: 2.5rem;
+--header-height: 3rem;
+
 
 /*Border radius
 keep a consistent radius across the sight
@@ -326,44 +327,6 @@ consistent cards to mach design forms & cards should now blend into pages and no
   padding-left: var(--space-6);
 }
 
-/* Header / Navigation 
-the header and links uses the design tokens to feel integrated into the system
-*/
-header {
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-  padding: var(--space-4) var(--space-6);
-  /*fix header to top of page to keep navbar at top*/
-  position: fixed;
-  height:var(--header-height);
-  top: 0;
-  left: 0;
-  z-index: 3;
-  width: 100%;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-6);
-}
-
-nav a {
-  font-family: var(--body-font);
-  font-size: var(--body-size);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-heading);
-  text-decoration: none;
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-md);
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-nav a:hover {
-  background-color: var(--color-surface-hover);
-  color: var(--color-accent);
-}
 
 /* Visually Hidden (accessible)
 this hides content visually but keeps it available to screen readers,
@@ -416,6 +379,116 @@ simple consistent size across the site
 .text-left {
   text-align: left;
 }
+/* header section */
+header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4)  var(--space-3);
+  /*fix header to top of page to keep navbar at top*/
+  position: fixed;
+  height:var(--header-height);
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+}
+/* nav bar section code */
+nav a {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-heading);
+  text-decoration: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+nav a:hover {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent);
+}
+
+.nav {
+  padding: 1rem 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* hide links on mobile */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  min-width: 0;
+}
+
+/* show links when hamburger is clicked */
+.nav-links.nav-open {
+  display: flex;
+}
+
+/* hamburger visible on mobile */
+.nav-toggle {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-heading);
+  flex-shrink: 0;
+  margin-left: auto;
+
+}
+
+/* theme toggle should never shrink */
+.theme-toggle {
+  flex-shrink: 0;
+}
+/* Parent container for drop down menu
+we need a drop down because we have to much going on */
+
+.dropdown {
+  position: relative;
+}
+
+/* Hidden by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: var(--space-2);
+  padding-top: var(--space-2); /* invisible buffer */
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) 0;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Dropdown links */
+.dropdown-menu a {
+  display: block;
+  padding: var(--space-2) var(--space-4);
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+  background: var(--color-surface-hover);
+}
+
 
 /* Hero Section
 full use of tokens to follow site design
@@ -440,22 +513,40 @@ full use of tokens to follow site design
   margin-bottom: var(--space-6);
   font-size: var(--body-size-large);
 }
-/* nav bar section*/
 
-/* hamburg button for mobile */
-.nav-toggle {
-  display: none;
+/* Theme toggle button */
+.theme-toggle {
+  flex-shrink: 0;
   background: none;
   border: none;
-  font-size: 2rem;
-  color: var(--color-heading);
+  padding: var(--space-2);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav a.active {
-  color: var(--color-accent);
-  font-weight: 600;
+.theme-toggle img {
+  width: 50px;
+  height: 50px;
+  transition: opacity 0.2s ease;
 }
 
+/* Light mode = moon */
+#theme-icon {
+  content: url("../svg/darkmode.svg");
+}
+
+/* Dark mode = sun */
+:root[data-theme="dark"] #theme-icon {
+  content: url("../svg/lightmode.svg");
+}
+
+/* Optional hover styling */
+.theme-toggle:hover {
+  background-color: var(--color-surface-hover);
+}
 /* make logo responsive */
 #logo img {
   height: auto;
@@ -496,6 +587,9 @@ this is what is going to hold all of the content together
 }
 
 /* Footer */
+#footer{
+  /*place holder*/
+}
 footer {
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
@@ -518,17 +612,17 @@ footer a:hover {
 footer p {
   margin: var(--space-2) 0; /* or 0 if you want it tight */
 }
-
-.newsletter-cta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap; /* lets it break nicely on small screens */
+/*nice round icons for a clean look*/
+#icon-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;   /* keeps the icon crisp */
+  image-rendering: auto; /* lets the browser smooth edges */
+  background-color: #000; /* optional: gives a clean circle backdrop */
 }
 
-.newsletter-cta p {
-  margin: 0;
-}
+
 
 /*body styling*/
 
@@ -601,4 +695,23 @@ body {
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
   border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+
+  /* hide hamburger */
+  .nav-toggle {
+    display: none;
+  }
+
+  /* show links in a row */
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    flex: 1;       /* take available space */
+    min-width: 0;  /* allow shrinking */
+  }
 }
