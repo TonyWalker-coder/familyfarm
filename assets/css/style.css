@@ -180,7 +180,13 @@ p {
   font-weight: var(--body-weight);
   color: var(--color-text);
 }
-
+#farm {
+  font-family: var(--heading-font);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: var(--heading-line-height);
+  font-weight: var(--heading-weight);
+  color: var(--color-heading);
+}
 /* Buttons
 
 consistent buttons using design tokens
