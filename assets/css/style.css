@@ -608,6 +608,16 @@ footer a:hover {
 footer p {
   margin: var(--space-2) 0; /* or 0 if you want it tight */
 }
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+
 /*nice round icons for a clean look*/
 #icon-img {
   width: 40px;
