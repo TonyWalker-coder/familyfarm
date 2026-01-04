@@ -389,7 +389,7 @@ header {
   height:var(--header-height);
   top: 0;
   left: 0;
-  z-index: 3;
+  z-index: 1000;
   width: 100%;
 }
 /* nav bar section code */
@@ -417,22 +417,46 @@ nav a:hover {
   gap: 1rem;
 }
 
-/* hide links on mobile */
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+}
+
+/* MOBILE FIRST — hidden menu */
 .nav-links {
   display: none;
   flex-direction: column;
   gap: 1rem;
-  width: 100%;
+  width: auto;
   padding: 1rem 0;
-  min-width: 0;
-}
+  background: var(--color-bg);
+  position: absolute;
+  left:0;
+  padding: var(--space-4) var(--space-5);
+  gap: var(--space-4);
+  top: 100%;
+  z-index: 10;
 
-/* show links when hamburger is clicked */
+  /* existing styles… */
+  border-bottom-right-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md); /* optional if you want symmetry */
+  border: 1px solid var(--color-border);
+  border-top: none; /* so it visually connects to the header */
+background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-top: none;
+
+
+}
+/* Show links when hamburger is clicked */
 .nav-links.nav-open {
   display: flex;
 }
 
-/* hamburger visible on mobile */
+/* Hamburger visible on mobile */
 .nav-toggle {
   display: block;
   background: none;
@@ -441,21 +465,57 @@ nav a:hover {
   color: var(--color-heading);
   flex-shrink: 0;
   margin-left: auto;
-
 }
 
-/* theme toggle should never shrink */
-.theme-toggle {
+
+/* Theme toggle button */
+#theme-toggle {
+  background: none;
+  border: none;
+  padding: var(--space-2);
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
+  margin-right: var(--space-4);
 }
-/* we need a drop down because we have to much going on the navbar*/
+
+/* Icon */
+#theme-toggle img {
+  width: 35px;
+  height: 35px;
+  transition: opacity 0.2s ease;
+}
+
+/* Hover */
+#theme-toggle:hover {
+  background-color: var(--color-surface-hover);
+}
+
+
+
+/*the site needs a drop down menu because there is to much going on the navbar*/
 /*The dropdown menu */
 .dropdown {
   position: relative; /* anchor point */
+  z-index: 1;
+  display: inline-block; /* or block, but must not stretch with content */
+
 }
+.dropdown.open .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 
 .dropdown-menu {
   position: absolute; /* remove from flex layout */
+  z-index: 10; /* ensures menus stack above their triggers */
+  inset: auto auto auto 0; /* ensures it stays anchored */
+
   top: 100%;
   left: 0;
   margin-top: var(--space-2);
@@ -510,39 +570,11 @@ full use of tokens to follow site design
   font-size: var(--body-size-large);
 }
 
-/* Theme toggle button */
-.theme-toggle {
-  flex-shrink: 0;
-  background: none;
-  border: none;
-  padding: var(--space-2);
-  cursor: pointer;
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.theme-toggle img {
-  width: 50px;
-  height: 50px;
-  transition: opacity 0.2s ease;
-}
-
-/* Light mode = moon */
-#theme-icon {
-  content: url("../svg/darkmode.svg");
-}
-
 /* Dark mode = sun */
 :root[data-theme="dark"] #theme-icon {
   content: url("../svg/lightmode.svg");
 }
 
-/* Optional hover styling */
-.theme-toggle:hover {
-  background-color: var(--color-surface-hover);
-}
 /* make logo responsive */
 #logo img {
   height: auto;
@@ -599,6 +631,7 @@ footer a {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
+  padding: var(--space-2) var(--space-2);
 }
 
 footer a:hover {
@@ -607,6 +640,25 @@ footer a:hover {
 
 footer p {
   margin: var(--space-2) 0; /* or 0 if you want it tight */
+}
+
+#socialmedia{
+  margin-top: var(--space-2);
+}
+
+#socialmedia a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: var(--font-weight-medium);
+  padding-right: var(--space-2);
+}
+
+#socialmedia a:hover {
+  color: var(--light-accent-hover);
+}
+
+:root[data-theme="dark"] #socialmedia a:hover {
+  background-color: var(--dark-accent-hover);
 }
 
 .icon {
@@ -709,6 +761,9 @@ body {
   .nav-toggle {
     display: none;
   }
+}
+/* DESKTOP */
+@media (min-width: 768px) {
 
   /* show links in a row */
   .nav-links {
@@ -717,7 +772,28 @@ body {
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    flex: 1;       /* take available space */
-    min-width: 0;  /* allow shrinking */
+    flex: 1;
+    min-width: 0;
+    width:100%;
+    top: 100%;
+    z-index: 10;
+  }
+
+  /* hide hamburger */
+  .nav-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    position: static;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    top: 55%;   /* sits directly below parent */
+    left: 100px;     /* aligns left edge */
+    margin: 0;
   }
 }
