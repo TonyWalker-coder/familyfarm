@@ -88,7 +88,7 @@ eliminate random spacing everything has a consistent scale
 /*variable to set header height and body padding will keep both in sync
 even when the site adjusts for nav dropdown*/
   --nav1-height: 40px;
-  --nav2-height: 72px;
+  --nav2-height: 70px;
 --header-height: calc(var(--nav1-height) + var(--nav2-height));
 
 
@@ -435,8 +435,6 @@ nav a:hover {
   justify-content: space-between;
   gap: 1rem;
   position: relative;
-
-  border-bottom: 2px solid red;
   height: var(--nav1-height);
 }
 
@@ -463,7 +461,6 @@ nav a:hover {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-top: none;
-  border-top: 2px solid black;
 }
 /* Show links when hamburger is clicked */
 .nav-links.nav-open {
