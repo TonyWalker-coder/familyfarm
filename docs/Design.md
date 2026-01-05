@@ -27,6 +27,18 @@
   - Cropping
   - Quality & Style
   - Performance
+- Typography Usage Guidelines
+  - Font Pairing
+  - Line Height
+  - Max Line Length
+  - Heading Scale
+  - Hierarchy Rules
+  - Readability
+- Colour Usage Guidelines
+  - Accents
+  - Surfaces
+  - Borders
+  - Headings & Text
 
 
 - - External references
@@ -260,7 +272,8 @@ Images support the brand’s warmth and storytelling, but they must remain acces
 
 ## Java Scripts
 
-it has been necessary to use a few java scripts to handle certain trigger events while I have limited knowledge of java it was necessary to explore web based free java sites for inspirations
+Not using the **Bootstrap** *JavaScript components* meant I needed a few small custom scripts to handle simple **UI** interactions. My JavaScript knowledge is still developing, so I explored a couple of free online resources for inspiration while keeping the scripts minimal and focused on essential trigger events only.
+
 
 ### Java resources
 
@@ -295,3 +308,6 @@ Using a standard **\<header>** element inside the modal caused unexpected behavi
 To avoid this, the modal uses a custom element **\<modal-header>** instead of the native **\<header>** tag.
 
 This is an intentional and permanent design choice to ensure stable modal behaviour across browsers.
+
+### Update
+After further testing with HTML validators and accessibility tools, the custom element was replaced with a standard **\<div>.** This resolves the browser issue while maintaining full semantic clarity and compatibility with validators and screen readers.

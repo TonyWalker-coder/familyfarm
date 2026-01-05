@@ -26,18 +26,14 @@
             The Waltons Farm
           </span></p>
       </div>
-
       <button type="button" class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-
       <button id="theme-toggle" aria-label="Toggle dark mode">
         <img src="assets/svg/darkmode.svg" alt="" id="theme-icon">
       </button>
     </div>
-
     <nav class="nav-links">
       <a class="active" href="index.html">Home</a>
       <a href="#">About Us</a>
-
       <div class="dropdown">
         <button class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
           Activities
@@ -48,8 +44,6 @@
           <a href="#">Gallery</a>
         </div>
       </div>
-
-
       <a href="#footer">Contact</a>
     </nav>
   </header>
@@ -221,9 +215,7 @@
 
   <!-- JS -->
 
-  <!--Simple little bit of java to open and close the newsletter mobile 
-    https://www.java-scripts.net/ used for inspiration -->
-
+  <!-- Simple JS to open/close the newsletter modal -->
   <script>
     let lastFocusedElement = null;
 
@@ -249,8 +241,7 @@
       }
     });
   </script>
-  <!--Simple bit of java to populate data-theme for toggle 
-https://www.java-scripts.net/ used for inspiration -->
+  <!--Simple little bit of java to open and close the newsletter mobile -->
 
   <script>
     const toggle = document.getElementById('theme-toggle');
@@ -262,7 +253,7 @@ https://www.java-scripts.net/ used for inspiration -->
     });
   </script>
 
-
+<!-- Toggle the mobile navigation menu and update aria-expanded -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -274,7 +265,7 @@ https://www.java-scripts.net/ used for inspiration -->
     })
 
   </script>
-
+<!-- Toggle desktop dropdown menus and update aria-expanded -->
   <script>
     document.querySelectorAll('.dropdown > button').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -286,7 +277,7 @@ https://www.java-scripts.net/ used for inspiration -->
 
 
   </script>
-
+<!-- Close the mobile nav when a link is clicked -->
   <script>
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
