@@ -221,25 +221,31 @@
 
     document.addEventListener("click", (e) => {
 
-      // OPEN
-      if (e.target.matches("[data-open-modal]")) {
-        lastFocusedElement = e.target;
+  // OPEN
+  if (e.target.matches("[data-open-modal]")) {
+    lastFocusedElement = e.target;
 
-        const tpl = document.querySelector("#newsletter-modal");
-        document.body.appendChild(tpl.content.cloneNode(true));
+    // update aria-expanded
+    e.target.setAttribute("aria-expanded", "true");
 
-        const modal = document.querySelector("[data-modal]");
-        modal.querySelector(".modal-close").focus();
-      }
+    const tpl = document.querySelector("#newsletter-modal");
+    document.body.appendChild(tpl.content.cloneNode(true));
 
-      // CLOSE (button or backdrop)
-      if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
-        document.querySelector("[data-modal]")?.remove();
+    const modal = document.querySelector("[data-modal]");
+    modal.querySelector(".modal-close").focus();
+  }
 
-        // return focus to opener
-        lastFocusedElement?.focus();
-      }
-    });
+  // CLOSE (button or backdrop)
+  if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
+    document.querySelector("[data-modal]")?.remove();
+
+    // return focus to opener
+    lastFocusedElement?.focus();
+
+    // collapse aria-expanded on the opener
+    lastFocusedElement?.setAttribute("aria-expanded", "false");
+  }
+});
   </script>
   <!--Simple little bit of java to open and close the newsletter mobile -->
 
@@ -253,7 +259,7 @@
     });
   </script>
 
-<!-- Toggle the mobile navigation menu and update aria-expanded -->
+  <!-- Toggle the mobile navigation menu and update aria-expanded -->
   <script>
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
@@ -265,7 +271,7 @@
     })
 
   </script>
-<!-- Toggle desktop dropdown menus and update aria-expanded -->
+  <!-- Toggle desktop dropdown menus and update aria-expanded -->
   <script>
     document.querySelectorAll('.dropdown > button').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -277,7 +283,7 @@
 
 
   </script>
-<!-- Close the mobile nav when a link is clicked -->
+  <!-- Close the mobile nav when a link is clicked -->
   <script>
     document.querySelectorAll('.nav-links a').forEach(link => {
       link.addEventListener('click', () => {
@@ -285,6 +291,24 @@
       });
     });
   </script>
+
+<!--open/close expanding feedback form-->
+<script>
+  const feedbackToggle = document.querySelector('.feedback-toggle');
+  const feedbackPanel = document.querySelector('.feedback-panel');
+  const feedbackCancel = document.querySelector('.feedback-cancel');
+
+  feedbackToggle?.addEventListener('click', () => {
+    feedbackPanel.classList.toggle('open');
+    feedbackPanel.hidden = !feedbackPanel.classList.contains('open');
+  });
+
+  feedbackCancel?.addEventListener('click', () => {
+    feedbackPanel.classList.remove('open');
+    feedbackPanel.hidden = true;
+  });
+
+</script>
 </body>
 
 </html>
