@@ -9,7 +9,12 @@
 
 - [Introduction](#introduction)
 - [Overview](#overview)
-- [cards](#public-activities-cards-must-have)
+- [Objectives](#objectives)
+- [User Stories](#user-stories)
+  - [Visual Aspect](#visual-aspect-of-website-must-have)
+    - [Accessibility](#accessibility-acceptance-criteria)
+- [Activities Cards](#public-activities-cards-must-have)
+- [Public Activities](#public-activities-must-have)
 
 ## Introduction
 
@@ -62,7 +67,7 @@ As a first‑time visitor to the farm’s website, I want a visually engaging ho
 
 ### Accessibility acceptance criteria
 
-- All inputs have associated <label> elements
+- All inputs have associated \<label> elements
 - Component is fully keyboard navigable.
 - Screen readers can identify the purpose of the element.
 - Colour contrast meets WCAG AA.
@@ -94,13 +99,13 @@ As a first time visitor I want the activity cards to visually draw me in and enc
 
 ## Public activities (must have)
 
-As a visitor who clicked through from the homepage cards, I want the activities page to follow the same exciting theme as the cards that drew me in so that the experience feels consistent and engaging.
+As a visitor who clicked through from the homepage page, I want the activities page to follow the same exciting theme as the cards that drew me in so that the experience feels consistent and engaging.
 
 - Clean, uncluttered page making use of grid structure.
 - Activities and seasonal activities to have their own page.
 - Link back and forth between daily activities and seasonal activities.
 - Link to booking forms.
-- All inputs have associated <label> elements.
+- All inputs have associated \<label> elements.
 - Component is fully keyboard navigable.
 - Screen readers can identify the purpose of the element.
 
@@ -115,7 +120,7 @@ As a visitor interested in the farm’s community impact, I want an easy‑to‑
 - This page can introduce additional facts about the farm.
 - Aesthetic layout is prioritised, with correct column usage across all screen sizes.
 - A feedback form is included and visually integrated into the design.
-- All inputs have associated <label> elements.
+- All inputs have associated \<label> elements.
 - Component is fully keyboard navigable.
 - Screen readers can identify the purpose of the element.
 
@@ -156,7 +161,7 @@ As a visitor making a booking I want the form to be clear and easy to use, so I 
 - The booking form will include: name, title, contact phone, email, event type, date required, number of guest and a free‑text section (the free‑text field is optional; all others are required).
 - On successful completion the visitor will receive a clear success message.
 - Colour contrast meets WCAG AA.
-- All inputs have associated <label> elements.
+- All inputs have associated \<label> elements.
 - Component is fully keyboard navigable.
 - Screen readers can identify the purpose of the element.
 - Icons include accessible text alternatives.
@@ -177,7 +182,7 @@ As a visitor interested in current and upcoming activities, I want to sign up fo
 - The call‑to‑action is clearly visible and integrated into the layout.
 - Modal traps focus and returns focus to the trigger.
 - Colour contrast meets WCAG AA.
-- All inputs have associated <label> elements.
+- All inputs have associated \<label> elements.
 - Component is fully keyboard navigable.
 - Screen readers can identify the purpose of the element.
 - Icons include accessible text alternatives.
@@ -208,19 +213,24 @@ All design decisions, colour palettes, and wireframes can be found here:
 
 - HTML5
 - CSS3
-- Bootstrap 5.3 (for forms + grid)
-- JavaScript (3rd party libraries for light interactivity)
+- JavaScript
 - GitHub Pages (deployment)
+- GitHub Project (user stories)
 
 ## Folder structure
 
-/assets
-   /css
-   /images
-   /js
-/docs
-index.html
-README.md
+```text
+project/
+  assets/
+    images/
+    css/
+    js/
+  docs
+  screenshots
+  index.html
+  about.html
+  activities.html
+```
 
 ## Local deployment
 
