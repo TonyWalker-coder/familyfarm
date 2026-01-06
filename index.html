@@ -35,10 +35,16 @@
       <a class="active" href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <div class="dropdown">
-        <button class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
-          Activities
+        <button type="button" class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
+          What’s On
+          <span class="chevron"></span>
         </button>
+
+
+
+
         <div class="dropdown-menu">
+          <a href="#">Activities</a>
           <a href="#">Seasonal</a>
           <a href="#">Shop & Cafe</a>
           <a href="#">Gallery</a>
@@ -221,31 +227,31 @@
 
     document.addEventListener("click", (e) => {
 
-  // OPEN
-  if (e.target.matches("[data-open-modal]")) {
-    lastFocusedElement = e.target;
+      // OPEN
+      if (e.target.matches("[data-open-modal]")) {
+        lastFocusedElement = e.target;
 
-    // update aria-expanded
-    e.target.setAttribute("aria-expanded", "true");
+        // update aria-expanded
+        e.target.setAttribute("aria-expanded", "true");
 
-    const tpl = document.querySelector("#newsletter-modal");
-    document.body.appendChild(tpl.content.cloneNode(true));
+        const tpl = document.querySelector("#newsletter-modal");
+        document.body.appendChild(tpl.content.cloneNode(true));
 
-    const modal = document.querySelector("[data-modal]");
-    modal.querySelector(".modal-close").focus();
-  }
+        const modal = document.querySelector("[data-modal]");
+        modal.querySelector(".modal-close").focus();
+      }
 
-  // CLOSE (button or backdrop)
-  if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
-    document.querySelector("[data-modal]")?.remove();
+      // CLOSE (button or backdrop)
+      if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
+        document.querySelector("[data-modal]")?.remove();
 
-    // return focus to opener
-    lastFocusedElement?.focus();
+        // return focus to opener
+        lastFocusedElement?.focus();
 
-    // collapse aria-expanded on the opener
-    lastFocusedElement?.setAttribute("aria-expanded", "false");
-  }
-});
+        // collapse aria-expanded on the opener
+        lastFocusedElement?.setAttribute("aria-expanded", "false");
+      }
+    });
   </script>
   <!--Simple little bit of java to open and close the newsletter mobile -->
 
@@ -292,23 +298,23 @@
     });
   </script>
 
-<!--open/close expanding feedback form-->
-<script>
-  const feedbackToggle = document.querySelector('.feedback-toggle');
-  const feedbackPanel = document.querySelector('.feedback-panel');
-  const feedbackCancel = document.querySelector('.feedback-cancel');
+  <!--open/close expanding feedback form-->
+  <script>
+    const feedbackToggle = document.querySelector('.feedback-toggle');
+    const feedbackPanel = document.querySelector('.feedback-panel');
+    const feedbackCancel = document.querySelector('.feedback-cancel');
 
-  feedbackToggle?.addEventListener('click', () => {
-    feedbackPanel.classList.toggle('open');
-    feedbackPanel.hidden = !feedbackPanel.classList.contains('open');
-  });
+    feedbackToggle?.addEventListener('click', () => {
+      feedbackPanel.classList.toggle('open');
+      feedbackPanel.hidden = !feedbackPanel.classList.contains('open');
+    });
 
-  feedbackCancel?.addEventListener('click', () => {
-    feedbackPanel.classList.remove('open');
-    feedbackPanel.hidden = true;
-  });
+    feedbackCancel?.addEventListener('click', () => {
+      feedbackPanel.classList.remove('open');
+      feedbackPanel.hidden = true;
+    });
 
-</script>
+  </script>
 </body>
 
 </html>

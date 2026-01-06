@@ -244,6 +244,26 @@ button:hover {
   outline: 2px solid var(--focus-color, #005fcc);
   outline-offset: 2px;
 }
+/*drop down menu pointer*/
+.chevron {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 0.4rem;
+  border-right: 3px solid currentColor;
+  border-bottom: 3px solid currentColor;
+  transform: rotate(45deg); /* ▼ */
+}
+
+
+
+.dropdown.open .chevron {
+  transform: rotate(-135deg); /* ▲ */
+}
+
+
+
+
 
 
 /* Form Inputs
@@ -306,8 +326,7 @@ consistent cards to mach design forms & cards should now blend into pages and no
 }
 
 .card:hover,.activity-card:hover,.about-card:hover{
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-  color-mix(in srgb, var(--color-border) 30%, transparent);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--color-border) 30%, transparent);
   transform: translateY(-4px);
 }
 .card img {
@@ -648,6 +667,29 @@ nav a:hover,#historical a:hover{
   display: inline-block; /* or block, but must not stretch with content */
 
 }
+.dropdown-trigger:hover {
+  background: var(--color-surface-hover);
+}
+
+/* 
+  Dropdown trigger behaviour:
+  - Remove default focus styling so the button doesn't stay highlighted after click.
+  - Keep hover highlight active even after the button has been focused.
+  - Order matters: focus reset comes first, hover override comes after.
+  - Do NOT reorder these rules — it breaks hover after click.
+*/
+.dropdown-trigger:focus {
+  outline: none;
+  color: inherit;
+  background: transparent;
+}
+
+.dropdown-trigger:hover {
+  background: var(--color-surface-hover);
+}
+
+
+
 .dropdown.open .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
@@ -679,11 +721,11 @@ nav a:hover,#historical a:hover{
   transition: opacity .15s ease, transform .15s ease;
 }
 
-.dropdown:hover .dropdown-menu {
+/*.dropdown:hover .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-}
+}*/
 
 .dropdown-menu a {
   display: block;
