@@ -35,7 +35,7 @@
       <a aria-label="Go to homepage" href="index.html">Home</a>
       <a aria-label="Go to about us page" href="about.html">About Us</a>
       <div class="dropdown">
-        <button type="button" class="dropdown-trigger link-button active" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="dropdown-trigger link-button" id="active" aria-haspopup="true" aria-expanded="false">
           What’s On
           <span class="chevron"></span>
         </button>
@@ -69,13 +69,13 @@
 
       <div class="card">
         <img src="assets/images/act2.jpg" fetchpriority="high"
-          alt="two proud farmers tending to a new born calf in a barn">
+          alt="children petting a goat">
       </div>
 
       <div class="card overlay-card">
         <h2>Children’s Barn</h2>
         <p>Our Children’s Barn provides an engaging, hands‑on introduction to life on the farm. Visitors can meet and feed a variety of gentle animals while learning about their care and behaviour. It’s an enjoyable, educational experience that encourages confidence, curiosity, and connection with the natural world.</p>
-        <img src="assets/images/act3.jpg" alt="Children’s Barn animals" class="overlay-image">
+        <img src="assets/images/act3.jpg" fetchpriority="high" alt="little smiling girl touches heads with a chicken" class="overlay-image">
       </div>
 
 
@@ -85,12 +85,12 @@
       <div class="card overlay-card">
         <h2>Tractor Rides</h2>
         <p>Our tractor rides offer a relaxed tour across the farm’s 600 acres, giving visitors a chance to see the landscape from a new perspective. The route takes in key areas of the site, with opportunities to observe daily farm life and enjoy the peaceful surroundings. A selection of restored vintage tractors is also on display for those interested in the history of agricultural machinery.</p>
-        <img src="assets/images/act8.jpg" alt="Children’s Barn animals" class="overlay-image">
+        <img src="assets/images/act8.jpg" alt="two children having a ride on the back of a tractor" fetchpriority="high" class="overlay-image">
       </div>
 
       <div class="card">
         <img src="assets/images/act6.jpg" fetchpriority="high"
-          alt="two proud farmers tending to a new born calf in a barn">
+          alt="happy child riding a child size tractor">
       </div>
 
 
@@ -99,13 +99,13 @@
 
       <div class="card">
         <img src="assets/images/act11.jpg" fetchpriority="high"
-          alt="two proud farmers tending to a new born calf in a barn">
+          alt="market stall with all sorts of goods for sale">
       </div>
 
       <div class="card overlay-card">
         <h2>Car Boot Sale</h2>
         <p>Our weekly Sunday car boot sale provides a lively outdoor marketplace where visitors can explore a wide range of items, from vintage finds to household bargains. The relaxed atmosphere makes it easy to browse at your own pace, enjoy the fresh air, and perhaps uncover a hidden gem.</p>
-        <img src="assets/images/act13.jpg" alt="Children’s Barn animals" class="overlay-image">
+        <img src="assets/images/act13.jpg" fetchpriority="high" alt="man inspecting the goods on a market stall" class="overlay-image">
       </div>
 
 
@@ -115,17 +115,73 @@
       <div class="card overlay-card">
         <h2>predator sanctuary</h2>
         <p>Our predator sanctuary provides a safe environment for native species such as owls, pine martens, and stoats. Visitors can learn about the important ecological roles these animals play and how the farm works alongside them to support natural pest control. The sanctuary highlights the value of wildlife conservation and demonstrates how sustainable farming practices can benefit both the land and local biodiversity</p>
-        <img src="assets/images/act21.jpg" alt="Children’s Barn animals" class="overlay-image">
+        <img src="assets/images/act21.jpg" alt="stoat standing on some logs for a vantage point" class="overlay-image">
       </div>
 
       <div class="card">
         <img src="assets/images/act20.jpg" fetchpriority="high"
-          alt="two proud farmers tending to a new born calf in a barn">
+          alt="barn owl looking out a hole in a brick wall">
       </div>
 
 
     </div>
   </section>
+  <!-- Floating Button -->
+<button class="floating-button" id="openBooking">Book Now</button>
+
+<!-- Booking Form Overlay -->
+<div class="booking-overlay" id="bookingOverlay">
+  <div class="booking-form">
+    <button class="close-form" id="closeBooking">×</button>
+
+    <h3>Book Your Visit</h3>
+
+    <form action="https://formdump.codeinstitute.net">
+      <label>
+        Name
+        <input type="text" required>
+      </label>
+
+      <label>
+        Email
+        <input type="email" required>
+      </label>
+
+      <label>
+        Phone
+        <input type="tel" required>
+      </label>
+
+      <label>
+        Date Required
+        <input type="date" required>
+      </label>
+
+      <label>
+        Number of Persons
+        <input type="number" min="1" required>
+      </label>
+
+      <label>
+        Select Event
+        <select required>
+          <option value="">Choose an event…</option>
+          <option>Farm Tour</option>
+          <option>Tractor Experience</option>
+          <option>Animal Meet & Greet</option>
+          <option>Photography Session</option>
+        </select>
+      </label>
+
+      <label>
+        Additional Notes (optional)
+        <textarea rows="3"></textarea>
+      </label>
+
+      <button type="submit" class="submit-btn">Submit Booking</button>
+    </form>
+  </div>
+</div>
   <!-- Footer -->
   <footer id="footer">
     <div class="grid grid-3">
@@ -310,6 +366,35 @@
     });
 
   </script>
+  <!--
+    Booking Form Toggle Logic
+    -------------------------
+    - Opens the slide‑up booking form when the floating button is clicked.
+    - Closes the form when the close button is clicked.
+    - Also closes the form if the user clicks on the dark overlay
+      (but NOT when clicking inside the form itself).
+    - Uses a simple "active" class to trigger CSS transitions.
+  -->
+  <script>
+
+
+  const openBtn = document.getElementById('openBooking');
+  const closeBtn = document.getElementById('closeBooking');
+  const overlay = document.getElementById('bookingOverlay');
+
+  openBtn.addEventListener('click', () => {
+    overlay.classList.add('active');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+
+  // Close when clicking outside the form
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+</script>
 </section>
 </body>
 

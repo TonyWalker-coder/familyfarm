@@ -89,7 +89,7 @@ eliminate random spacing everything has a consistent scale
 even when the site adjusts for nav dropdown*/
   --nav1-height: 40px;
   --nav2-height: 70px;
---header-height: calc(var(--nav1-height) + var(--nav2-height));
+  --header-height: calc(var(--nav1-height) + var(--nav2-height));
 
 
 /*Border radius
@@ -214,6 +214,106 @@ button {
 button:hover {
   background-color: var(--light-accent-hover);
 }
+
+/*floating button for the booking form*/
+.floating-button {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+
+  /* Optional: make it feel more tappable */
+  padding: var(--space-3) var(--space-5);
+
+  /* Optional: subtle shadow so it lifts off the page */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+  z-index: 999; /* keep it above cards, nav, etc. */
+}
+/*hidden booking form for floating button*/
+/* Overlay */
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+/* Visible state */
+.booking-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Form container */
+.booking-form {
+  max-height: 80vh;
+  background: var(--color-surface);
+  width: 100%;
+  max-width: 480px;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+
+  /* allow scrolling */
+  max-height: 90vh;
+  overflow-y: auto;
+
+}
+.booking-form h3 {
+  margin-bottom: var(--space-3);
+}
+
+
+/* Slide up when active */
+.booking-overlay.active .booking-form {
+  transform: translateY(0);
+}
+
+/* Close button */
+.close-form {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: none;
+  border: none;
+  font-size: var(--font-size-2xl);
+  cursor: pointer;
+}
+
+/* Form fields */
+.booking-form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--space-3);
+  font-weight: var(--font-weight-medium);
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  margin-top: var(--space-2);
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: var(--body-font);
+}
+
+/* Submit button */
+.submit-btn {
+  width: 100%;
+  margin-top: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+}
+
 
 :root[data-theme="dark"] button:hover {
   background-color: var(--dark-accent-hover);
@@ -708,8 +808,11 @@ nav a:hover,#historical a:hover{
 .dropdown-trigger:hover {
   background: var(--color-surface-hover);
 }
-.active{
-  border: 1px,solid,blue;
+
+#active{
+  border-bottom: 4px solid var(--color-accent);
+  border-left: 2px solid var(--color-accent);
+  padding: 0 0 2px 4px; 
 }
 
 

@@ -201,8 +201,8 @@ As a visitor interested in the farm’s historical sites, I want a page that pro
 
 All design decisions, colour palettes, and wireframes can be found here:
 
-[wire frames](https://github.com/TonyWalker-coder/familyfarm/blob/main/docs/wireframe.pdf)  
-[design reference](https://github.com/TonyWalker-coder/familyfarm/blob/main/docs/Design.md)
+[Wire Frames](docs/wireframe.pdf)  
+[Design Reference](docs/design.md)
 
 ## Tech stack
 
