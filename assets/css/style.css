@@ -336,6 +336,27 @@ consistent cards to mach design forms & cards should now blend into pages and no
   display: block;
 }
 
+/*image fade over card text on hover*/
+.overlay-card {
+  position: relative;
+  overflow: hidden; /* keeps the image clipped to the card */
+}
+
+.overlay-card .overlay-image {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none; /* so hover still triggers on the card */
+}
+
+.overlay-card:hover .overlay-image {
+  opacity: 1;
+}
 /* the activity cards are meant to be visually exciting so we have create a whole set of 
    wrappers just for them but still using the existing tokens */
 

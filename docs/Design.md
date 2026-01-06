@@ -4,6 +4,7 @@
 
 - About This Documentation
 - Design System — Foundations
+- Website Design and Layout
 - Accessibility Standards
   - Reference Material
 - Typography
@@ -57,6 +58,11 @@ These foundations define the core principles, styles, and assets that shape the 
 - [GitHub Docs](https://docs.github.com/en)
 - [README guide](https://ranitmanik.github.io/README-guide/)
 - [Design documentation: A practical guide](https://medium.com/@dirkjankraan/design-documentation-a-practical-guide-c5852fbb5c90)
+
+## Rationale for Using Multiple Techniques
+
+Different sections of the site intentionally employ varied layout and presentation techniques to demonstrate a broad understanding of HTML and CSS. Each method—such as side‑by‑side layouts, image overlays, and hover‑based reveal effects—has been selected to showcase a specific skill or concept relevant to the module’s learning outcomes.
+Although the visual identity remains consistent across the project, the underlying implementations differ to illustrate versatility in problem‑solving and to evidence the ability to apply multiple approaches to structuring and styling content. This variation is pedagogically purposeful and reflects the exploratory nature of the project rather than the uniformity expected of a commercial production site.
 
 ## Accessibility Standards
 
