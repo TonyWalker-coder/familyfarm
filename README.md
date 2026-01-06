@@ -1,6 +1,6 @@
 # The Walton Family Farm
 
-![Homepage Screenshot](screenshots/homepage.png)
+![Homepage Screenshot](screenshots/homepage.webp)
 
 
 [Deployed Website](https://tonywalker-coder.github.io/familyfarm/)
