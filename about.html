@@ -17,7 +17,7 @@
 
 <body>
   <!-- Header / Navigation -->
-  <header>
+    <header>
     <div class="container nav-header">
       <div id="logo">
         <p class="m-0"><span id="farm">
@@ -31,16 +31,18 @@
       </button>
     </div>
     <nav class="nav-links">
-      <a href="index.html" aria-label="Go to homepage">Home</a>
-      <a class="active" href="about.html">About Us</a>
+      <a aria-label="Go to homepage" href="index.html">Home</a>
+      <a aria-label="Go to about us page" class="active" href="about.html">About Us</a>
       <div class="dropdown">
-        <button class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
-          Activities
+        <button type="button" class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
+          What’s On
+          <span class="chevron"></span>
         </button>
         <div class="dropdown-menu">
-          <a href="#">Seasonal</a>
-          <a href="#">Shop & Cafe</a>
-          <a href="#">Gallery</a>
+          <a aria-label="Go to activities" href="activities.html">Activities</a>
+          <a aria-label="Go to seasonal activities" href="#">Seasonal</a>
+          <a aria-label="Go to shop and cafe" href="#">Shop & Cafe</a>
+          <a aria-label="Go to gallery" href="#">Gallery</a>
         </div>
       </div>
       <a href="#footer">Contact</a>
