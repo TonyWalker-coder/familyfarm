@@ -1,5 +1,16 @@
 # The Walton Family Farm
 
+![Homepage Screenshot](screenshots/homepage.png)
+
+
+[Deployed Website](https://tonywalker-coder.github.io/familyfarm/)
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Overview](#overview)
+- [cards](#public-activities-cards-must-have)
+
 ## Introduction
 
 The Walton Family Farm website is a community‑focused, responsive web project designed to promote the farm’s activities, support commercial growth, and strengthen its role within the local community. This README outlines the project goals, user stories, accessibility requirements, and development roadmap.
@@ -190,8 +201,8 @@ As a visitor interested in the farm’s historical sites, I want a page that pro
 
 All design decisions, colour palettes, and wireframes can be found here:
 
-[wire frames](to be added when file structure is built)
-[design reference](to be added when file structure is built)
+[wire frames](https://github.com/TonyWalker-coder/familyfarm/blob/main/docs/wireframe.pdf)  
+[design reference](https://github.com/TonyWalker-coder/familyfarm/blob/main/docs/Design.md)
 
 ## Tech stack
 
