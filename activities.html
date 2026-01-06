@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About Us</title>
+  <title>The Waltons Family Farm</title>
   <meta name="description" content="Milestone project 1.0">
   <meta name="author" content="Tony Walker">
+  <link rel="preload" as="image" href="assets/images/heroR.png">
   <!--favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -31,130 +32,104 @@
       </button>
     </div>
     <nav class="nav-links">
-      <a href="index.html" aria-label="Go to homepage">Home</a>
-      <a class="active" href="about.html">About Us</a>
+      <a  aria-label="Go to homepage" href="index.html">Home</a>
+      <a aria-label="Go to about us page" href="about.html">About Us</a>
       <div class="dropdown">
-        <button class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
-          Activities
+        <button type="button" class="dropdown-trigger link-button active" aria-haspopup="true" aria-expanded="false">
+          What’s On
+          <span class="chevron"></span>
         </button>
         <div class="dropdown-menu">
-          <a href="#">Seasonal</a>
-          <a href="#">Shop & Cafe</a>
-          <a href="#">Gallery</a>
+          <a aria-label="Go to activities" href="#">Activities</a>
+          <a aria-label="Go to seasonal activities" href="#">Seasonal</a>
+          <a aria-label="Go to shop and cafe" href="#">Shop & Cafe</a>
+          <a aria-label="Go to gallery" href="#">Gallery</a>
         </div>
       </div>
       <a href="#footer">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
+  <section id="hero-activities">
+
+    <div class="container text-wrap">
+      <h1>Activities On The Farm</h1>
+    </div>
+
+  </section>
+
+
+
+
   <!-- Grid Section -->
   <section class="container mt-4">
 
-    <div class="grid grid-2">
+    <div class="grid grid-3">
 
       <div class="card">
-        <img src="assets/images/about1.webp" fetchpriority="high"
-          alt="typical misty morning on a farm showing cows and a tractor">
+        <img src="assets/images/intro1.webp" fetchpriority="high"
+          alt="two proud farmers tending to a new born calf in a barn">
       </div>
 
       <div class="card">
-        <h2>About our family farm</h2>
-        <p>The Waltons Family Farm is a long‑established, community‑focused farm based in Peterborough. We’re a family
-          operation with strong local ties and a clear ambition to grow sustainably. Our work centres on responsible
-          farming, seasonal produce, and supporting the community we’re part of.</p>
-      </div>
-
-    </div>
-
-    <div class="grid grid-2">
-
-
-
-      <div class="card">
-        <h2>A truly sustainable farm</h2>
-        <p>At The Waltons Family Farm, we care for our animals and land with genuine attention and respect. Our
-          livestock are raised in a calm, natural setting, with much of their feed grown on the farm. Through regular
-          checks and clean, consistent routines, we maintain high standards while supporting the local community we’ve
-          been part of for generations.</p>
+        <h2>Welcome to our family farm</h2>
+        <p> Pop into the shop and café for fresh local produce. We’ve been part of this community for over 70 years.
+          Proud to serve our neighbours, friends, and visitors. Thanks for supporting a proper family-run farm.</p>
       </div>
 
       <div class="card">
-        <img src="assets/images/about2.webp" fetchpriority="high"
-          alt="typical misty morning on a farm showing cows and a tractor">
+        <img src="assets/images/intro2.webp" fetchpriority="high"
+          alt="young lady arranging fresh produce in a farm field">
       </div>
 
     </div>
 
-    <div class="grid grid-2">
+    <div class="grid grid-3">
 
-      <div class="card">
-        <img src="assets/images/about3.webp" fetchpriority="high"
-          alt="typical misty morning on a farm showing cows and a tractor">
-      </div>
-
-      <div class="card">
-        <h2>Our commitment</h2>
-        <p>We’re a farm built on genuine relationships and honest work. Our commitment to the community guides
-          everything we do. You can trust us to care for the land — and the people who rely on it.</p>
-      </div>
-    </div>
-    <div class="grid grid-2">
-
-
-      <div class="card">
-        <h2>Cutting edge technology</h2>
-        <p>We use modern tools to work smarter and care for our land responsibly. Technology helps us monitor our
-          fields, improve efficiency, and reduce waste. It’s all part of building a future‑focused farm that serves our
-          community well.</p>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/about4.webp" fetchpriority="high" alt="female farmer standing in a field using a laptop">
-      </div>
-
-    </div>
-    <button type="button" class="feedback-toggle" aria-expanded="false" aria-controls="feedback-panel">Leave Feedback</button>
-
-    <div class="feedback-panel" id="feedback-panel" hidden>
-      <form action="https://formdump.codeinstitute.net" method="POST" class="feedback-form">
-        <label>
-          Your Name
-          <input type="text" name="name" required>
-        </label>
-
-        <label>
-          Your Feedback
-          <textarea name="message" rows="4" required></textarea>
-        </label>
-
-        <button type="submit" class="feedback-submit">Send</button>
-        <button type="button" class="feedback-cancel">Cancel</button>
-      </form>
-    </div>
-
-
-    <div class="grid grid-1">
-
-      <div class="about-card">
-        <div class="about-card__image-wrapper">
-          <img src="assets/images/about5.webp" alt="ruined castle standing in a field"
-            class="about-card__image">
+      <div class="activity-card">
+        <div class="activity-card__image-wrapper">
+          <img src="assets/images/shop22.webp" fetchpriority="high" alt="lady showing of fresh produce in a farm shop"
+            class="activity-card__image">
         </div>
 
-        <div class="about-card__content">
-          <h3>Our commitment</h3>
-          <p>We’re proud to protect the historic ruins on our land, treating them with the respect they deserve. They’re
-            a reminder of the stories that shaped our countryside and the people who lived here before us. Feel free to
-            explore our gallery to see how we preserve and care for these special places.</p>
-        </div>
-        <div>
-          <span aria-label="Go to historical virtual tour" id="historical"><a href="#">Historical Site Virtual Tour</a></span>
+        <div class="activity-card__content">
+          <h3 class="activity-card__title">Farm Shop and Café</h3>
+          <p class="activity-card__text">
+            visit our shop and café and sample our fresh produce
+          </p>
         </div>
       </div>
 
+      <div class="activity-card">
+        <div class="activity-card__image-wrapper">
+          <img src="assets/images/seasonal11.webp" fetchpriority="high"
+            alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
+        </div>
 
+        <div class="activity-card__content">
+          <h3 class="activity-card__title">Seasonal Activities</h3>
+          <p class="activity-card__text">
+            the farm is active all year round, why not visit one of our seasonal events
+          </p>
+        </div>
+      </div>
+
+      <div class="activity-card">
+        <div class="activity-card__image-wrapper">
+          <img src="assets/images/petting1.webp" fetchpriority="high"
+            alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
+        </div>
+
+        <div class="activity-card__content">
+          <h3 class="activity-card__title">Children’s Barn</h3>
+          <p class="activity-card__text">
+            meet greet and feed the animals<br>
+            they love it!
+          </p>
+        </div>
+      </div>
     </div>
-
   </section>
   <!-- Footer -->
   <footer id="footer">
@@ -170,8 +145,7 @@
 
         <div>
           <p>Sign up to our newsletter for fun facts and upcoming events.</p>
-          <button type="button" data-open-modal aria-haspopup="dialog" aria-expanded="false" aria-controls="newsletter-modal">Sign Up</button>
-
+          <button type="button" data-open-modal>Sign Up</button>
         </div>
         <div id="socialmedia">
           <!-- links to social media preserve this site by opening on their own page-->
@@ -220,7 +194,7 @@
   <template id="newsletter-modal">
     <div class="modal-backdrop" data-modal>
       <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
-        aria-describedby="modal-description" tabindex="-1">
+        aria-describedby="modal-description">
 
         <div class="modal-header">
           <h2 id="modal-title">Join Our Newsletter</h2>
@@ -343,4 +317,5 @@
   </script>
 </section>
 </body>
+
 </html>
