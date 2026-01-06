@@ -687,7 +687,9 @@ nav a:hover,#historical a:hover{
 .dropdown-trigger:hover {
   background: var(--color-surface-hover);
 }
-
+.active{
+  border: 1px,solid,blue;
+}
 
 
 .dropdown.open .dropdown-menu {
