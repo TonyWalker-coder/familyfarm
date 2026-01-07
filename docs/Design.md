@@ -89,7 +89,7 @@
 - [Java Scripts](java-scripts)
   - Ownership
   - Java resources
-- [Design Decisions]
+- [Design Decisions](#design-decisions)
   - [Responsive Grid: Uneven Rows on Small Breakpoint](#responsive-grid-uneven-rows-on-small-breakpoints)
   - [Modal Irregular Design](#modal-irregular-design)
     - Update

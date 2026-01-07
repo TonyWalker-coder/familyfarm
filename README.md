@@ -5,6 +5,17 @@
 
 [Deployed Website](https://tonywalker-coder.github.io/familyfarm/)
 
+## License
+
+This project is licensed under the MIT License.
+You are free to use, modify, distribute, and build upon this project for personal or commercial purposes.
+See the full license in the [**LICENSE**](LICENSE) file for complete details
+
+## Purpose of This README
+
+This README serves as the starting point for understanding the planning, structure, and development process behind the Walton Family Farm website. It isn’t intended to contain every asset or design detail. Instead, it works alongside the project’s supporting documents — such as wireframes, design references, and testing documentation — which provide the deeper technical and visual context. Together, these documents form the complete project record, with the README acting as the central guide.
+
+
 ## Table of Contents
 
 - [Introduction](#introduction)
