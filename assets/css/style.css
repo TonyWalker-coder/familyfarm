@@ -80,7 +80,7 @@ all heading are defined here
   --heading-4-size: var(--font-size-lg);
 
   --heading-line-height: var(--line-height-tight);
-  --heading-weight: var(--font-weight-bold);
+ --heading-weight: var(--font-weight-regular);
   --heading-font: var(--font-heading);
 
   /* Body Text Tokens

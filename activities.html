@@ -16,6 +16,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <!--
+Restore the user's saved theme BEFORE loading the stylesheet.
+This ensures the correct data-theme is active on first paint
+-->
+<script>
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+</script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -317,16 +327,18 @@
         }
       });
     </script>
-    <!--Simple little bit of java to open and close the newsletter mobile -->
 
     <script>
       const toggle = document.getElementById('theme-toggle');
-      const root = document.documentElement;
+const root = document.documentElement;
 
-      toggle.addEventListener('click', () => {
-        const isDark = root.getAttribute('data-theme') === 'dark';
-        root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      });
+toggle.addEventListener('click', () => {
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  const nextTheme = isDark ? 'light' : 'dark';
+
+  root.setAttribute('data-theme', nextTheme);
+  localStorage.setItem('theme', nextTheme);   // <-- save it
+});
     </script>
 
     <!-- Toggle the mobile navigation menu and update aria-expanded -->
