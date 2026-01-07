@@ -39,8 +39,13 @@
 
 ## Table of contents
 
-- About This Documentation
-- Design System — Foundations
+- [About This Documentation](#about-this-documentation)
+- [Design System — Foundations](#design-foundations)
+- [External references](#external-references)
+- [Rationale for Using Multiple Techniques](#rationale-for-using-multiple-techniques)
+- [Accessibility Standards](#accessibility-standards)
+  - [Reference Material](#reference-material)
+
 - Website Design and Layout
 - Accessibility Standards
   - Reference Material
@@ -79,13 +84,11 @@
   - Headings & Text
 
 
-- - External references
-
 ## About This Documentation
 
 This design system and README follow common industry expectations for project documentation. A good README explains what the project is, how to use it, and how it’s structured. A design document goes further by outlining the decisions behind the work — accessibility standards, typography, colour choices, assets, and usage guidelines. This level of documentation supports maintainability, transparency, and assessment criteria such as Merit+, where clear justification and traceability of design decisions are required.
 
-## Design System — Foundations
+## Design Foundations
 
 These foundations define the core principles, styles, and assets that shape the visual and functional identity of the project. They ensure consistency, accessibility, and a shared language across design and development.
 
@@ -94,7 +97,7 @@ These foundations define the core principles, styles, and assets that shape the 
 - [Make a README](https://www.makeareadme.com/)
 - [GitHub Docs](https://docs.github.com/en)
 - [README guide](https://ranitmanik.github.io/README-guide/)
-- [Design documentation: A practical guide](https://medium.com/@dirkjankraan/design-documentation-a-practical-guide-c5852fbb5c90)
+- [How to write design documentation](https://www.freecodecamp.org/news/how-to-write-a-good-software-design-document-66fcf019569c/)
 
 ## Rationale for Using Multiple Techniques
 
@@ -143,11 +146,11 @@ The colour palette was chosen based on the images being used on the site to ensu
 
 ### Brand Colours (Shared Across Themes)
 
---brand-barn-red: #5A0F0F;
---brand-sun-gold: #E8C9A1;
---brand-grass-green: #C7D7A4;
---brand-sky-blue: #D8E4F0;
---brand-earth-brown: #3A2A1E;
+--brand-barn-red: #5A0F0F;  
+--brand-sun-gold: #E8C9A1;  
+--brand-grass-green: #C7D7A4;  
+--brand-sky-blue: #D8E4F0;  
+--brand-earth-brown: #3A2A1E;  
 
 <div style="display:flex; gap:10px;">
 <div style="width:60px; height:60px; background:#5A0F0F; border-radius:6px;"></div>
@@ -155,7 +158,6 @@ The colour palette was chosen based on the images being used on the site to ensu
 <div style="width:60px; height:60px; background:#C7D7A4; border-radius:6px;"></div>
 <div style="width:60px; height:60px; background:#D8E4F0; border-radius:6px;"></div>
 <div style="width:60px; height:60px; background:#3A2A1E; border-radius:6px;"></div>
-
 </div>
 
 ### Light Theme
@@ -168,15 +170,35 @@ The colour palette was chosen based on the images being used on the site to ensu
 --light-accent: #C7D7A4;  
 --light-accent-hover: #AFC48B;  
 
+<div style="display:flex; gap:10px;">
+<div style="width:60px; height:60px; background:#F9F3E6; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#F4E9D2; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#3A2A1E; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#5A0F0F; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#E8C9A1; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#C7D7A4; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#AFC48B; border-radius:6px;"></div>
+</div>
+
 ### Dark Theme
 
 --dark-bg: #1F2E1A;  
---dark-surface: #2D3F52;  
+--dark-surface: #1F2E1A;  
 --dark-text: #F4E9D2;  
 --dark-heading: #E8C9A1;  
 --dark-border: #3A2A1E;  
 --dark-accent: #C7D7A4;  
 --dark-accent-hover: #D8E4F0;  
+
+<div style="display:flex; gap:10px;">
+<div style="width:60px; height:60px; background:#1F2E1A; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#1F2E1A; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#F4E9D2; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#E8C9A1; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#3A2A1E; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#C7D7A4; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#D8E4F0; border-radius:6px;"></div>
+</div>
 
 ### Semantic Tokens
 
@@ -370,4 +392,5 @@ To avoid this, the modal uses a custom element **\<modal-header>** instead of th
 This is an intentional and permanent design choice to ensure stable modal behaviour across browsers.
 
 ### Update
+
 After further testing with HTML validators and accessibility tools, the custom element was replaced with a standard **\<div>.** This resolves the browser issue while maintaining full semantic clarity and compatibility with validators and screen readers.
