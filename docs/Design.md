@@ -35,6 +35,7 @@
   font-display: swap;
 }
 </style>
+
 # Design Reference
 
 ## Table of contents
@@ -45,10 +46,6 @@
 - [Rationale for Using Multiple Techniques](#rationale-for-using-multiple-techniques)
 - [Accessibility Standards](#accessibility-standards)
   - [Reference Material](#reference-material)
-
-- Website Design and Layout
-- Accessibility Standards
-  - Reference Material
 - [Typography](#typography)
   - Headings — *Bree Serif*
   - Body Text — *Nunito*
@@ -58,31 +55,44 @@
   - Dark Theme
   - Semantic Tokens
   - Design Notes
-- Logo Attribution
-- Wire frames
-  - Why Balsamiq
-- Image Licensing
-  - Image Source List
-  - Usage Guidelines
+- [Logo Attribution](#logo-attribution)
+- [Wire Frames](#wire-frames)
+  - [Why Balsamiq](#why-balsamiq)
+- [Image Licensing](#image-licensing)
+  - [Image Source List](#image-source-list)
+  - [Usage Guidelines](#usage-guidelines)
   - Image Usage Guidelines
   - Alt Text
   - Aspect Ratios
   - Cropping
   - Quality & Style
   - Performance
-- Typography Usage Guidelines
+- [Usage Guidelines](#usage-guidelines)
+- [Typography Usage Guidelines](#typography-usage-guidelines)
   - Font Pairing
   - Line Height
   - Max Line Length
   - Heading Scale
   - Hierarchy Rules
   - Readability
-- Colour Usage Guidelines
+- [Typography Usage Guidelines](#typography-usage-guidelines)
+  - Font Pairing
+  - Line Height
+  - Max Line Length
+  - Heading Scale
+  - Hierarchy Rules
+- [Colour Usage Guidelines](#colour-usage-guidelines)
   - Accents
   - Surfaces
   - Borders
   - Headings & Text
-
+- [Java Scripts](java-scripts)
+  - Ownership
+  - Java resources
+- [Design Decisions]
+  - [Responsive Grid: Uneven Rows on Small Breakpoint](#responsive-grid-uneven-rows-on-small-breakpoints)
+  - [Modal Irregular Design](#modal-irregular-design)
+    - Update
 
 ## About This Documentation
 
@@ -248,11 +258,11 @@ All images used in this project are sourced from copyright‑free or permissivel
 - [i stock photo](https://www.istockphoto.com/search/2/image-film?phrase=agriculture&page=2)
 - [Adobe Stock](https://stock.adobe.com/)
 
-### Usage Guidelines
+## Usage Guidelines
 
 These guidelines ensure consistent, accessible, and intentional use of images, typography, and colour across the project.
 
-### Image Usage Guidelines
+## Image Usage Guidelines
 
 Images support the brand’s warmth and storytelling, but they must remain accessible and purposeful.
 
@@ -313,7 +323,7 @@ Images support the brand’s warmth and storytelling, but they must remain acces
 - H5: 1.125rem
 - H6: 1rem
 
-### Hierarchy Rules
+### Heading Scale,Hierarchy Rules
 
 - Use one H1 per page
 - Don’t skip heading levels
@@ -356,6 +366,9 @@ Images support the brand’s warmth and storytelling, but they must remain acces
 
 Not using the **Bootstrap** *JavaScript components* meant I needed a few small custom scripts to handle simple **UI** interactions. My JavaScript knowledge is still developing, so I explored a couple of free online resources for inspiration while keeping the scripts minimal and focused on essential trigger events only.
 
+### Ownership
+
+Although I used online examples to understand certain techniques, all JavaScript used in this project was written by me and tailored specifically to this site.
 
 ### Java resources
 
@@ -364,7 +377,7 @@ Not using the **Bootstrap** *JavaScript components* meant I needed a few small c
 
 ## Design Decisions
 
-### Responsive Grid: Uneven Rows on Small Breakpoints
+## Responsive Grid: Uneven Rows on Small Breakpoints
 
 Our layout uses a custom CSS Grid with responsive  values. At the  breakpoint (based on **Bootstrap‑style** sizing, but implemented in pure CSS), three cards naturally form a 2 + 1 layout. This happens because the available column width supports two cards per row, leaving the third to wrap onto its own line.  
 We intentionally keep this behavior. It avoids forced stretching, preserves consistent card proportions, and maintains predictable, readable layouts across breakpoints. At the smallest sizes (**xs**), cards stack vertically for clarity.
@@ -384,7 +397,7 @@ xs:
 [2]  
 [3]  
 
-### Modal irregular design
+## Modal irregular design
 
 Using a standard **\<header>** element inside the modal caused unexpected behaviour: the browser attempted to merge it with the site’s main **\<header>**, resulting in layout distortion.
 To avoid this, the modal uses a custom element **\<modal-header>** instead of the native **\<header>** tag.
