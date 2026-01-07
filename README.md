@@ -2,7 +2,6 @@
 
 ![Homepage Screenshot](screenshots/homepage.webp)
 
-
 [Deployed Website](https://tonywalker-coder.github.io/familyfarm/)
 
 ## License
@@ -13,8 +12,7 @@ See the full license in the [**LICENSE**](LICENSE) file for complete details
 
 ## Purpose of This README
 
-This README serves as the starting point for understanding the planning, structure, and development process behind the Walton Family Farm website. It isn’t intended to contain every asset or design detail. Instead, it works alongside the project’s supporting documents — such as wireframes, design references, and testing documentation — which provide the deeper technical and visual context. Together, these documents form the complete project record, with the README acting as the central guide.
-
+This **README** is designed to guide the project from the very beginning, outlining the planning, structure, and development approach before and during the build. It isn’t intended to contain every asset or completed detail up front. Instead, it works alongside the project’s supporting documents — such as wireframes, design references, and testing documentation — which are developed and refined as the site evolves. Together, these documents form the full project record, with the **README** acting as the starting point.
 
 ## Table of Contents
 
@@ -227,6 +225,7 @@ All design decisions, colour palettes, and wireframes can be found here:
 - JavaScript
 - GitHub Pages (deployment)
 - GitHub Project (user stories)
+- Copilot
 
 ## Folder structure
 
