@@ -1,36 +1,4 @@
-<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
-
 # The Walton Family Farm
-
-
-<div style="display:flex; gap:10px;">
-
-<div style="width:60px; height:60px; background:#4CAF50; border-radius:6px;"></div>
-`#4CAF50`
-
-<div style="width:60px; height:60px; background:#FF9800; border-radius:6px;"></div>
-`#FF9800`
-
-<div style="width:60px; height:60px; background:#F44336; border-radius:6px;"></div>
-`#F44336`
-
-</div>
-
-
-**Bree Serif**
-
-<p style="font-family:'Bree Serif', serif; font-size:24px;">
-The quick brown fox jumps over the lazy dog.
-</p>
-
-**Nunito**
-
-<p style="font-family:'Nunito', sans-serif; font-size:24px;">
-The quick brown fox jumps over the lazy dog.
-</p>
-
-
-
 
 ![Homepage Screenshot](screenshots/homepage.webp)
 

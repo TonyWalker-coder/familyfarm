@@ -8,6 +8,10 @@
   <title>About Us</title>
   <meta name="description" content="Milestone project 1.0">
   <meta name="author" content="Tony Walker">
+  <!--fonts-->
+  <link rel="preload" href="/assets/fonts/Inter18pt-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Inter18pt-Medium.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/Inter18pt-Bold.woff2" as="font" type="font/woff2" crossorigin>
   <!--favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
@@ -17,7 +21,7 @@
 
 <body>
   <!-- Header / Navigation -->
-    <header>
+  <header>
     <div class="container nav-header">
       <div id="logo">
         <p class="m-0"><span id="farm">
@@ -111,11 +115,13 @@
       </div>
 
       <div class="card">
-        <img src="assets/images/about4.webp" fetchpriority="high" alt="female farmer standing in a field using a laptop">
+        <img src="assets/images/about4.webp" fetchpriority="high"
+          alt="female farmer standing in a field using a laptop">
       </div>
 
     </div>
-    <button type="button" class="feedback-toggle" aria-expanded="false" aria-controls="feedback-panel">Leave Feedback</button>
+    <button type="button" class="feedback-toggle" aria-expanded="false" aria-controls="feedback-panel">Leave
+      Feedback</button>
 
     <div class="feedback-panel" id="feedback-panel" hidden>
       <form action="https://formdump.codeinstitute.net" method="POST" class="feedback-form">
@@ -139,8 +145,7 @@
 
       <div class="about-card">
         <div class="about-card__image-wrapper">
-          <img src="assets/images/about5.webp" alt="ruined castle standing in a field"
-            class="about-card__image">
+          <img src="assets/images/about5.webp" alt="ruined castle standing in a field" class="about-card__image">
         </div>
 
         <div class="about-card__content">
@@ -150,7 +155,8 @@
             explore our gallery to see how we preserve and care for these special places.</p>
         </div>
         <div>
-          <span aria-label="Go to historical virtual tour" id="historical"><a href="#">Historical Site Virtual Tour</a></span>
+          <span aria-label="Go to historical virtual tour" id="historical"><a href="#">Historical Site Virtual
+              Tour</a></span>
         </div>
       </div>
 
@@ -172,7 +178,8 @@
 
         <div>
           <p>Sign up to our newsletter for fun facts and upcoming events.</p>
-          <button type="button" data-open-modal aria-haspopup="dialog" aria-expanded="false" aria-controls="newsletter-modal">Sign Up</button>
+          <button type="button" data-open-modal aria-haspopup="dialog" aria-expanded="false"
+            aria-controls="newsletter-modal">Sign Up</button>
 
         </div>
         <div id="socialmedia">
@@ -248,101 +255,102 @@
   </template>
 
   <!-- JS -->
-<section>
-  <!-- Simple JS to open/close the newsletter modal -->
-  <script>
-    let lastFocusedElement = null;
+  <section>
+    <!-- Simple JS to open/close the newsletter modal -->
+    <script>
+      let lastFocusedElement = null;
 
-    document.addEventListener("click", (e) => {
+      document.addEventListener("click", (e) => {
 
-      // OPEN
-      if (e.target.matches("[data-open-modal]")) {
-        lastFocusedElement = e.target;
+        // OPEN
+        if (e.target.matches("[data-open-modal]")) {
+          lastFocusedElement = e.target;
 
-        // update aria-expanded
-        e.target.setAttribute("aria-expanded", "true");
+          // update aria-expanded
+          e.target.setAttribute("aria-expanded", "true");
 
-        const tpl = document.querySelector("#newsletter-modal");
-        document.body.appendChild(tpl.content.cloneNode(true));
+          const tpl = document.querySelector("#newsletter-modal");
+          document.body.appendChild(tpl.content.cloneNode(true));
 
-        const modal = document.querySelector("[data-modal]");
-        modal.querySelector(".modal-close").focus();
-      }
+          const modal = document.querySelector("[data-modal]");
+          modal.querySelector(".modal-close").focus();
+        }
 
-      // CLOSE (button or backdrop)
-      if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
-        document.querySelector("[data-modal]")?.remove();
+        // CLOSE (button or backdrop)
+        if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
+          document.querySelector("[data-modal]")?.remove();
 
-        // return focus to opener
-        lastFocusedElement?.focus();
+          // return focus to opener
+          lastFocusedElement?.focus();
 
-        // collapse aria-expanded on the opener
-        lastFocusedElement?.setAttribute("aria-expanded", "false");
-      }
-    });
-  </script>
-  <!--Simple little bit of java to open and close the newsletter mobile -->
-
-  <script>
-    const toggle = document.getElementById('theme-toggle');
-    const root = document.documentElement;
-
-    toggle.addEventListener('click', () => {
-      const isDark = root.getAttribute('data-theme') === 'dark';
-      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-    });
-  </script>
-
-  <!-- Toggle the mobile navigation menu and update aria-expanded -->
-  <script>
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    navToggle.addEventListener('click', () => {
-      const expanded = navToggle.getAttribute('aria-expanded') === 'true'
-      navToggle.setAttribute('aria-expanded', !expanded)
-      navLinks.classList.toggle('nav-open')
-    })
-
-  </script>
-  <!-- Toggle desktop dropdown menus and update aria-expanded -->
-  <script>
-    document.querySelectorAll('.dropdown > button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const parent = btn.parentElement;
-        const isOpen = parent.classList.toggle('open');
-        btn.setAttribute('aria-expanded', isOpen);
+          // collapse aria-expanded on the opener
+          lastFocusedElement?.setAttribute("aria-expanded", "false");
+        }
       });
-    });
+    </script>
+    <!--Simple little bit of java to open and close the newsletter mobile -->
 
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      const root = document.documentElement;
 
-  </script>
-  <!-- Close the mobile nav when a link is clicked -->
-  <script>
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('nav-open');
+      toggle.addEventListener('click', () => {
+        const isDark = root.getAttribute('data-theme') === 'dark';
+        root.setAttribute('data-theme', isDark ? 'light' : 'dark');
       });
-    });
-  </script>
+    </script>
 
-  <!--open/close expanding feedback form-->
-  <script>
-    const feedbackToggle = document.querySelector('.feedback-toggle');
-    const feedbackPanel = document.querySelector('.feedback-panel');
-    const feedbackCancel = document.querySelector('.feedback-cancel');
+    <!-- Toggle the mobile navigation menu and update aria-expanded -->
+    <script>
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
 
-    feedbackToggle?.addEventListener('click', () => {
-      feedbackPanel.classList.toggle('open');
-      feedbackPanel.hidden = !feedbackPanel.classList.contains('open');
-    });
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true'
+        navToggle.setAttribute('aria-expanded', !expanded)
+        navLinks.classList.toggle('nav-open')
+      })
 
-    feedbackCancel?.addEventListener('click', () => {
-      feedbackPanel.classList.remove('open');
-      feedbackPanel.hidden = true;
-    });
+    </script>
+    <!-- Toggle desktop dropdown menus and update aria-expanded -->
+    <script>
+      document.querySelectorAll('.dropdown > button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const parent = btn.parentElement;
+          const isOpen = parent.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen);
+        });
+      });
 
-  </script>
-</section>
+
+    </script>
+    <!-- Close the mobile nav when a link is clicked -->
+    <script>
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('nav-open');
+        });
+      });
+    </script>
+
+    <!--open/close expanding feedback form-->
+    <script>
+      const feedbackToggle = document.querySelector('.feedback-toggle');
+      const feedbackPanel = document.querySelector('.feedback-panel');
+      const feedbackCancel = document.querySelector('.feedback-cancel');
+
+      feedbackToggle?.addEventListener('click', () => {
+        feedbackPanel.classList.toggle('open');
+        feedbackPanel.hidden = !feedbackPanel.classList.contains('open');
+      });
+
+      feedbackCancel?.addEventListener('click', () => {
+        feedbackPanel.classList.remove('open');
+        feedbackPanel.hidden = true;
+      });
+
+    </script>
+  </section>
 </body>
+
 </html>

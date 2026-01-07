@@ -1,3 +1,40 @@
+<style>
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter18pt-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Inter18pt-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter18pt-Medium.woff2') format('woff2'),
+       url('../assets/fonts/Inter18pt-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter18pt-Bold.woff2') format('woff2'),
+       url('../assets/fonts/Inter18pt-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bree Serif';
+  src: url('assets/fonts/BreeSerif-Regular.woff2') format('woff2'),
+       url('assets/fonts/BreeSerif-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
 # Design Reference
 
 ## Table of contents
@@ -7,10 +44,10 @@
 - Website Design and Layout
 - Accessibility Standards
   - Reference Material
-- Typography
+- [Typography](#typography)
   - Headings — *Bree Serif*
   - Body Text — *Nunito*
-- Colour Palette
+- [Colour Palette](#colour-palette)
   - Brand Colours (*Shared Across Themes*)
   - Light Theme
   - Dark Theme
@@ -81,16 +118,24 @@ This project follows **WCAG 2.2 Level AA,** the standard recommended by **GOV.UK
 
 ## Typography
 
-Fonts sourced from [google fonts](https://fonts.google.com/)  
-These fonts were chosen to balance warmth, readability, and brand personality.
+Our typography is fully self‑hosted for performance, reliability, and long‑term control.
+The chosen fonts balance warmth, readability, and a friendly, approachable brand personality.
 
 ### Headings — Bree Serif
 
 Friendly, handcrafted, and distinctive without compromising clarity.
 
-### Body Text — Nunito
+<p style="font-family:'Bree Serif', serif; font-size:24px;">
+The quick brown fox jumps over the lazy dog.
+</p>
 
-Modern, clean, and highly readable across devices and sizes.
+### Body Text — Inter
+
+Modern, clean, highly readable, and fully self‑hosted for performance.
+
+<p style="font-family:'Inter', sans-serif; font-size:24px;">
+  The quick brown fox jumps over the lazy dog.
+</p>
 
 ## Colour Palette
 
@@ -103,6 +148,15 @@ The colour palette was chosen based on the images being used on the site to ensu
 --brand-grass-green: #C7D7A4;
 --brand-sky-blue: #D8E4F0;
 --brand-earth-brown: #3A2A1E;
+
+<div style="display:flex; gap:10px;">
+<div style="width:60px; height:60px; background:#5A0F0F; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#E8C9A1; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#C7D7A4; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#D8E4F0; border-radius:6px;"></div>
+<div style="width:60px; height:60px; background:#3A2A1E; border-radius:6px;"></div>
+
+</div>
 
 ### Light Theme
 
@@ -215,7 +269,7 @@ Images support the brand’s warmth and storytelling, but they must remain acces
 ### Font Pairing
 
 - Bree Serif → headings only
-- Nunito → body text, UI text, labels, buttons
+- Inter → body text, UI text, labels, buttons
 
 ### Line Height
 

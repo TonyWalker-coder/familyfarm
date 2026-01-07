@@ -1,5 +1,32 @@
-/* google fonts*/
+/* google fonts
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*/
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter18pt-Regular.woff2') format('woff2'),
+       url('../fonts/Inter18pt-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter18pt-Medium.woff2') format('woff2'),
+       url('../fonts/Inter18pt-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter18pt-Bold.woff2') format('woff2'),
+       url('../fonts/Inter18pt-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 /* 
 ROOT TOKENS — COLOURS, TYPOGRAPHY, SPACING, RADII, ETC.
 */
@@ -11,7 +38,8 @@ Components will use these tokens, to change fonts later, you only update them he
 
 */
   --font-heading: "Bree Serif", serif;
-  --font-body: "Nunito", sans-serif;
+  --font-body: "Inter", sans-serif;
+
 
   /* Typography Scale 
 
