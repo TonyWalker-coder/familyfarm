@@ -926,26 +926,37 @@ full use of tokens to follow site design
   background-position: center;
   min-height: 55vh;
 }
-#hero-activities::before {
+#hero-seasonal {
+  position: relative;
+  padding: var(--space-8) 0;
+  background-color: var(--color-surface);
+  color: var(--color-heading);
+  text-align: center;
+  background-image: url("../images/hero-seasonal1.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 55vh;
+}
+#hero-activities::before, #hero-seasonal::before{
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.4); /* adjust transparency */
   pointer-events: none;
 }
-#hero-activities h1 {
+#hero-activities h1,#hero-seasonal h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
   text-shadow: 0 2px 6px rgba(0,0,0,0.35);
   margin: var(--space-1) var(--space-0);
 }
-#hero-activities .text-wrap {
+#hero-activities .text-wrap, #hero-seasonal .text-wrap{
   display: inline-block;
   padding: var(--space-3) var(--space-4);
   /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
   -webkit-backdrop-filter: blur(var(--space-1));
   backdrop-filter: blur(var(--space-1));
-  background: rgba(0,0,0,0.25); /* tweak as needed */
+  background: rgba(0,0,0,0.10); /* tweak as needed */
   border-radius: var(--radius-md);
 }
 
