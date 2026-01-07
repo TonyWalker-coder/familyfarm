@@ -171,35 +171,35 @@ This ensures the correct data-theme is active on first paint
 
         <h3>Book Your Visit</h3>
 
-        <form action="https://formdump.codeinstitute.net">
+        <form action="https://formdump.codeinstitute.net/" method="POST">
           <label>
             Name
-            <input type="text" required>
+            <input type="text" id="name" name="name" required>
           </label>
 
           <label>
             Email
-            <input type="email" required>
+            <input type="email" id="email" name="email" required>
           </label>
 
           <label>
             Phone
-            <input type="tel" required>
+            <input type="tel" id="tel" name="tel" required>
           </label>
 
           <label>
             Date Required
-            <input type="date" required>
+            <input type="date" id="date" name="date" required>
           </label>
 
           <label>
             Number of Persons
-            <input type="number" min="1" required>
+            <input type="number" min="1" id="qty" name="qty" required>
           </label>
 
           <label>
             Select Event
-            <select required>
+            <select required id="event" name="event">
               <option value="">Choose an event…</option>
               <option>Farm Tour</option>
               <option>Tractor Experience</option>
@@ -210,7 +210,7 @@ This ensures the correct data-theme is active on first paint
 
           <label>
             Additional Notes (optional)
-            <textarea rows="3"></textarea>
+            <textarea rows="3" id="txt" name="txt" ></textarea>
           </label>
 
           <button type="submit" class="submit-btn">Submit Booking</button>
