@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,14 +21,15 @@
 Restore the user's saved theme BEFORE loading the stylesheet.
 This ensures the correct data-theme is active on first paint
 -->
-<script>
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    document.documentElement.setAttribute('data-theme', savedTheme);
-  }
-</script>
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  </script>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
   <!-- Header / Navigation -->
   <header>
@@ -51,7 +53,8 @@ This ensures the correct data-theme is active on first paint
       <a aria-label="Go to homepage" href="index.html">Home</a>
       <a aria-label="Go to about us page" href="about.html">About Us</a>
       <div class="dropdown">
-        <button id="active" type="button" class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
+        <button id="active" type="button" class="dropdown-trigger link-button" aria-haspopup="true"
+          aria-expanded="false">
           What’s On
           <span class="chevron"></span>
         </button>
@@ -81,26 +84,74 @@ This ensures the correct data-theme is active on first paint
 
         <div class="card">
           <h2>The Waltons Farm Shop, Café & Butchery</h2>
-          <p>Waltons is a true countryside staple — a farm shop, café, and traditional butchery built around local produce, honest craft, and the rhythm of the seasons.</p>
+          <p>Waltons is a true countryside staple — a farm shop, café, and traditional butchery built around local
+            produce, honest craft, and the rhythm of the seasons.</p>
         </div>
       </div>
 
       <div class="grid grid-2">
 
-        <div class="card">
-          <img src="assets/images/sea1.jpg" fetchpriority="high"
-            alt="little girl intently picking the best strawberries" style="min-height:300px;">
+        <div class="slider-card">
+          <div class="slider-window">
+            <div class="slider-track">
+              <img src="assets/images/sc03.webp" alt="">
+              <img src="assets/images/sc04.webp" alt="">
+              <img src="assets/images/sc11.webp" alt="">
+            </div>
+          </div>
+
+          <button class="slider-btn left" data-dir="left">‹</button>
+          <button class="slider-btn right" data-dir="right">›</button>
         </div>
 
-        <div class="card overlay-card">
-          <h2>Farm Shop</h2>
-          <p>Our shelves and crates are filled with the best from our farm: fresh fruit and veg picked at their peak, changing naturally throughout the year. Whether it’s crisp autumn apples, summer berries, or just‑dug potatoes, everything is sourced our farm, a local community driven farm you know and trust.</p>
+
+
+        <div class="card">
+          <h3>Farm Shop</h3>
+          <p>Our shelves and crates are filled with the best from our farm: fresh fruit and veg picked at their peak,
+            changing naturally throughout the year. Whether it’s crisp autumn apples, summer berries, or just‑dug
+            potatoes, everything is sourced our farm, a local community driven farm you know and trust.</p>
         </div>
 
 
       </div>
 
+      <div class="grid grid-2">
 
+        <div class="card">
+          <img src="assets/images/sc03.jpg" fetchpriority="high"
+            alt="little girl intently picking the best strawberries" style="min-height:300px;">
+        </div>
+
+        <div class="card">
+          <h3>Butchery</h3>
+          <p>The butchery is the beating heart of Waltons. From lamb at Easter to BBQ‑ready beef in summer and turkeys
+            at Christmas, our range of meats is locally reared and expertly prepared on site. Our master butchers take
+            real pride in their craft — every cut is done with skill, care, and proper tradition.</p>
+        </div>
+
+
+      </div>
+
+      <div class="grid grid-2">
+
+        <div class="card">
+          <img src="assets/images/sc03.jpg" fetchpriority="high"
+            alt="little girl intently picking the best strawberries" style="min-height:300px;">
+        </div>
+
+        <div class="card">
+          <h3>Café</h3>
+          <p>When you’re ready to take a breather, our café is the perfect place to settle in. Enjoy hearty breakfasts,
+            comforting lunches, homemade cakes, and proper coffee, all served with a warm, friendly welcome. Seasonal
+            specials make the most of what’s fresh in the shop, so the menu always feels connected to the farm and the
+            time of year.</p>
+        </div>
+
+
+      </div>
+
+    </section>
     <!-- Footer -->
     <footer id="footer">
       <div class="grid grid-3">
@@ -224,15 +275,15 @@ This ensures the correct data-theme is active on first paint
 
       <script>
         const toggle = document.getElementById('theme-toggle');
-const root = document.documentElement;
+        const root = document.documentElement;
 
-toggle.addEventListener('click', () => {
-  const isDark = root.getAttribute('data-theme') === 'dark';
-  const nextTheme = isDark ? 'light' : 'dark';
+        toggle.addEventListener('click', () => {
+          const isDark = root.getAttribute('data-theme') === 'dark';
+          const nextTheme = isDark ? 'light' : 'dark';
 
-  root.setAttribute('data-theme', nextTheme);
-  localStorage.setItem('theme', nextTheme);   // <-- save it
-});
+          root.setAttribute('data-theme', nextTheme);
+          localStorage.setItem('theme', nextTheme);   // <-- save it
+        });
 
 
       </script>
@@ -288,6 +339,28 @@ toggle.addEventListener('click', () => {
         });
 
       </script>
+
+      <script>
+        document.querySelectorAll('.slider-card').forEach(card => {
+          const track = card.querySelector('.slider-track');
+          const btns = card.querySelectorAll('.slider-btn');
+          let index = 0;
+
+          btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+              const dir = btn.dataset.dir;
+              index = dir === 'right' ? index + 1 : index - 1;
+
+              if (index < 0) index = 2;
+              if (index > 2) index = 0;
+
+              track.style.transform = `translateX(-${index * 100}%)`;
+            });
+          });
+        });
+      </script>
+
+
     </section>
   </main>
 </body>
