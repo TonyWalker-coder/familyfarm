@@ -959,6 +959,16 @@ full use of tokens to follow site design
   background: rgba(0,0,0,0.10); /* tweak as needed */
   border-radius: var(--radius-md);
 }
+.hero-shop {
+  padding: var(--space-8) 0;
+  background-color: var(--color-surface);
+  color: var(--color-heading);
+  text-align: center;
+  background-image: url("../images/sc19.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 55vh;
+}
 
 /* Dark mode = sun */
 :root[data-theme="dark"] #theme-icon {
