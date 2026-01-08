@@ -89,6 +89,8 @@
 - [Java Scripts](java-scripts)
   - Ownership
   - Java resources
+- [Page Content](#page-content)
+
 - [Design Decisions](#design-decisions)
   - [Responsive Grid: Uneven Rows on Small Breakpoint](#responsive-grid-uneven-rows-on-small-breakpoints)
   - [Modal Irregular Design](#modal-irregular-design)
@@ -375,6 +377,10 @@ Although I used online examples to understand certain techniques, all JavaScript
 
 [Free java scripts - java-scripts.net](https://www.java-scripts.net)  
 [Tutorial resource - w3schools](https://www.w3schools.com/)
+
+## Page Content
+
+Since this isn’t a real commercial site, all the text on the pages was written specifically for the project. I used Copilot to help generate content that feels relevant, interesting, and fits the overall theme of the website
 
 ## Design Decisions
 
