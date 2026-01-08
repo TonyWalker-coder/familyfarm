@@ -1145,6 +1145,37 @@ body {
   border-top: 1px solid var(--color-border);
 }
 
+/* Default (light mode) */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between logo + title */
+}
+
+.logo {
+  width: 50px;
+  height: auto;
+  display: block;
+color: black;
+}
+
+
+
+[data-theme="dark"] .logo {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .logo {
+    width: 45px; 
+  }
+}
+
+
+
+
+
+
 @media (min-width: 768px) {
 
   /* hide hamburger */
