@@ -93,6 +93,7 @@
   - [Responsive Grid: Uneven Rows on Small Breakpoint](#responsive-grid-uneven-rows-on-small-breakpoints)
   - [Modal Irregular Design](#modal-irregular-design)
     - Update
+- [Navigation Layout Adjustment)](#navigation-layout-adjustment-for-medium-screens)
 
 ## About This Documentation
 
@@ -388,14 +389,20 @@ lg:
 md:  
 [1][2][3]
 
+![Medium Screen Breakpoint](../screenshots/screenshot01.webp)
+
 sm:  
 [1][2]  
 [3]
+
+![Small Screen Breakpoint](../screenshots/screenshot02.webp)
 
 xs:  
 [1]  
 [2]  
 [3]  
+
+![Medium Screen Breakpoint](../screenshots/screenshot03.webp)
 
 ## Modal irregular design
 
@@ -407,3 +414,10 @@ This is an intentional and permanent design choice to ensure stable modal behavi
 ### Update
 
 After further testing with HTML validators and accessibility tools, the custom element was replaced with a standard **\<div>.** This resolves the browser issue while maintaining full semantic clarity and compatibility with validators and screen readers.
+
+## Navigation Layout Adjustment for Medium+ Screens
+
+During wireframing, the primary navigation was originally placed in a single horizontal row on medium and larger screens.
+However, this layout became visually cramped and reduced readability as the number of links increased.
+To maintain clarity and avoid crowding, the navigation was updated to use a two‑line layout on medium+ breakpoints.
+This improves spacing, reduces cognitive load, and keeps the interface consistent with the overall clean, breathable design direction.
