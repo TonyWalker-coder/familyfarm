@@ -121,3 +121,45 @@ if (page === 'activities' || page === 'seasonal') {
     if (e.target === overlay) overlay.classList.remove('active');
   });
 }
+// -----------------------------
+// SHOP & CAFE SLIDESHOW
+// -----------------------------
+if (page === "shopandcafe") {
+
+    let slideIndex = 1;
+
+    function showSlides(n) {
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) slideIndex = 1;
+        if (n < 1) slideIndex = slides.length;
+
+        // Hide all slides
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        // Remove active state from dots
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        // Show current slide
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+    }
+
+    // Next/previous controls
+    window.plusSlides = function(n) {
+        showSlides(slideIndex += n);
+    };
+
+    // Thumbnail controls
+    window.currentSlide = function(n) {
+        showSlides(slideIndex = n);
+    };
+
+    // Initialise
+    showSlides(slideIndex);
+}
