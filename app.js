@@ -7,6 +7,15 @@ const page = document.body.dataset.page;
 // GLOBAL: Newsletter modal
 // ------------------------------
 let lastFocusedElement = null;
+// ------------------------------
+// PAGE-SPECIFIC: Shop & Cafe slideshows
+// ------------------------------
+if (page === "shopandcafe") {
+    createSlideshow("#slideshow1");
+    createSlideshow("#slideshow2");
+    createSlideshow("#slideshow3");
+}
+
 
 document.addEventListener("click", (e) => {
   // OPEN
@@ -124,42 +133,38 @@ if (page === 'activities' || page === 'seasonal') {
 // -----------------------------
 // SHOP & CAFE SLIDESHOW
 // -----------------------------
-if (page === "shopandcafe") {
+function createSlideshow(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
 
-    let slideIndex = 1;
+    let index = 1;
+    const slides = container.querySelectorAll(".mySlides");
+    const dots = container.querySelectorAll(".dot");
 
-    function showSlides(n) {
-        const slides = document.getElementsByClassName("mySlides");
-        const dots = document.getElementsByClassName("dot");
+    function show(n) {
+        if (n > slides.length) index = 1;
+        if (n < 1) index = slides.length;
 
-        if (n > slides.length) slideIndex = 1;
-        if (n < 1) slideIndex = slides.length;
+        slides.forEach(s => s.style.display = "none");
+        dots.forEach(d => d.classList.remove("active"));
 
-        // Hide all slides
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-
-        // Remove active state from dots
-        for (let i = 0; i < dots.length; i++) {
-            dots[i].classList.remove("active");
-        }
-
-        // Show current slide
-        slides[slideIndex - 1].style.display = "block";
-        dots[slideIndex - 1].classList.add("active");
+        slides[index - 1].style.display = "block";
+        dots[index - 1].classList.add("active");
     }
 
-    // Next/previous controls
-    window.plusSlides = function(n) {
-        showSlides(slideIndex += n);
-    };
+    container.querySelector(".prev")?.addEventListener("click", () => {
+        show(index += 1);
+    });
 
-    // Thumbnail controls
-    window.currentSlide = function(n) {
-        showSlides(slideIndex = n);
-    };
+    container.querySelector(".next")?.addEventListener("click", () => {
+        show(index -= 1);
+    });
 
-    // Initialise
-    showSlides(slideIndex);
+    dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+            show(index = i + 1);
+        });
+    });
+
+    show(index);
 }
