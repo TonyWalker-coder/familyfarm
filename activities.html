@@ -29,7 +29,7 @@ This ensures the correct data-theme is active on first paint
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body data-page="activities">
   <!-- Header / Navigation -->
   <header>
 
@@ -298,136 +298,8 @@ This ensures the correct data-theme is active on first paint
         </div>
       </div>
     </template>
-
-    <!-- JS -->
-    <section>
-      <!-- Simple JS to open/close the newsletter modal -->
-      <script>
-        let lastFocusedElement = null;
-
-        document.addEventListener("click", (e) => {
-
-          // OPEN
-          if (e.target.matches("[data-open-modal]")) {
-            lastFocusedElement = e.target;
-
-            // update aria-expanded
-            e.target.setAttribute("aria-expanded", "true");
-
-            const tpl = document.querySelector("#newsletter-modal");
-            document.body.appendChild(tpl.content.cloneNode(true));
-
-            const modal = document.querySelector("[data-modal]");
-            modal.querySelector(".modal-close").focus();
-          }
-
-          // CLOSE (button or backdrop)
-          if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
-            document.querySelector("[data-modal]")?.remove();
-
-            // return focus to opener
-            lastFocusedElement?.focus();
-
-            // collapse aria-expanded on the opener
-            lastFocusedElement?.setAttribute("aria-expanded", "false");
-          }
-        });
-      </script>
-
-      <script>
-        const toggle = document.getElementById('theme-toggle');
-        const root = document.documentElement;
-
-        toggle.addEventListener('click', () => {
-          const isDark = root.getAttribute('data-theme') === 'dark';
-          const nextTheme = isDark ? 'light' : 'dark';
-
-          root.setAttribute('data-theme', nextTheme);
-          localStorage.setItem('theme', nextTheme);   // <-- save it
-        });
-      </script>
-
-      <!-- Toggle the mobile navigation menu and update aria-expanded -->
-      <script>
-        const navToggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        navToggle.addEventListener('click', () => {
-          const expanded = navToggle.getAttribute('aria-expanded') === 'true'
-          navToggle.setAttribute('aria-expanded', !expanded)
-          navLinks.classList.toggle('nav-open')
-        })
-
-      </script>
-      <!-- Toggle desktop dropdown menus and update aria-expanded -->
-      <script>
-        document.querySelectorAll('.dropdown > button').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const parent = btn.parentElement;
-            const isOpen = parent.classList.toggle('open');
-            btn.setAttribute('aria-expanded', isOpen);
-          });
-        });
-
-
-      </script>
-      <!-- Close the mobile nav when a link is clicked -->
-      <script>
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('nav-open');
-          });
-        });
-      </script>
-
-      <!--open/close expanding feedback form-->
-      <script>
-        const feedbackToggle = document.querySelector('.feedback-toggle');
-        const feedbackPanel = document.querySelector('.feedback-panel');
-        const feedbackCancel = document.querySelector('.feedback-cancel');
-
-        feedbackToggle?.addEventListener('click', () => {
-          feedbackPanel.classList.toggle('open');
-          feedbackPanel.hidden = !feedbackPanel.classList.contains('open');
-        });
-
-        feedbackCancel?.addEventListener('click', () => {
-          feedbackPanel.classList.remove('open');
-          feedbackPanel.hidden = true;
-        });
-
-      </script>
-      <!--
-    Booking Form Toggle Logic
-    -------------------------
-    - Opens the slide‑up booking form when the floating button is clicked.
-    - Closes the form when the close button is clicked.
-    - Also closes the form if the user clicks on the dark overlay
-      (but NOT when clicking inside the form itself).
-    - Uses a simple "active" class to trigger CSS transitions.
-  -->
-      <script>
-
-
-        const openBtn = document.getElementById('openBooking');
-        const closeBtn = document.getElementById('closeBooking');
-        const overlay = document.getElementById('bookingOverlay');
-
-        openBtn.addEventListener('click', () => {
-          overlay.classList.add('active');
-        });
-
-        closeBtn.addEventListener('click', () => {
-          overlay.classList.remove('active');
-        });
-
-        // Close when clicking outside the form
-        overlay.addEventListener('click', (e) => {
-          if (e.target === overlay) overlay.classList.remove('active');
-        });
-      </script>
-    </section>
   </main>
+  <script src="/app.js"></script>
 </body>
 
 </html>

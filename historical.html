@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Seasonal</title>
+  <title>The Waltons Family Farm</title>
   <meta name="description" content="Milestone project 1.0">
   <meta name="author" content="Tony Walker">
+  <link rel="preload" as="image" href="assets/images/hero.webp">
   <!--fonts-->
   <link rel="preload" href="assets/fonts/Inter18pt-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/Inter18pt-Medium.woff2" as="font" type="font/woff2" crossorigin>
@@ -29,7 +30,10 @@ This ensures the correct data-theme is active on first paint
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body data-page="seasonal">
+<body data-page="historical">
+
+
+
 
   <!-- Header / Navigation -->
   <header>
@@ -50,10 +54,10 @@ This ensures the correct data-theme is active on first paint
       </button>
     </div>
     <nav class="nav-links">
-      <a aria-label="Go to homepage" href="index.html">Home</a>
+      <a id="active" aria-label="Go to homepage" href="index.html">Home</a>
       <a aria-label="Go to about us page" href="about.html">About Us</a>
       <div class="dropdown">
-        <button id="active" type="button" class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="dropdown-trigger link-button" aria-haspopup="true" aria-expanded="false">
           What’s On
           <span class="chevron"></span>
         </button>
@@ -67,162 +71,84 @@ This ensures the correct data-theme is active on first paint
       <a href="#footer">Contact</a>
     </nav>
   </header>
-  <main>
+  <main id="main-content">
     <!-- Hero Section -->
-    <section id="hero-seasonal">
+    <section class="hero">
 
-      <div class="container text-wrap">
-        <h1>Seasonal Activities</h1>
+      <div class="container">
+        <h1>Welcome to Our Family Farm</h1>
       </div>
 
     </section>
-
-
-
-
     <!-- Grid Section -->
     <section class="container mt-4">
 
-      <div class="grid grid-2">
+      <div class="grid grid-3">
 
         <div class="card">
-          <img src="assets/images/sea1.jpg" fetchpriority="high"
-            alt="little girl intently picking the best strawberries">
+          <img src="assets/images/inx1.webp" fetchpriority="high"
+            alt="two female farmers collecting produce in a poly tunnel">
         </div>
 
-        <div class="card overlay-card">
-          <h2>Pick‑Your‑Own Strawberries</h2>
-          <p>Let the kids loose in the strawberry patch and watch them turn into little treasure hunters. Fresh air,
-            juicy berries, and a basket you’ll struggle not to eat on the way home — it’s simple, hands‑on fun that
-            makes summer feel like summer.</p>
-          <img src="assets/images/sea2.jpg" fetchpriority="high" alt="smiling boy holding a bowl full of strawberries"
-            class="overlay-image">
+        <div class="card">
+          <h2>Welcome to our family farm</h2>
+          <p>Pop into the shop and café for fresh local produce. We’ve been part of this community for over 70 years.
+            Proud to serve our neighbours, friends, and visitors. Thanks for supporting a proper family-run farm.</p>
         </div>
 
+        <div class="card">
+          <img src="assets/images/inx2.webp" fetchpriority="high"
+            alt="young lady arranging fresh produce in a farm field">
+        </div>
 
       </div>
-      <div class="grid grid-2">
 
-        <div class="card overlay-card">
-          <h2>Pick‑Your‑Own Pumpkins</h2>
-          <p>Wander through the pumpkin patch and let the kids hunt for the perfect one — big, small, round, wonky, they
-            all have personality. Fresh air, muddy boots, and that “I found it!” moment make it a proper autumn day out.
-            Take your pumpkin home for carving, decorating, or proudly guarding the doorstep for Halloween.
-          </p>
-          <img src="assets/images/sea4.jpg" alt="two children having a ride on the back of a tractor"
-            fetchpriority="high" class="overlay-image">
+      <div class="grid grid-3">
+
+        <div class="activity-card">
+          <div class="activity-card__image-wrapper">
+            <img src="assets/images/shop22.webp" fetchpriority="high" alt="lady showing of fresh produce in a farm shop"
+              class="activity-card__image">
+          </div>
+
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Farm Shop and Café</h3>
+            <p class="activity-card__text">
+              visit our shop and café and sample our fresh produce
+            </p>
+          </div>
         </div>
 
-        <div class="card">
-          <img src="assets/images/sea6.jpg" fetchpriority="high" alt="happy child riding a child size tractor">
+        <div class="activity-card">
+          <div class="activity-card__image-wrapper">
+            <img src="assets/images/seasonal11.webp" fetchpriority="high"
+              alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
+          </div>
+
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Seasonal Activities</h3>
+            <p class="activity-card__text">
+              the farm is active all year round, why not visit one of our seasonal events
+            </p>
+          </div>
         </div>
 
+        <div class="activity-card">
+          <div class="activity-card__image-wrapper">
+            <img src="assets/images/petting1.webp" fetchpriority="high"
+              alt="young girl looks excited to meet and greet an equally excited goat" class="activity-card__image">
+          </div>
 
-      </div>
-      <div class="grid grid-2">
-
-        <div class="card">
-          <img src="assets/images/sea11.jpg" fetchpriority="high" alt="market stall with all sorts of goods for sale">
+          <div class="activity-card__content">
+            <h3 class="activity-card__title">Children’s Barn</h3>
+            <p class="activity-card__text">
+              meet greet and feed the animals<br>
+              they love it!
+            </p>
+          </div>
         </div>
-
-        <div class="card overlay-card">
-          <h2>Harvest Market</h2>
-          <p>A chance for local growers, bakers, makers, and small farms to bring the best of their harvest to one place. Fresh produce, homemade treats, seasonal crafts, and the kind of conversations you only get when you meet the people who actually grow your food. It’s a relaxed, friendly day out where the community comes together, kids explore, and everyone goes home with something good in their basket.</p>
-          <img src="assets/images/sea10.jpg" fetchpriority="high" alt="man inspecting the goods on a market stall"
-            class="overlay-image">
-        </div>
-
-
-      </div>
-      <div class="grid grid-2">
-
-        <div class="card overlay-card">
-          <h2>Steam Fairground & Show Day</h2>
-          <p>A full day of old‑school fun with steam engines, vintage rides, classic fairground games, and the smell of good food drifting through the air. Kids get the thrills, grown‑ups get the nostalgia, and everyone stays for the live music and fireworks as the sun goes down. It’s loud, lively, and the closest thing to a proper village show you’ll find</p>
-          <img src="assets/images/sea21.jpg" alt="stoat standing on some logs for a vantage point"
-            class="overlay-image">
-        </div>
-
-        <div class="card">
-          <img src="assets/images/sea20.jpg" fetchpriority="high" alt="barn owl looking out a hole in a brick wall">
-        </div>
-
-
-      </div>
-            <div class="grid grid-2">
-
-        <div class="card">
-          <img src="assets/images/sea31.jpg" fetchpriority="high" alt="market stall with all sorts of goods for sale">
-        </div>
-
-        <div class="card overlay-card">
-          <h2>Christmas Market & Tree Cutting</h2>
-          <p>Wrap up warm and wander through our festive Christmas market, filled with local makers, seasonal treats, and the smell of chestnuts roasting in the cold air. Pick and cut your own tree straight from the field, then enjoy a hot drink while the kids explore the stalls and lights. It’s relaxed, cheerful, and everything you want from a countryside Christmas — simple, cosy, and full of that proper festive feeling.</p>
-          <img src="assets/images/sea30.jpg" fetchpriority="high" alt="man inspecting the goods on a market stall"
-            class="overlay-image">
-        </div>
-
-
       </div>
     </section>
-    <!-- Floating Button -->
-    <button type="button" class="floating-button" id="openBooking">Book Now</button>
-
-    <!-- Booking Form Overlay -->
-    <div class="booking-overlay" id="bookingOverlay">
-      <div class="booking-form">
-        <button type="button" class="close-form" id="closeBooking">×</button>
-
-        <h3>Book Your Visit</h3>
-
-        <form action="https://formdump.codeinstitute.net/" method="POST">
-          <label>
-            Name
-            <input type="text" id="name" name="name" required>
-          </label>
-
-          <label>
-            Email
-            <input type="email" id="email" name="email" required>
-          </label>
-
-          <label>
-            Phone
-            <input type="tel" id="tel" name="tel" required>
-          </label>
-
-          <label>
-            Date Required
-            <input type="date" id="date" name="date" required>
-          </label>
-
-          <label>
-            Number of Persons
-            <input type="number" min="1" id="qty" name="qty" required>
-          </label>
-
-          <label>
-            Select Event
-            <select required id="event" name="event">
-              <option value="">Choose an event…</option>
-              <option>Market - Retailer</option>
-              <option>Steam Fair (Party 4+)</option>
-              <option>Pumpkin Pick & Carve (Party 4+)</option>
-              <option>Christmas Party - School</option>
-              <option>Fruit Pickers - School</option>
-              <option>Pumpkin Pick & Carve - School</option>
-            </select>
-          </label>
-
-          <label>
-            Additional Notes (optional)
-            <textarea rows="3" id="txt" name="txt" ></textarea>
-          </label>
-
-          <button type="submit" class="submit-btn">Submit Booking</button>
-        </form>
-      </div>
-    </div>
     <!-- Footer -->
     <footer id="footer">
       <div class="grid grid-3">
@@ -310,6 +236,7 @@ This ensures the correct data-theme is active on first paint
         </div>
       </div>
     </template>
+
 
   </main>
   <script src="/app.js"></script>
