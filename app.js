@@ -1,10 +1,14 @@
 // ------------------------------
+// PAGE IDENTIFIER (must be first)
+// ------------------------------
+const page = document.body.dataset.page;
+
+// ------------------------------
 // GLOBAL: Newsletter modal
 // ------------------------------
 let lastFocusedElement = null;
 
 document.addEventListener("click", (e) => {
-
   // OPEN
   if (e.target.matches("[data-open-modal]")) {
     lastFocusedElement = e.target;
@@ -19,7 +23,10 @@ document.addEventListener("click", (e) => {
   }
 
   // CLOSE (button or backdrop)
-  if (e.target.matches("[data-close-modal]") || e.target.matches("[data-modal]")) {
+  if (
+    e.target.matches("[data-close-modal]") ||
+    e.target.matches("[data-modal]")
+  ) {
     document.querySelector("[data-modal]")?.remove();
 
     lastFocusedElement?.focus();
@@ -27,70 +34,90 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 // ------------------------------
 // GLOBAL: Theme toggle
 // ------------------------------
-const toggle = document.getElementById('theme-toggle');
+const toggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
 
-toggle?.addEventListener('click', () => {
-  const isDark = root.getAttribute('data-theme') === 'dark';
-  const nextTheme = isDark ? 'light' : 'dark';
+toggle?.addEventListener("click", () => {
+  const isDark = root.getAttribute("data-theme") === "dark";
+  const nextTheme = isDark ? "light" : "dark";
 
-  root.setAttribute('data-theme', nextTheme);
-  localStorage.setItem('theme', nextTheme);
+  root.setAttribute("data-theme", nextTheme);
+  localStorage.setItem("theme", nextTheme);
 });
-
 
 // ------------------------------
 // GLOBAL: Mobile nav toggle
 // ------------------------------
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-navToggle?.addEventListener('click', () => {
-  const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-  navToggle.setAttribute('aria-expanded', !expanded);
-  navLinks.classList.toggle('nav-open');
+navToggle?.addEventListener("click", () => {
+  const expanded = navToggle.getAttribute("aria-expanded") === "true";
+  navToggle.setAttribute("aria-expanded", !expanded);
+  navLinks.classList.toggle("nav-open");
 });
-
 
 // ------------------------------
 // GLOBAL: Desktop dropdown menus
 // ------------------------------
-document.querySelectorAll('.dropdown > button').forEach(btn => {
-  btn.addEventListener('click', () => {
+document.querySelectorAll(".dropdown > button").forEach((btn) => {
+  btn.addEventListener("click", () => {
     const parent = btn.parentElement;
-    const isOpen = parent.classList.toggle('open');
-    btn.setAttribute('aria-expanded', isOpen);
+    const isOpen = parent.classList.toggle("open");
+    btn.setAttribute("aria-expanded", isOpen);
   });
 });
-
 
 // ------------------------------
 // GLOBAL: Close mobile nav on link click
 // ------------------------------
-document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks?.classList.remove('nav-open');
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks?.classList.remove("nav-open");
   });
 });
 
+// ------------------------------
+// ABOUT PAGE: Feedback panel toggle
+// ------------------------------
+if (page === "about") {
+  const feedbackToggle = document.querySelector(".feedback-toggle");
+  const feedbackPanel = document.querySelector(".feedback-panel");
+  const feedbackCancel = document.querySelector(".feedback-cancel");
+
+  feedbackToggle?.addEventListener("click", () => {
+    feedbackPanel.classList.toggle("open");
+    feedbackPanel.hidden = !feedbackPanel.classList.contains("open");
+  });
+
+  feedbackCancel?.addEventListener("click", () => {
+    feedbackPanel.classList.remove("open");
+    feedbackPanel.hidden = true;
+  });
+}
 
 // ------------------------------
-// GLOBAL: Feedback panel toggle
+// ACTIVITIES + SEASONAL: Booking form toggle
 // ------------------------------
-const feedbackToggle = document.querySelector('.feedback-toggle');
-const feedbackPanel = document.querySelector('.feedback-panel');
-const feedbackCancel = document.querySelector('.feedback-cancel');
+if (page === 'activities' || page === 'seasonal') {
 
-feedbackToggle?.addEventListener('click', () => {
-  feedbackPanel.classList.toggle('open');
-  feedbackPanel.hidden = !feedbackPanel.classList.contains('open');
-});
+  const openBtn = document.getElementById('openBooking');
+  const closeBtn = document.getElementById('closeBooking');
+  const overlay = document.getElementById('bookingOverlay');
 
-feedbackCancel?.addEventListener('click', () => {
-  feedbackPanel.classList.remove('open');
-  feedbackPanel.hidden = true;
-});
+  openBtn?.addEventListener('click', () => {
+    overlay.classList.add('active');
+  });
+
+  closeBtn?.addEventListener('click', () => {
+    overlay.classList.remove('active');
+  });
+
+  // Close when clicking outside the form
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) overlay.classList.remove('active');
+  });
+}
