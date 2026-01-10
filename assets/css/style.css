@@ -64,14 +64,7 @@ A single source for all typography
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-  /* heading tokens 
-change entire heading scale in one place all heading are defined here 
-*//**************************************************************************DEL
-  --heading-1-size: var(--font-size-3xl);
-  --heading-2-size: var(--font-size-2xl);
-  --heading-3-size: var(--font-size-xl);
-  --heading-4-size: var(--font-size-lg);
-*/
+  /* heading tokens */
   --heading-line-height: var(--line-height-tight);
   --heading-weight: var(--font-weight-regular);
   --heading-font: var(--font-heading);
@@ -205,9 +198,9 @@ p {
   color: var(--color-heading);
 }
 
-/* buttons
+/*buttons section
 consistent buttons using design tokens
-padding uses your spacing scale, colours use your semantic tokens, font uses your typography tokens
+padding uses site spacing scale, colours use site semantic tokens, font uses site typography tokens
 */
 button {
   font-family: var(--body-font);
@@ -251,23 +244,23 @@ button:hover {
 }
 /*end of button section*/
 /**tony top to here done**/
+/*booking form section
 /*floating button for the booking form*/
 .floating-button {
   position: fixed;
   bottom: var(--space-6);
   right: var(--space-6);
-
-  /* Optional: make it feel more tappable */
+/* optional styling: make it feel more tappable */
   padding: var(--space-3) var(--space-5);
-
-  /* Optional: subtle shadow so it lifts off the page */
+/* optional styling: subtle box shadow so it lifts off the page */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-
-  z-index: 999; /* keep it above cards, nav, etc. */
+/* keep it above cards, nav, etc. */
+  z-index: 999; 
 }
 /*paste up to buttons */
 /*hidden booking form for floating button*/
-/* Overlay */
+
+/* overlay */
 .booking-overlay {
   position: fixed;
   inset: 0;
@@ -275,22 +268,20 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-
-  height: 100vh; /* ← THIS fixes the disappearing page */
-
+  height: 100vh;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 1000;
 }
 
-/* Visible state */
+/*visible state */
 .booking-overlay.active {
   opacity: 1;
   pointer-events: auto;
 }
 
-/* Form container */
+/*form container */
 .booking-form {
   max-height: 80vh;
   background: var(--color-surface);
@@ -301,23 +292,16 @@ button:hover {
   box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
   transform: translateY(100%);
   transition: transform 0.3s ease;
-
-  /* allow scrolling */
+/* allow scrolling */
   max-height: 90vh;
   overflow-y: auto;
 }
-
-/*paste*/
-.booking-form {
-  background: var(--color-surface);
-}
-
 
 .booking-form h3 {
   margin-bottom: var(--space-3);
 }
 
-/* Slide up when active */
+/*slide up when active */
 .booking-overlay.active .booking-form {
   transform: translateY(0);
 }
@@ -326,8 +310,7 @@ body.booking-open {
   height: 100%;
 }
 
-
-/* Close button */
+/*close button */
 .close-form {
   position: absolute;
   top: var(--space-3);
@@ -338,7 +321,7 @@ body.booking-open {
   cursor: pointer;
 }
 
-/* Form fields */
+/*form fields */
 .booking-form label {
   display: flex;
   flex-direction: column;
@@ -356,16 +339,14 @@ body.booking-open {
   font-family: var(--body-font);
 }
 
-/* Submit button */
+/*submit button */
 .submit-btn {
   width: 100%;
   margin-top: var(--space-4);
   padding: var(--space-2) var(--space-4);
 }
+/* end of booking form section*/
 
-:root[data-theme="dark"] button:hover {
-  background-color: var(--dark-accent-hover);
-}
 /* Make <button> visually match nav <a> links */
 .link-button {
   background: none;
