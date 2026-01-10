@@ -263,7 +263,7 @@ button:hover {
   padding: var(--space-3) var(--space-5);
 
   /* Optional: subtle shadow so it lifts off the page */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 
   z-index: 999; /* keep it above cards, nav, etc. */
 }
@@ -272,10 +272,12 @@ button:hover {
 .booking-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  height: 100vh; /* ← THIS fixes the disappearing page */
 
   opacity: 0;
   pointer-events: none;
@@ -313,6 +315,11 @@ button:hover {
 .booking-overlay.active .booking-form {
   transform: translateY(0);
 }
+body.booking-open {
+  overflow: hidden;
+  height: 100%;
+}
+
 
 /* Close button */
 .close-form {

@@ -111,25 +111,7 @@ if (page === "about") {
 // ------------------------------
 // ACTIVITIES + SEASONAL: Booking form toggle
 // ------------------------------
-if (page === 'activities' || page === 'seasonal') {
 
-  const openBtn = document.getElementById('openBooking');
-  const closeBtn = document.getElementById('closeBooking');
-  const overlay = document.getElementById('bookingOverlay');
-
-  openBtn?.addEventListener('click', () => {
-    overlay.classList.add('active');
-  });
-
-  closeBtn?.addEventListener('click', () => {
-    overlay.classList.remove('active');
-  });
-
-  // Close when clicking outside the form
-  overlay?.addEventListener('click', (e) => {
-    if (e.target === overlay) overlay.classList.remove('active');
-  });
-}
 // -----------------------------
 // SHOP & CAFE SLIDESHOW
 // -----------------------------
@@ -167,4 +149,35 @@ function createSlideshow(containerSelector) {
     });
 
     show(index);
+}
+
+//new code
+
+
+if (page === 'activities' || page === 'seasonal') {
+
+  const bookingOverlay = document.getElementById("bookingOverlay");
+  const closeBooking = document.getElementById("closeBooking");
+  const bookingButton = document.getElementById("bookingButton");
+
+  // OPEN booking form
+  bookingButton?.addEventListener("click", () => {
+    bookingOverlay.classList.add("active");
+    document.body.classList.add("booking-open"); // lock scroll
+  });
+
+  // CLOSE booking form
+  closeBooking?.addEventListener("click", () => {
+    bookingOverlay.classList.remove("active");
+    document.body.classList.remove("booking-open"); // unlock scroll
+  });
+
+  // Close when clicking outside the form
+  bookingOverlay?.addEventListener("click", (e) => {
+    if (e.target === bookingOverlay) {
+      bookingOverlay.classList.remove("active");
+      document.body.classList.remove("booking-open");
+    }
+  });
+
 }

@@ -75,6 +75,7 @@ This ensures the correct data-theme is active on first paint
       </div>
 
     </section>
+
     <!-- Grid Section -->
     <section class="container mt-4">
 
@@ -153,64 +154,11 @@ This ensures the correct data-theme is active on first paint
 
       </div>
     </section>
+
+
+<!--cut from here -->
     <!-- Floating Button -->
-    <button type="button" class="floating-button" id="openBooking">Book Now</button>
 
-    <!-- Booking Form Overlay -->
-    <div class="booking-overlay" id="bookingOverlay">
-      <div class="booking-form">
-        <button type="button" class="close-form" id="closeBooking">×</button>
-
-        <h3>Book Your Visit</h3>
-
-        <form action="https://formdump.codeinstitute.net/" method="POST">
-          <label>
-            Name
-            <input type="text" id="name" name="name" required>
-          </label>
-
-          <label>
-            Email
-            <input type="email" id="email" name="email" required>
-          </label>
-
-          <label>
-            Phone
-            <input type="tel" id="tel" name="tel" required>
-          </label>
-
-          <label>
-            Date Required
-            <input type="date" id="date" name="date" required>
-          </label>
-
-          <label>
-            Number of Persons
-            <input type="number" min="1" id="qty" name="qty" required>
-          </label>
-
-          <label>
-            Select Event
-            <select required id="event" name="event">
-              <option value="">Choose an event…</option>
-              <option>Petting Barn 4+</option>
-              <option>Tractor Rides 4+</option>
-              <option>Car Boot (seller)</option>
-              <option>Predator Sanctuary 4+</option>
-              <option>Predator Sanctuary - School Group</option>
-              <option>Petting Barn - School Group</option>
-            </select>
-          </label>
-
-          <label>
-            Additional Notes (optional)
-            <textarea rows="3" id="txt" name="txt"></textarea>
-          </label>
-
-          <button type="submit" class="submit-btn">Submit Booking</button>
-        </form>
-      </div>
-    </div>
     <!-- Footer -->
     <footer id="footer">
       <div class="grid grid-3">
@@ -299,6 +247,63 @@ This ensures the correct data-theme is active on first paint
       </div>
     </template>
   </main>
+      <button type="button" class="floating-button" id="bookingButton">Book Now</button>
+
+    <!-- Booking Form Overlay -->
+    <div class="booking-overlay" id="bookingOverlay">
+      <div class="booking-form">
+        <button type="button" class="close-form" id="closeBooking">×</button>
+
+        <h3>Book Your Visit</h3>
+
+        <form action="https://formdump.codeinstitute.net/" method="POST">
+          <label>
+            Name
+            <input type="text" id="name" name="name" required>
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="email" name="email" required>
+          </label>
+
+          <label>
+            Phone
+            <input type="tel" id="tel" name="tel" required>
+          </label>
+
+          <label>
+            Date Required
+            <input type="date" id="date" name="date" required>
+          </label>
+
+          <label>
+            Number of Persons
+            <input type="number" min="1" id="qty" name="qty" required>
+          </label>
+
+          <label>
+            Select Event
+            <select required id="event" name="event">
+              <option value="">Choose an event…</option>
+              <option>Petting Barn 4+</option>
+              <option>Tractor Rides 4+</option>
+              <option>Car Boot (seller)</option>
+              <option>Predator Sanctuary 4+</option>
+              <option>Predator Sanctuary - School Group</option>
+              <option>Petting Barn - School Group</option>
+            </select>
+          </label>
+
+          <label>
+            Additional Notes (optional)
+            <textarea rows="3" id="txt" name="txt"></textarea>
+          </label>
+
+          <button type="submit" class="submit-btn">Submit Booking</button>
+        </form>
+      </div>
+    </div>
   <script src="app.js"></script>
 </body>
 
