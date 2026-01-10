@@ -242,6 +242,33 @@ button:hover {
 .btn-secondary:hover {
   background-color: var(--color-surface-hover);
 }
+
+/* Make <button> visually match nav <a> links */
+.link-button {
+  background: none;
+  border: none;
+  padding: var(--space-2) var(--space-3); /* match nav a */
+  margin: 0;
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-heading);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: var(--radius-md); /* match nav a */
+  transition: background-color 0.2s ease, color 0.2s ease; /* match nav a */
+}
+
+.link-button:hover,
+.link-button:focus {
+  background-color: var(--color-surface-hover);
+  color: var(--color-accent);
+}
+
+.link-button:focus-visible {
+  outline: 2px solid var(--focus-color, #005fcc);
+  outline-offset: 2px;
+}
 /*end of button section*/
 
 /*form Inputs section
@@ -302,7 +329,7 @@ label {
 /* keep it above cards, nav, etc. */
   z-index: 999; 
 }
-/*paste up to buttons */
+
 /*hidden booking form for floating button*/
 
 /* overlay */
@@ -392,37 +419,6 @@ body.booking-open {
 }
 /* end of booking form section*/
 
-/*i do not believe this is being used anymore*/
-/*comment out for now*/
-/* Make <button> visually match nav <a> links *comment
-.link-button {
-  background: none;
-  border: none;
-  padding: var(--space-2) var(--space-3); /* match nav a *comment
-  margin: 0;
-  font-family: var(--body-font);
-  font-size: var(--body-size);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-heading);
-  cursor: pointer;
-  text-decoration: none;
-  border-radius: var(--radius-md); /* match nav a *comment
-  transition: background-color 0.2s ease, color 0.2s ease; /* match nav a *comment
-}
-
-.link-button:hover,
-.link-button:focus {
-  background-color: var(--color-surface-hover);
-  color: var(--color-accent);
-}
-
-.link-button:focus-visible {
-  outline: 2px solid var(--focus-color, #005fcc);
-  outline-offset: 2px;
-}*/
-
-/**tony top to here done**/
-
 /*drop down menu pointer*/
 .chevron {
   display: inline-block;
@@ -437,11 +433,11 @@ body.booking-open {
 .dropdown.open .chevron {
   transform: rotate(-135deg); /* ▲ */
 }
+/*end drop down menu pointer section*/
 
-
-
-/* Card / Panel 
-consistent cards to mach design forms & cards should now blend into pages and not look detached
+/* content card / panel section 
+consistent content cards to mach design forms & cards should now blend into pages and not look detached
+several pages will use the same card system so there will be more then one group of classes using this section
 */
 .card,
 .activity-card {
@@ -492,9 +488,10 @@ consistent cards to mach design forms & cards should now blend into pages and no
 .overlay-card:hover .overlay-image {
   opacity: 1;
 }
+/*end of normal cards*/
+
 /* the activity cards are meant to be visually exciting so we have create a whole set of 
    wrappers just for them but still using the existing tokens */
-
 .activity-card__image-wrapper {
   position: absolute;
   top: -99px;
@@ -504,8 +501,9 @@ consistent cards to mach design forms & cards should now blend into pages and no
   height: 240px;
   border-radius: 50%;
   overflow: hidden;
-  border: 6px solid var(--color-surface); /* clean cutout effect */
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); /* soft bottom shadow */
+  border: 6px solid var(--color-surface);
+  /* soft bottom shadow */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); 
 }
 
 .activity-card {
@@ -532,9 +530,9 @@ consistent cards to mach design forms & cards should now blend into pages and no
   padding-bottom: var(--space-6);
   padding-left: var(--space-6);
 }
+/*end of activities cards
 
-/*about us cards */
-
+/*about us card */
 .about-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -547,7 +545,7 @@ consistent cards to mach design forms & cards should now blend into pages and no
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
-/* IMAGE WRAPPER — matches your floating circle logic but rectangular */
+/*image wrapper — rectangular circle */
 .about-card__image-wrapper {
   position: absolute;
   top: -135px;
@@ -557,25 +555,30 @@ consistent cards to mach design forms & cards should now blend into pages and no
   height: 210px; /* rectangular shape */
   border-radius: var(--radius-xl-responsive);
   overflow: hidden;
-  border: 6px solid var(--color-surface); /* same clean cutout effect */
+  /*cutout effect */
+  border: 6px solid var(--color-surface); 
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25); /* same lift */
   margin-top: 30px;
 }
 
-/* IMAGE */
+/*image */
 .about-card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/*paste7 down*/
-/* CONTENT */
+
+/*content */
 .about-card__content {
   padding-top: 100px; /* same spacing as activity cards */
   padding-right: var(--space-6);
   padding-bottom: var(--space-6);
   padding-left: var(--space-6);
 }
+/*end of about card*/
+
+/**tony top to here done**/
+
 /*sliding image card left and right*/
 * {
   box-sizing: border-box;
@@ -612,7 +615,9 @@ consistent cards to mach design forms & cards should now blend into pages and no
   font-size: 18px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
-  user-select: none;
+  /* prevent text selection across all major browsers */
+-webkit-user-select: none; /* Safari, iOS Safari */
+user-select: none;         /* modern browsers */
 }
 
 /* Position the "next button" to the right */

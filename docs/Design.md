@@ -96,6 +96,8 @@
   - [Modal Irregular Design](#modal-irregular-design)
     - Update
 - [Navigation Layout Adjustment)](#navigation-layout-adjustment-for-medium-screens)
+- [Design Note : Webkit](#design-note-webkit)
+  - webkit-user-select
 
 ## About This Documentation
 
@@ -231,6 +233,10 @@ The idea behind this colour palette
 - Grass green works in both themes without contrast issues
 - You’ve avoided the classic dark‑mode low‑contrast trap
 - Palette is strong enough to support seasonal variants (your idea — and a good one)
+
+## Light/Dark Theme Design Note
+
+The site uses a modern light/dark theme system built around CSS custom properties. Theme selection is primarily OS‑driven via **prefers-color-scheme,** ensuring the UI automatically matches the user’s system preference. A manual toggle switch will also be provided for users who want explicit control, overriding the OS setting when activated. All colors, surfaces, accents, and interactive states are defined through design tokens, so both themes remain visually consistent and easy to maintain.
 
 ## Logo Attribution
 
@@ -423,7 +429,21 @@ After further testing with HTML validators and accessibility tools, the custom e
 
 ## Navigation Layout Adjustment for Medium+ Screens
 
-During wireframing, the primary navigation was originally placed in a single horizontal row on medium and larger screens.
+During wire framing, the primary navigation was originally placed in a single horizontal row on medium and larger screens.
 However, this layout became visually cramped and reduced readability as the number of links increased.
 To maintain clarity and avoid crowding, the navigation was updated to use a two‑line layout on medium+ breakpoints.
 This improves spacing, reduces cognitive load, and keeps the interface consistent with the overall clean, breathable design direction.
+
+## Design Note Webkit
+
+### WebKit-prefixed CSS properties
+
+- webkit-user-select
+- webkit-backdrop-filter
+
+**Why:**  
+Safari and iOS Safari rely on the WebKit engine, which does not fully support the standard  property. Adding the  prefix ensures consistent behaviour across all WebKit‑based browsers.  
+**Who:**  
+Visual Studio Code surfaced a compatibility warning during development, prompting the decision to include the prefixed version.  
+**When:**  
+Added during the styling pass focused on standardising text‑selection behaviour across interactive elements.
