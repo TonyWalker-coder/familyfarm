@@ -1,3 +1,4 @@
+/*loading fonts to keep the low load time*/
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter18pt-Regular.woff2") format("woff2"),
@@ -6,7 +7,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter18pt-Medium.woff2") format("woff2"),
@@ -15,7 +15,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter18pt-Bold.woff2") format("woff2"),
@@ -33,20 +32,19 @@
   font-display: swap;
 }
 /* 
-ROOT TOKENS — COLOURS, TYPOGRAPHY, SPACING, RADII, ETC.
+root tokens — colours, typography, spacing, radii etc
 */
 :root {
-  /* Typography
-  
+/* Typography
+
 Create semantic tokens (--font-heading , --font-body )
-Components will use these tokens, to change fonts later, you only update them here
+Components will use these tokens, to change fonts later, so they only get updated here
 
 */
   --font-heading: "Bree Serif", serif;
   --font-body: "Inter", sans-serif;
 
-  /* Typography Scale 
-
+/* Typography Scale 
 A consistent scale and a predictable spacing between text
 A single source for all typography
 */
@@ -58,55 +56,46 @@ A single source for all typography
   --font-size-xl: 1.5rem; /* 24px */
   --font-size-2xl: 2rem; /* 32px */
   --font-size-3xl: 3rem; /* 48px */
-
+/*A unitless line-height means it multiplies the element’s font size so font size x unit*/
   --line-height-tight: 1.1;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.7;
-
+/* weight = 100 > thin 700 > bold*/
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 700;
-
-  /* Heading Tokens 
-change entire heading scale in one place
-
-all heading are defined here 
-*/
-
+  /* heading tokens 
+change entire heading scale in one place all heading are defined here 
+*//**************************************************************************DEL
   --heading-1-size: var(--font-size-3xl);
   --heading-2-size: var(--font-size-2xl);
   --heading-3-size: var(--font-size-xl);
   --heading-4-size: var(--font-size-lg);
-
+*/
   --heading-line-height: var(--line-height-tight);
   --heading-weight: var(--font-weight-regular);
   --heading-font: var(--font-heading);
 
-  /* Body Text Tokens
-
+/* body Text Tokens
 fix text sizing here 
 */
   --body-font: var(--font-body);
   --body-size: var(--font-size-md);
   --body-line-height: var(--line-height-normal);
   --body-weight: var(--font-weight-regular);
-
   --body-size-small: var(--font-size-sm);
   --body-size-large: var(--font-size-lg);
 
-  /* Responsive Typography 
-The CSS clamp() function is used to set a value that will adjust responsively between a minimum value and a maximum value depending on the size of the viewport.
+/* responsive typography 
+the CSS clamp() function is used to set a value that will adjust responsively between a minimum value and a maximum value depending on the size of the viewport
 reference www.w3schools.com if stuck
 */
-  --heading-1-size: clamp(2rem, 5vw, 3rem);
-  --heading-2-size: clamp(1.5rem, 4vw, 2rem);
-  --heading-3-size: clamp(1.25rem, 3vw, 1.5rem);
-  --heading-4-size: clamp(1.125rem, 2.5vw, 1.25rem);
-  --body-size: clamp(0.9rem, 1.5vw, 1.125rem);
-
-  /* Spacing Scale
-eliminate random spacing everything has a consistent scale
-*/
+--heading-1-size: clamp(var(--font-size-2xl), 5vw, var(--font-size-3xl));
+--heading-2-size: clamp(var(--font-size-xl), 4vw, var(--font-size-2xl));
+--heading-3-size: clamp(var(--font-size-lg), 3vw, var(--font-size-xl));
+--heading-4-size: clamp(var(--font-size-md), 2.5vw, var(--font-size-lg));
+--body-size: clamp(var(--font-size-sm), 1.5vw, var(--font-size-md));
+/* spacing scale eliminate random spacing everything has a consistent scale*/
   --space-0: 0;
   --space-1: 0.25rem; /* 4px */
   --space-2: 0.5rem; /* 8px */
@@ -116,16 +105,12 @@ eliminate random spacing everything has a consistent scale
   --space-6: 2rem; /* 32px */
   --space-7: 3rem; /* 48px */
   --space-8: 4rem; /* 64px */
-
-  /*variable to set header height and body padding will keep both in sync
+/*variable to set header height and body padding will keep both in sync
 even when the site adjusts for nav dropdown*/
   --nav1-height: 40px;
   --nav2-height: 70px;
   --header-height: calc(var(--nav1-height) + var(--nav2-height));
-
-  /*Border radius
-keep a consistent radius across the sight
-*/
+/*border radius keep a consistent radius across the sight*/
   --radius-sm: 0.375rem;
   --radius-md: 0.5rem;
   --radius-lg: 1.5rem; /* 24px */
@@ -141,15 +126,13 @@ keep a consistent radius across the sight
     1.5vw,
     calc(var(--radius-md) * 1.4)
   );
-
-  /* Brand Colours (Shared Across Themes) */
+/* brand colours (shared across themes) */
   --brand-barn-red: #5a0f0f;
   --brand-sun-gold: #e8c9a1;
   --brand-grass-green: #c7d7a4;
   --brand-sky-blue: #d8e4f0;
   --brand-earth-brown: #3a2a1e;
-
-  /* Light Theme (Default) */
+/* light theme (default) */
   --color-bg: #f9f3e6;
   --color-surface: #f4e9d2;
   --color-text: #3a2a1e;
@@ -159,10 +142,10 @@ keep a consistent radius across the sight
   --color-accent-hover: #afc48b;
   --color-surface-hover: #ede1c8;
 }
-/*Conditional scopes
-These activate only when the selector matches dark theme
+/*conditional scopes
+these activate only when the selector matches dark theme
 use @media (prefers-color-scheme: dark) to follow OS theme
-i will also include a toggle switch
+the site will also include a toggle switch
 */
 :root[data-theme="dark"] {
   --color-bg: #1f2e1a;
@@ -174,8 +157,7 @@ i will also include a toggle switch
   --color-accent-hover: #d8e4f0;
   --color-surface-hover: #3a4a5c;
 }
-
-/* Component Defaults: Headings
+/*defaults headings
 this will ensure all heading always look the same
 */
 h1 {
@@ -185,7 +167,6 @@ h1 {
   font-weight: var(--heading-weight);
   color: var(--color-heading);
 }
-
 h2 {
   font-family: var(--heading-font);
   font-size: var(--heading-2-size);
@@ -193,7 +174,6 @@ h2 {
   font-weight: var(--heading-weight);
   color: var(--color-heading);
 }
-
 h3 {
   font-family: var(--heading-font);
   font-size: var(--heading-3-size);
@@ -201,7 +181,6 @@ h3 {
   font-weight: var(--heading-weight);
   color: var(--color-heading);
 }
-
 h4 {
   font-family: var(--heading-font);
   font-size: var(--heading-4-size);
@@ -209,8 +188,7 @@ h4 {
   font-weight: var(--heading-weight);
   color: var(--color-heading);
 }
-
-/* Component Defaults: Paragraphs */
+/* defaults paragraphs */
 p {
   font-family: var(--body-font);
   font-size: var(--body-size);
@@ -218,6 +196,9 @@ p {
   font-weight: var(--body-weight);
   color: var(--color-text);
 }
+
+/**tony top to here done**/
+
 #farm {
   font-family: var(--heading-font);
   font-size: clamp(1.5rem, 4vw, 2rem);
@@ -308,6 +289,13 @@ button:hover {
   max-height: 90vh;
   overflow-y: auto;
 }
+
+/*paste*/
+.booking-form {
+  background: var(--color-surface);
+}
+
+
 .booking-form h3 {
   margin-bottom: var(--space-3);
 }
