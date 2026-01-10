@@ -196,7 +196,7 @@ The colour palette was chosen based on the images being used on the site to ensu
 ### Dark Theme
 
 --dark-bg: #1F2E1A;  
---dark-surface: #1F2E1A;  
+--dark-surface: #2d3f52;  
 --dark-text: #F4E9D2;  
 --dark-heading: #E8C9A1;  
 --dark-border: #3A2A1E;  

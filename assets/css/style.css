@@ -196,9 +196,7 @@ p {
   font-weight: var(--body-weight);
   color: var(--color-text);
 }
-
-/**tony top to here done**/
-
+/* Give this <p> h2 presence without violating heading order */
 #farm {
   font-family: var(--heading-font);
   font-size: clamp(1.5rem, 4vw, 2rem);
@@ -206,26 +204,21 @@ p {
   font-weight: var(--heading-weight);
   color: var(--color-heading);
 }
-/* Buttons
 
+/* buttons
 consistent buttons using design tokens
 padding uses your spacing scale, colours use your semantic tokens, font uses your typography tokens
-
 */
-
 button {
   font-family: var(--body-font);
   font-size: var(--body-size);
   font-weight: var(--font-weight-medium);
   line-height: var(--body-line-height);
-
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
-
   background-color: var(--color-accent);
   color: var(--color-heading);
-
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -234,6 +227,30 @@ button:hover {
   background-color: var(--light-accent-hover);
 }
 
+:root[data-theme="dark"] button:hover {
+  background-color: var(--dark-accent-hover);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: var(--color-heading);
+}
+
+:root[data-theme="dark"] .btn-primary:hover {
+  background-color: var(--dark-accent-hover);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-hover);
+}
+/*end of button section*/
+/**tony top to here done**/
 /*floating button for the booking form*/
 .floating-button {
   position: fixed;
