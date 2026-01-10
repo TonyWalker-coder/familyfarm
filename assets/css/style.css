@@ -243,7 +243,52 @@ button:hover {
   background-color: var(--color-surface-hover);
 }
 /*end of button section*/
-/**tony top to here done**/
+
+/*form Inputs section
+
+**DEBUG this was moved from lower down lets make sure we have not caused a cascade collapse
+
+forms designed to look like they are part of the same design using predefined tokens
+*/
+input,
+textarea,
+select {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  line-height: var(--body-line-height);
+  font-weight: var(--body-weight);
+
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+
+  background-color: var(--color-surface);
+  color: var(--color-text);
+
+  width: 100%;
+  box-sizing: border-box;
+
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 40%, transparent);
+  outline: none;
+}
+
+/* labels */
+label {
+  font-family: var(--body-font);
+  font-size: var(--body-size-small);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-heading);
+  margin-bottom: var(--space-1);
+  display: block;
+}
+/*end of form section*/
 /*booking form section
 /*floating button for the booking form*/
 .floating-button {
@@ -347,11 +392,13 @@ body.booking-open {
 }
 /* end of booking form section*/
 
-/* Make <button> visually match nav <a> links */
+/*i do not believe this is being used anymore*/
+/*comment out for now*/
+/* Make <button> visually match nav <a> links *comment
 .link-button {
   background: none;
   border: none;
-  padding: var(--space-2) var(--space-3); /* match nav a */
+  padding: var(--space-2) var(--space-3); /* match nav a *comment
   margin: 0;
   font-family: var(--body-font);
   font-size: var(--body-size);
@@ -359,8 +406,8 @@ body.booking-open {
   color: var(--color-heading);
   cursor: pointer;
   text-decoration: none;
-  border-radius: var(--radius-md); /* match nav a */
-  transition: background-color 0.2s ease, color 0.2s ease; /* match nav a */
+  border-radius: var(--radius-md); /* match nav a *comment
+  transition: background-color 0.2s ease, color 0.2s ease; /* match nav a *comment
 }
 
 .link-button:hover,
@@ -372,7 +419,10 @@ body.booking-open {
 .link-button:focus-visible {
   outline: 2px solid var(--focus-color, #005fcc);
   outline-offset: 2px;
-}
+}*/
+
+/**tony top to here done**/
+
 /*drop down menu pointer*/
 .chevron {
   display: inline-block;
@@ -388,48 +438,7 @@ body.booking-open {
   transform: rotate(-135deg); /* ▲ */
 }
 
-/* Form Inputs
 
-forms designed to look like they are part of the same design using predefined tokens
-*/
-input,
-textarea,
-select {
-  font-family: var(--body-font);
-  font-size: var(--body-size);
-  line-height: var(--body-line-height);
-  font-weight: var(--body-weight);
-
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--color-border);
-
-  background-color: var(--color-surface);
-  color: var(--color-text);
-
-  width: 100%;
-  box-sizing: border-box;
-
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 40%, transparent);
-  outline: none;
-}
-
-/* Labels */
-label {
-  font-family: var(--body-font);
-  font-size: var(--body-size-small);
-  font-weight: var(--font-weight-medium);
-  color: var(--color-heading);
-  margin-bottom: var(--space-1);
-  display: block;
-}
 
 /* Card / Panel 
 consistent cards to mach design forms & cards should now blend into pages and not look detached
