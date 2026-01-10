@@ -1053,11 +1053,11 @@ full use of tokens to follow site design
   text-align: center;
   background-image: url("../images/hero-gallery2.jpg");
   background-size: cover;
-  background-position:center;
+  background-position: center;
   height: 55vh;
 }
 #hero-activities::before,
-#hero-seasonal::before ,
+#hero-seasonal::before,
 #hero-gallery::before {
   content: "";
   position: absolute;
@@ -1066,14 +1066,16 @@ full use of tokens to follow site design
   pointer-events: none;
 }
 #hero-activities h1,
-#hero-seasonal h1, #hero-gallery h1 {
+#hero-seasonal h1,
+#hero-gallery h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   margin: var(--space-1) var(--space-0);
 }
 #hero-activities .text-wrap,
-#hero-seasonal .text-wrap, #hero-gallery .text-wrap {
+#hero-seasonal .text-wrap,
+#hero-gallery .text-wrap {
   display: inline-block;
   padding: var(--space-3) var(--space-4);
   /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
@@ -1293,20 +1295,27 @@ body {
   color: #fff;
 }
 /*gallery grid system */
- .masonry {
+.masonry {
   column-count: 4;
   column-gap: 1rem;
   padding: 1rem;
+
+  max-width: none;
+  width: 100%;
+
+  grid-column: 1 / -1;
 }
 .masonry img {
   width: 100%;
   margin-bottom: 1rem;
   display: block;
   break-inside: avoid;
-  border-radius: 6px; /* optional but looks lovely */
-}
+  border-radius: 6px;
 
-/* Responsive breakpoints */
+  height: auto !important;
+  object-fit: contain !important;
+}
+/* Responsive breakpoints for gallery*/
 @media (max-width: 1200px) {
   .masonry {
     column-count: 3;
@@ -1321,7 +1330,7 @@ body {
   .masonry {
     column-count: 1;
   }
-} 
+}
 
 @media (max-width: 600px) {
   .logo {
