@@ -267,6 +267,7 @@ button:hover {
 
   z-index: 999; /* keep it above cards, nav, etc. */
 }
+/*paste up to buttons */
 /*hidden booking form for floating button*/
 /* Overlay */
 .booking-overlay {
@@ -572,7 +573,7 @@ consistent cards to mach design forms & cards should now blend into pages and no
   height: 100%;
   object-fit: cover;
 }
-
+/*paste7 down*/
 /* CONTENT */
 .about-card__content {
   padding-top: 100px; /* same spacing as activity cards */
@@ -672,8 +673,8 @@ consistent cards to mach design forms & cards should now blend into pages and no
   text-align: center;
 }
 
-.active,
-.dot:hover {
+.slideshow-container .dot.active,
+.slideshow-container .dot:hover {
   background-color: #717171;
 }
 
@@ -704,7 +705,8 @@ consistent cards to mach design forms & cards should now blend into pages and no
     /*width: 100%;*/
   }
 }
-
+/*paste7 up*/
+/*paste6 down*/
 /* Visually Hidden (accessible)
 this hides content visually but keeps it available to screen readers,
 don't make accessability look like an after thought follow the current theme
@@ -816,6 +818,8 @@ simple consistent size across the site
 .text-left {
   text-align: left;
 }
+/*paste6 up*/
+/*paste5 down*/
 /* header section */
 header {
   background-color: var(--color-surface);
@@ -1007,7 +1011,8 @@ nav a:hover,
   white-space: nowrap;
   padding: var(--space-2) var(--space-4);
 }
-
+/*paste5 up*/
+/*paste4 down*/
 /* Hero Section
 full use of tokens to follow site design
 */
@@ -1219,7 +1224,8 @@ body {
   color: var(--color-text);
   padding-top: var(--header-height);
 }
-
+/*paste4 up*/
+/*paste3 down*/
 /* modal for newsletter */
 
 /* Backdrop */
@@ -1301,6 +1307,8 @@ body {
 [data-theme="dark"] .logo {
   color: #fff;
 }
+/*paste3 up*/
+/*paste1 down*/
 /*gallery grid system */
 .masonry {
   column-count: 4;
@@ -1338,7 +1346,8 @@ body {
     column-count: 1;
   }
 }
-
+/*paste1 up*/
+/*paste2 down*/
 @media (max-width: 600px) {
   .logo {
     width: 45px;
@@ -1394,3 +1403,4 @@ body {
 body {
   padding-top: var(--header-height);
 }
+/*paste2 up*/
