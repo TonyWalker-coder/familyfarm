@@ -21,12 +21,36 @@
 Restore the user's saved theme BEFORE loading the stylesheet.
 This ensures the correct data-theme is active on first paint
 -->
-  <script>
+
+<script>
+  // Check if this is the user's first visit
+  const firstVisit = localStorage.getItem('firstVisit');
+
+  if (!firstVisit) {
+    // First ever visit → clear any old theme
+    localStorage.removeItem('theme');
+
+    // Apply OS theme
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+
+    // Mark that first visit is complete
+    localStorage.setItem('firstVisit', 'done');
+  } else {
+    // Not first visit → load saved theme if it exists
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       document.documentElement.setAttribute('data-theme', savedTheme);
+    } else {
+      // No saved theme → still follow OS
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
     }
-  </script>
+  }
+</script>
+
+
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -238,7 +262,8 @@ This ensures the correct data-theme is active on first paint
 
 
   </main>
-  <script src="app.js"></script>
+    
+<script src="app.js"></script>
 </body>
 
 </html>
