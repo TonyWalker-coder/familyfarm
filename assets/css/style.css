@@ -1021,6 +1021,7 @@ reminder use of tokens to follow/create site design
   background-position: center;
   min-height: 55vh;
 }
+
 .hero-historical {
   background-image: url("../images/ach.jpg");
 }
@@ -1033,52 +1034,20 @@ reminder use of tokens to follow/create site design
 .hero-activities {
   background-image: url("../images/hero-activities2.jpg");
 }
+.hero-seasonal {
+  background-image: url("../images/hero-seasonal1.jpg");
+}
+.hero-gallery {
+  background-image: url("../images/hero-gallery2.jpg");
+}
 
 .hero h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
 }
-
-.hero p {
-  margin-bottom: var(--space-6);
-  font-size: var(--body-size-large);
-}
-
-#hero-seasonal {
-  position: relative;
-  padding: var(--space-8) 0;
-  background-color: var(--color-surface);
-  color: var(--color-heading);
-  text-align: center;
-  background-image: url("../images/hero-seasonal1.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 55vh;
-}
-#hero-gallery {
-  position: relative;
-  padding: var(--space-8) 0;
-  background-color: var(--color-surface);
-  color: var(--color-heading);
-  text-align: center;
-  background-image: url("../images/hero-gallery2.jpg");
-  background-size: cover;
-  background-position: center;
-  height: 55vh;
-}
-.hero-activities::before,
-#hero-seasonal::before,
-#hero-gallery::before,
-.hero-historical::before  {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.4); /* adjust transparency */
-  pointer-events: none;
-}
 .hero-activities h1,
-#hero-seasonal h1,
-#hero-gallery h1,
+.hero-seasonal h1,
+.hero-gallery h1,
 .hero-historical h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
@@ -1086,9 +1055,25 @@ reminder use of tokens to follow/create site design
   margin: var(--space-1) var(--space-0);
 }
 
+.hero p {
+  margin-bottom: var(--space-6);
+  font-size: var(--body-size-large);
+}
+
+.hero-activities::before,
+.hero-seasonal::before,
+.hero-gallery::before,
+.hero-historical::before  {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4); /* adjust transparency */
+  pointer-events: none;
+}
+
 .hero-activities .text-wrap,
-#hero-seasonal .text-wrap,
-#hero-gallery .text-wrap,
+.hero-seasonal .text-wrap,
+.hero-gallery .text-wrap,
 .hero-historical .text-wrap {
   display: inline-block;
   padding: var(--space-3) var(--space-4);
@@ -1098,9 +1083,6 @@ reminder use of tokens to follow/create site design
   background: rgba(0, 0, 0, 0.1); /* tweak as needed */
   border-radius: var(--radius-md);
 }
-
-
-
 /*end hero section*/
 
 /*home page introduction */
