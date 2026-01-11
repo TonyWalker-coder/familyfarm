@@ -1,4 +1,4 @@
-/*loading fonts to keep the low load time*/
+/*loading fonts locally to keep the low load time*/
 @font-face {
   font-family: "Inter";
   src: url("../fonts/Inter18pt-Regular.woff2") format("woff2"),

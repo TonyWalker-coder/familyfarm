@@ -20,10 +20,16 @@ This **README** is designed to guide the project from the very beginning, outlin
 - [Overview](#overview)
 - [Objectives](#objectives)
 - [User Stories](#user-stories)
-  - [Visual Aspect](#visual-aspect-of-website-must-have)
+  - [Visual Aspect (*must have*)](#visual-aspect-of-website-must-have)
     - [Accessibility](#accessibility-acceptance-criteria)
-- [Activities Cards](#public-activities-cards-must-have)
-- [Public Activities](#public-activities-must-have)
+  - [Activities Cards (*must have*)](#public-activities-cards-must-have)
+  - [Public Activities (*must have*)](#public-activities-must-have)
+  - [About Us (*must have*)](#about-us-must-have)
+  - [Gallery (*should have*)](#gallery-should-have)
+  - [Shop and Cafeteria (*should have*)](#shop-and-cafeteria-should-have)
+  - [Booking Form (*should have*)](#booking-form-should-have)
+  - [Newsletter (*could have*)](#newsletter-could-have)
+  - [Historical Story (*could have*)](#historical-story-could-have)
 
 ## Introduction
 
