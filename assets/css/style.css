@@ -577,17 +577,14 @@ several pages will use the same card system so there will be more then one group
 }
 /*end of about card*/
 
-/**tony top to here done**/
-
 /*sliding image card left and right*/
 * {
   box-sizing: border-box;
 }
 
-/* Slideshow container */
+/*slideshow container */
 .slideshow-container {
   position: relative;
-
   max-width: 500px;
   width: 100%;
 }
@@ -596,12 +593,12 @@ several pages will use the same card system so there will be more then one group
   height: auto;
 }
 
-/* Hide the images by default */
+/*hide the images by default */
 .mySlides {
   display: none;
 }
 
-/* Next & previous buttons */
+/*next & previous buttons */
 .prev,
 .next {
   cursor: pointer;
@@ -620,7 +617,7 @@ several pages will use the same card system so there will be more then one group
 user-select: none;         /* modern browsers */
 }
 
-/* Position the "next button" to the right */
+/*position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
@@ -632,27 +629,7 @@ user-select: none;         /* modern browsers */
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
+/*the dots indicators */
 .slideshow-container .dots {
   width: 100%;
   display: flex;
@@ -666,7 +643,6 @@ user-select: none;         /* modern browsers */
   width: 15px;
   margin: 0 2px;
   background-color: #bbb;
-
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
@@ -678,7 +654,7 @@ user-select: none;         /* modern browsers */
   background-color: #717171;
 }
 
-/* Fading animation */
+/*fading animation */
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
@@ -688,7 +664,6 @@ user-select: none;         /* modern browsers */
   from {
     opacity: 0.4;
   }
-
   to {
     opacity: 1;
   }
@@ -699,15 +674,15 @@ user-select: none;         /* modern browsers */
     grid-template-columns: 1fr;
   }
 
-  /* Make slideshow expand like the card */
+  /*make slideshow expand like the card to remove right hand white space when responsive*/
   .slideshow-container {
-    max-width: 700px;
-    /*width: 100%;*/
+    /*width: 100% is too much width x height so use max-width*/
+    max-width: 700px;    
   }
 }
-/*paste7 up*/
-/*paste6 down*/
-/* Visually Hidden (accessible)
+/*end of slide show and content cards*/
+/***DEBUG delete on final pass if not needed
+/*visually hidden (accessible)
 this hides content visually but keeps it available to screen readers,
 don't make accessability look like an after thought follow the current theme
 */
@@ -722,6 +697,8 @@ don't make accessability look like an after thought follow the current theme
   white-space: nowrap;
   border: 0;
 }
+/**tony top to here done**/
+
 /*feedback form */
 .feedback-toggle {
   display: inline-block;
