@@ -731,10 +731,8 @@ several pages will use the same card system so there will be more then one group
 }
 
 .slideshow .main-image img {
-  width: 100%;
-  height: auto;
-  max-width: 700px;
-  height: auto;
+  max-width: 600px;
+  height: 350px;
   display: block;
   border-radius: 4px;
 }
@@ -748,8 +746,6 @@ several pages will use the same card system so there will be more then one group
 }
 
 .slideshow .thumbnails img {
-  width: 80px;
-  height: 60px;
   width: 16.66%;
   height: auto;
   object-fit: cover;

@@ -175,43 +175,47 @@ if (page === "activities" || page === "seasonal") {
 // ------------------------------
 // historical slideshow gallery
 // ------------------------------
-//find every .slideshow component on the page and initialise each one
+
+// Find every .slideshow component on the page and initialise each one
 document.querySelectorAll(".slideshow").forEach(initThumbnailSlideshow);
 
 function initThumbnailSlideshow(slideshow) {
-  //cache all the scoped elements inside this slideshow instance
+  // Cache all the scoped elements inside this slideshow instance
   const mainImage = slideshow.querySelector(".main-image img");
   const thumbs = slideshow.querySelectorAll(".thumb");
   const prev = slideshow.querySelector(".prev");
   const next = slideshow.querySelector(".next");
 
-  //track the currently displayed image index
+  // Track the currently displayed image index
   let index = 0;
 
-  function show(i) {
+  // Show a specific image, optionally triggered by user interaction
+  function show(i, userTriggered = false) {
     index = (i + thumbs.length) % thumbs.length;
     mainImage.src = thumbs[index].src;
 
     thumbs.forEach((t) => t.classList.remove("active"));
     thumbs[index].classList.add("active");
 
-    //auto-scroll the thumbnail strip to keep the active one visible
-    thumbs[index].scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-      inline: "center",
-    });
+    // Only auto-scroll thumbnails when the user interacts
+    if (userTriggered) {
+      thumbs[index].scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
   }
 
-  //clicking a thumbnail jumps directly to that image
+  // Clicking a thumbnail jumps directly to that image
   thumbs.forEach((thumb, i) => {
-    thumb.addEventListener("click", () => show(i));
+    thumb.addEventListener("click", () => show(i, true));
   });
 
-  //prev/next buttons move relative to the current index
-  prev.addEventListener("click", () => show(index - 1));
-  next.addEventListener("click", () => show(index + 1));
+  // Prev/next buttons move relative to the current index
+  prev.addEventListener("click", () => show(index - 1, true));
+  next.addEventListener("click", () => show(index + 1, true));
 
-  //initialise the slideshow with the first image
+  // Initialise the slideshow with the first image (no auto-scroll)
   show(0);
 }
