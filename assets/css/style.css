@@ -769,6 +769,8 @@ several pages will use the same card system so there will be more then one group
   color: white;
   font-size: 22px;
   font-weight: bold;
+  /* prevent text selection across all major browsers */
+  -webkit-user-select: none; /* Safari, iOS Safari */
   user-select: none;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.4);
