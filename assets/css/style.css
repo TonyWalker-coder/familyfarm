@@ -1092,10 +1092,13 @@ reminder use of tokens to follow/create site design
 }
 
 .hero-historical {
-  background-image: url("../images/ach.jpg");
+  background-image: url("../images/ach.webp");
 }
 .hero {
   background-image: url("../images/hero.webp");
+}
+.hero-about {
+  background-image: url("../images/about.jpg");
 }
 .hero-shop {
   background-image: url("../images/sc19.jpg");
@@ -1114,10 +1117,8 @@ reminder use of tokens to follow/create site design
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
 }
-.hero-activities h1,
-.hero-seasonal h1,
-.hero-gallery h1,
-.hero-historical h1 {
+
+.hero-overlay h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
@@ -1129,10 +1130,7 @@ reminder use of tokens to follow/create site design
   font-size: var(--body-size-large);
 }
 
-.hero-activities::before,
-.hero-seasonal::before,
-.hero-gallery::before,
-.hero-historical::before  {
+.hero-overlay::before  {
   content: "";
   position: absolute;
   inset: 0;
@@ -1140,10 +1138,7 @@ reminder use of tokens to follow/create site design
   pointer-events: none;
 }
 
-.hero-activities .text-wrap,
-.hero-seasonal .text-wrap,
-.hero-gallery .text-wrap,
-.hero-historical .text-wrap {
+.hero-overlay .text-wrap {
   display: inline-block;
   padding: var(--space-3) var(--space-4);
   /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/

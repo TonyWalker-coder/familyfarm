@@ -1,14 +1,14 @@
 // ------------------------------
-// PAGE IDENTIFIER (must be first)
+// page selector (**must be first**)
 // ------------------------------
 const page = document.body.dataset.page;
 
 // ------------------------------
-// GLOBAL: Newsletter modal
+// **GLOBAL** newsletter modal
 // ------------------------------
 let lastFocusedElement = null;
 // ------------------------------
-// PAGE-SPECIFIC: Shop & Cafe slideshows
+// Shop & Cafe slideshows
 // ------------------------------
 if (page === "shopandcafe") {
   createSlideshow("#slideshow1");
@@ -17,7 +17,7 @@ if (page === "shopandcafe") {
 }
 
 document.addEventListener("click", (e) => {
-  // OPEN
+  //open
   if (e.target.matches("[data-open-modal]")) {
     lastFocusedElement = e.target;
 
@@ -30,7 +30,7 @@ document.addEventListener("click", (e) => {
     modal.querySelector(".modal-close").focus();
   }
 
-  // CLOSE (button or backdrop)
+  //close (button or backdrop)
   if (
     e.target.matches("[data-close-modal]") ||
     e.target.matches("[data-modal]")
@@ -43,7 +43,7 @@ document.addEventListener("click", (e) => {
 });
 
 // ------------------------------
-// GLOBAL: Theme toggle
+// **GLOBAL** theme toggle
 // ------------------------------
 const toggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
@@ -57,7 +57,7 @@ toggle?.addEventListener("click", () => {
 });
 
 // ------------------------------
-// GLOBAL: Mobile nav toggle
+// **GLOBAL** mobile nav toggle
 // ------------------------------
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -69,7 +69,7 @@ navToggle?.addEventListener("click", () => {
 });
 
 // ------------------------------
-// GLOBAL: Desktop dropdown menus
+// **GLOBAL** desktop dropdown menus
 // ------------------------------
 document.querySelectorAll(".dropdown > button").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -80,7 +80,7 @@ document.querySelectorAll(".dropdown > button").forEach((btn) => {
 });
 
 // ------------------------------
-// GLOBAL: Close mobile nav on link click
+// **GLOBAL** close mobile nav on link click
 // ------------------------------
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
@@ -89,7 +89,7 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 });
 
 // ------------------------------
-// ABOUT PAGE: Feedback panel toggle
+// aboutus feedback form
 // ------------------------------
 if (page === "about") {
   const feedbackToggle = document.querySelector(".feedback-toggle");
@@ -107,7 +107,7 @@ if (page === "about") {
   });
 }
 // -----------------------------
-// SHOP & CAFE SLIDESHOW
+// shop slide show
 // -----------------------------
 function createSlideshow(containerSelector) {
   const container = document.querySelector(containerSelector);
@@ -145,26 +145,26 @@ function createSlideshow(containerSelector) {
   show(index);
 }
 // ------------------------------
-// ACTIVITIES + SEASONAL: Booking form toggle
+//activities booking form toggle
 // ------------------------------
 if (page === "activities" || page === "seasonal") {
   const bookingOverlay = document.getElementById("bookingOverlay");
   const closeBooking = document.getElementById("closeBooking");
   const bookingButton = document.getElementById("bookingButton");
 
-  // OPEN booking form
+  //open booking form
   bookingButton?.addEventListener("click", () => {
     bookingOverlay.classList.add("active");
     document.body.classList.add("booking-open"); // lock scroll
   });
 
-  // CLOSE booking form
+  //close booking form
   closeBooking?.addEventListener("click", () => {
     bookingOverlay.classList.remove("active");
     document.body.classList.remove("booking-open"); // unlock scroll
   });
 
-  // Close when clicking outside the form
+  //close when clicking outside the form
   bookingOverlay?.addEventListener("click", (e) => {
     if (e.target === bookingOverlay) {
       bookingOverlay.classList.remove("active");
@@ -175,17 +175,17 @@ if (page === "activities" || page === "seasonal") {
 // ------------------------------
 // historical slideshow gallery
 // ------------------------------
-// Find every .slideshow component on the page and initialise each one
+//find every .slideshow component on the page and initialise each one
 document.querySelectorAll(".slideshow").forEach(initThumbnailSlideshow);
 
 function initThumbnailSlideshow(slideshow) {
-  // Cache all the scoped elements inside this slideshow instance
+  //cache all the scoped elements inside this slideshow instance
   const mainImage = slideshow.querySelector(".main-image img");
   const thumbs = slideshow.querySelectorAll(".thumb");
   const prev = slideshow.querySelector(".prev");
   const next = slideshow.querySelector(".next");
 
-  // Track the currently displayed image index
+  //track the currently displayed image index
   let index = 0;
 
   function show(i) {
@@ -195,7 +195,7 @@ function initThumbnailSlideshow(slideshow) {
     thumbs.forEach((t) => t.classList.remove("active"));
     thumbs[index].classList.add("active");
 
-    // Auto-scroll the thumbnail strip to keep the active one visible
+    //auto-scroll the thumbnail strip to keep the active one visible
     thumbs[index].scrollIntoView({
       behavior: "smooth",
       block: "nearest",
@@ -203,15 +203,15 @@ function initThumbnailSlideshow(slideshow) {
     });
   }
 
-  // Clicking a thumbnail jumps directly to that image
+  //clicking a thumbnail jumps directly to that image
   thumbs.forEach((thumb, i) => {
     thumb.addEventListener("click", () => show(i));
   });
 
-  // Prev/next buttons move relative to the current index
+  //prev/next buttons move relative to the current index
   prev.addEventListener("click", () => show(index - 1));
   next.addEventListener("click", () => show(index + 1));
 
-  // Initialise the slideshow with the first image
+  //initialise the slideshow with the first image
   show(0);
 }
