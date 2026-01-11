@@ -226,27 +226,46 @@ All design decisions, colour palettes, and wireframes can be found here:
 - GitHub Pages (deployment)
 - GitHub Project (user stories)
 - Copilot
+- Balsamiq
 
 ## Folder structure
 
 ```text
-project/
-  assets/
-    images/
-    css/
-    js/
-  docs
-  screenshots
-  index.html
-  about.html
-  activities.html
+
+└── 📁familyfarm
+    └── 📁assets
+        └── 📁css
+            ├── style.css
+        └── 📁favicon
+        └── 📁fonts
+        └── 📁gallery
+        └── 📁images
+        └── 📁svg
+    └── 📁docs
+        ├── Changelog.md
+        ├── Design.md
+        ├── wireframe.pdf
+    └── 📁screenshots
+    ├── .gitignore
+    ├── about.html
+    ├── activities.html
+    ├── app.js
+    ├── gallery.html
+    ├── historical.html
+    ├── index.html
+    ├── LICENSE
+    ├── README.md
+    ├── seasonal.html
+    ├── shopandcafe.html
+    └── todolist.txt
 ```
 
 ## Local deployment
 
-1. Clone the repository.
+1. Clone the [repository.](https://github.com/TonyWalker-coder/familyfarm)
 2. Open index.html in your browser or IDE.
+3. Consult /README.md & /docs/Design.md
 
 ## Workflow section
 
-Development follows a **“must‑have”** first workflow using **GitHub Projects.** Each user story is represented as a card and moves through To Do → In Progress → Done.
+Development follows a **“must‑have”** first workflow using [GitHub Projects.](https://github.com/users/TonyWalker-coder/projects/3) Each user story is represented as a card and moves through To Do → In Progress → Done.
