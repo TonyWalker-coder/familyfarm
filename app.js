@@ -181,3 +181,32 @@ if (page === 'activities' || page === 'seasonal') {
   });
 
 }
+
+document.querySelectorAll('.slideshow').forEach(initThumbnailSlideshow);
+
+function initThumbnailSlideshow(slideshow) {
+  const mainImage = slideshow.querySelector('.main-image img');
+  const thumbs = slideshow.querySelectorAll('.thumb');
+  const prev = slideshow.querySelector('.prev');
+  const next = slideshow.querySelector('.next');
+
+  let index = 0;
+
+  function show(i) {
+    index = (i + thumbs.length) % thumbs.length;
+    mainImage.src = thumbs[index].src;
+
+    thumbs.forEach(t => t.classList.remove('active'));
+    thumbs[index].classList.add('active');
+  }
+
+  thumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => show(i));
+  });
+
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+
+  show(0);
+}
+
