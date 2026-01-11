@@ -11,11 +11,10 @@ let lastFocusedElement = null;
 // PAGE-SPECIFIC: Shop & Cafe slideshows
 // ------------------------------
 if (page === "shopandcafe") {
-    createSlideshow("#slideshow1");
-    createSlideshow("#slideshow2");
-    createSlideshow("#slideshow3");
+  createSlideshow("#slideshow1");
+  createSlideshow("#slideshow2");
+  createSlideshow("#slideshow3");
 }
-
 
 document.addEventListener("click", (e) => {
   // OPEN
@@ -107,55 +106,48 @@ if (page === "about") {
     feedbackPanel.hidden = true;
   });
 }
-
-// ------------------------------
-// ACTIVITIES + SEASONAL: Booking form toggle
-// ------------------------------
-
 // -----------------------------
 // SHOP & CAFE SLIDESHOW
 // -----------------------------
 function createSlideshow(containerSelector) {
-    const container = document.querySelector(containerSelector);
-    if (!container) return;
+  const container = document.querySelector(containerSelector);
+  if (!container) return;
 
-    let index = 1;
-    const slides = container.querySelectorAll(".mySlides");
-    const dots = container.querySelectorAll(".dot");
+  let index = 1;
+  const slides = container.querySelectorAll(".mySlides");
+  const dots = container.querySelectorAll(".dot");
 
-    function show(n) {
-        if (n > slides.length) index = 1;
-        if (n < 1) index = slides.length;
+  function show(n) {
+    if (n > slides.length) index = 1;
+    if (n < 1) index = slides.length;
 
-        slides.forEach(s => s.style.display = "none");
-        dots.forEach(d => d.classList.remove("active"));
+    slides.forEach((s) => (s.style.display = "none"));
+    dots.forEach((d) => d.classList.remove("active"));
 
-        slides[index - 1].style.display = "block";
-        dots[index - 1].classList.add("active");
-    }
+    slides[index - 1].style.display = "block";
+    dots[index - 1].classList.add("active");
+  }
 
-    container.querySelector(".prev")?.addEventListener("click", () => {
-        show(index += 1);
+  container.querySelector(".prev")?.addEventListener("click", () => {
+    show((index += 1));
+  });
+
+  container.querySelector(".next")?.addEventListener("click", () => {
+    show((index -= 1));
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      show((index = i + 1));
     });
+  });
 
-    container.querySelector(".next")?.addEventListener("click", () => {
-        show(index -= 1);
-    });
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-            show(index = i + 1);
-        });
-    });
-
-    show(index);
+  show(index);
 }
-
-//new code
-
-
-if (page === 'activities' || page === 'seasonal') {
-
+// ------------------------------
+// ACTIVITIES + SEASONAL: Booking form toggle
+// ------------------------------
+if (page === "activities" || page === "seasonal") {
   const bookingOverlay = document.getElementById("bookingOverlay");
   const closeBooking = document.getElementById("closeBooking");
   const bookingButton = document.getElementById("bookingButton");
@@ -179,34 +171,47 @@ if (page === 'activities' || page === 'seasonal') {
       document.body.classList.remove("booking-open");
     }
   });
-
 }
-
-document.querySelectorAll('.slideshow').forEach(initThumbnailSlideshow);
+// ------------------------------
+// historical slideshow gallery
+// ------------------------------
+// Find every .slideshow component on the page and initialise each one
+document.querySelectorAll(".slideshow").forEach(initThumbnailSlideshow);
 
 function initThumbnailSlideshow(slideshow) {
-  const mainImage = slideshow.querySelector('.main-image img');
-  const thumbs = slideshow.querySelectorAll('.thumb');
-  const prev = slideshow.querySelector('.prev');
-  const next = slideshow.querySelector('.next');
+  // Cache all the scoped elements inside this slideshow instance
+  const mainImage = slideshow.querySelector(".main-image img");
+  const thumbs = slideshow.querySelectorAll(".thumb");
+  const prev = slideshow.querySelector(".prev");
+  const next = slideshow.querySelector(".next");
 
+  // Track the currently displayed image index
   let index = 0;
 
   function show(i) {
     index = (i + thumbs.length) % thumbs.length;
     mainImage.src = thumbs[index].src;
 
-    thumbs.forEach(t => t.classList.remove('active'));
-    thumbs[index].classList.add('active');
+    thumbs.forEach((t) => t.classList.remove("active"));
+    thumbs[index].classList.add("active");
+
+    // Auto-scroll the thumbnail strip to keep the active one visible
+    thumbs[index].scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
   }
 
+  // Clicking a thumbnail jumps directly to that image
   thumbs.forEach((thumb, i) => {
-    thumb.addEventListener('click', () => show(i));
+    thumb.addEventListener("click", () => show(i));
   });
 
-  prev.addEventListener('click', () => show(index - 1));
-  next.addEventListener('click', () => show(index + 1));
+  // Prev/next buttons move relative to the current index
+  prev.addEventListener("click", () => show(index - 1));
+  next.addEventListener("click", () => show(index + 1));
 
+  // Initialise the slideshow with the first image
   show(0);
 }
-

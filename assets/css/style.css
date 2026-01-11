@@ -722,16 +722,18 @@ several pages will use the same card system so there will be more then one group
 }
 /*end of slide show and content cards*/
 
-
+/*slideshow gallery on historical*/
 .slideshow {
   position: relative;
   max-width: 600px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto var(--space-5);
 }
 
 .slideshow .main-image img {
   width: 100%;
+  height: auto;
+  max-width: 700px;
   height: auto;
   display: block;
   border-radius: 4px;
@@ -748,6 +750,8 @@ several pages will use the same card system so there will be more then one group
 .slideshow .thumbnails img {
   width: 80px;
   height: 60px;
+  width: 16.66%;
+  height: auto;
   object-fit: cover;
   cursor: pointer;
   opacity: 0.6;
@@ -782,7 +786,7 @@ several pages will use the same card system so there will be more then one group
 
 .slideshow .prev { left: 0; }
 .slideshow .next { right: 0; }
-
+/*end of slideshow gallery section*/
 
 
 
@@ -1088,7 +1092,7 @@ reminder use of tokens to follow/create site design
 }
 
 .hero-historical {
-  background-image: url("../images/ach5.jpg");
+  background-image: url("../images/ach.jpg");
 }
 .hero {
   background-image: url("../images/hero.webp");
