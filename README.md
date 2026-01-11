@@ -30,6 +30,11 @@ This **README** is designed to guide the project from the very beginning, outlin
   - [Booking Form (*should have*)](#booking-form-should-have)
   - [Newsletter (*could have*)](#newsletter-could-have)
   - [Historical Story (*could have*)](#historical-story-could-have)
+- [Design Reference](#design-reference)
+- [Tech Stack](#tech-stack)
+- [Folder Structure](#folder-structure)
+- [Local Deployment](#local-deployment)
+- [Workflow Section](#workflow-section)
 
 ## Introduction
 
@@ -224,7 +229,7 @@ All design decisions, colour palettes, and wireframes can be found here:
 [Wire Frames](docs/wireframe.pdf)  
 [Design Reference](docs/design.md)
 
-## Tech stack
+## Tech Stack
 
 - HTML5
 - CSS3
@@ -234,7 +239,7 @@ All design decisions, colour palettes, and wireframes can be found here:
 - Copilot
 - Balsamiq
 
-## Folder structure
+## Folder Structure
 
 ```text
 
@@ -266,12 +271,12 @@ All design decisions, colour palettes, and wireframes can be found here:
     └── todolist.txt
 ```
 
-## Local deployment
+## Local Deployment
 
 1. Clone the [repository.](https://github.com/TonyWalker-coder/familyfarm)
 2. Open index.html in your browser or IDE.
 3. Consult /README.md & /docs/Design.md
 
-## Workflow section
+## Workflow Section
 
 Development follows a **“must‑have”** first workflow using [GitHub Projects.](https://github.com/users/TonyWalker-coder/projects/3) Each user story is represented as a card and moves through To Do → In Progress → Done.
