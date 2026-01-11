@@ -73,7 +73,6 @@ A single source for all typography
 fix text sizing here 
 */
   --body-font: var(--font-body);
-  --body-size: var(--font-size-md);
   --body-line-height: var(--line-height-normal);
   --body-weight: var(--font-weight-regular);
   --body-size-small: var(--font-size-sm);
@@ -119,7 +118,40 @@ even when the site adjusts for nav dropdown*/
     1.5vw,
     calc(var(--radius-md) * 1.4)
   );
-  /***DEBUG down : moved from lower down*/
+
+  /* brand colours (shared across themes) */
+  --brand-barn-red: #5a0f0f;
+  --brand-sun-gold: #e8c9a1;
+  --brand-grass-green: #c7d7a4;
+  --brand-sky-blue: #d8e4f0;
+  --brand-earth-brown: #3a2a1e;
+  /* light theme (default) */
+  --color-bg: #f9f3e6;
+  --color-surface: #f4e9d2;
+  --color-text: #3a2a1e;
+  --color-heading: #5a0f0f;
+  --color-border: #e8c9a1;
+  --color-accent: #c7d7a4;
+  --color-accent-hover: #afc48b;
+  --color-surface-hover: #ede1c8;
+}
+/*end of root section*/
+/*global utilities these belong at the top*/
+/*conditional scopes
+these activate only when the selector matches dark theme
+use @media (prefers-color-scheme: dark) to follow OS theme
+the site will also include a toggle switch
+*/
+:root[data-theme="dark"] {
+  --color-bg: #1f2e1a;
+  --color-surface: #2d3f52;
+  --color-text: #f4e9d2;
+  --color-heading: #e8c9a1;
+  --color-border: #3a2a1e;
+  --color-accent: #c7d7a4;
+  --color-accent-hover: #d8e4f0;
+  --color-surface-hover: #3a4a5c;
+}
   /*layout Container 
 keep all containers looking clean and centered
 */
@@ -158,40 +190,6 @@ simple consistent size across the site
   .text-left {
     text-align: left;
   }
-  /***DEBUG up*/
-  /* brand colours (shared across themes) */
-  --brand-barn-red: #5a0f0f;
-  --brand-sun-gold: #e8c9a1;
-  --brand-grass-green: #c7d7a4;
-  --brand-sky-blue: #d8e4f0;
-  --brand-earth-brown: #3a2a1e;
-  /* light theme (default) */
-  --color-bg: #f9f3e6;
-  --color-surface: #f4e9d2;
-  --color-text: #3a2a1e;
-  --color-heading: #5a0f0f;
-  --color-border: #e8c9a1;
-  --color-accent: #c7d7a4;
-  --color-accent-hover: #afc48b;
-  --color-surface-hover: #ede1c8;
-}
-/*end of root section*/
-/*global utilities these belong at the to*/
-/*conditional scopes
-these activate only when the selector matches dark theme
-use @media (prefers-color-scheme: dark) to follow OS theme
-the site will also include a toggle switch
-*/
-:root[data-theme="dark"] {
-  --color-bg: #1f2e1a;
-  --color-surface: #2d3f52;
-  --color-text: #f4e9d2;
-  --color-heading: #e8c9a1;
-  --color-border: #3a2a1e;
-  --color-accent: #c7d7a4;
-  --color-accent-hover: #d8e4f0;
-  --color-surface-hover: #3a4a5c;
-}
 /*defaults headings
 this will ensure all heading always look the same
 */
@@ -1135,7 +1133,7 @@ this is what is going to hold all of the content together
 .grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
-*/*end of grid section*/
+/*end of grid section*/
 
 /*footer section*/
 /***DEBUG not needed to be declared*comment
@@ -1323,7 +1321,7 @@ body {
   }
 }
 /*end gallery section*/
-/**tony top to here done**/
+
 /* DESKTOP */
 @media (min-width: 768px) {
   /*show links in a row */
