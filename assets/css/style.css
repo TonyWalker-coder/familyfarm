@@ -1011,16 +1011,29 @@ nav a:hover,
 /*hero Section
 reminder use of tokens to follow/create site design
 */
-.hero {
+.hero-gen {
+  position: relative;
   padding: var(--space-8) 0;
   background-color: var(--color-surface);
   color: var(--color-heading);
   text-align: center;
-  background-image: url("../images/hero.webp");
   background-size: cover;
   background-position: center;
   min-height: 55vh;
 }
+.hero-historical {
+  background-image: url("../images/ach.jpg");
+}
+.hero {
+  background-image: url("../images/hero.webp");
+}
+.hero-shop {
+  background-image: url("../images/sc19.jpg");
+}
+.hero-activities {
+  background-image: url("../images/hero-activities2.jpg");
+}
+
 .hero h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
@@ -1030,17 +1043,7 @@ reminder use of tokens to follow/create site design
   margin-bottom: var(--space-6);
   font-size: var(--body-size-large);
 }
-#hero-activities {
-  position: relative;
-  padding: var(--space-8) 0;
-  background-color: var(--color-surface);
-  color: var(--color-heading);
-  text-align: center;
-  background-image: url("../images/hero-activities2.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 55vh;
-}
+
 #hero-seasonal {
   position: relative;
   padding: var(--space-8) 0;
@@ -1063,26 +1066,30 @@ reminder use of tokens to follow/create site design
   background-position: center;
   height: 55vh;
 }
-#hero-activities::before,
+.hero-activities::before,
 #hero-seasonal::before,
-#hero-gallery::before {
+#hero-gallery::before,
+.hero-historical::before  {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.4); /* adjust transparency */
   pointer-events: none;
 }
-#hero-activities h1,
+.hero-activities h1,
 #hero-seasonal h1,
-#hero-gallery h1 {
+#hero-gallery h1,
+.hero-historical h1 {
   margin-bottom: var(--space-4);
   font-size: clamp(1.8rem, 4vw, var(--heading-1-size));
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
   margin: var(--space-1) var(--space-0);
 }
-#hero-activities .text-wrap,
+
+.hero-activities .text-wrap,
 #hero-seasonal .text-wrap,
-#hero-gallery .text-wrap {
+#hero-gallery .text-wrap,
+.hero-historical .text-wrap {
   display: inline-block;
   padding: var(--space-3) var(--space-4);
   /*WebKit implementations, improving the user experience and compatibility for individuals on older devices.*/
@@ -1092,26 +1099,8 @@ reminder use of tokens to follow/create site design
   border-radius: var(--radius-md);
 }
 
-.hero-shop {
-  padding: var(--space-8) 0;
-  background-color: var(--color-surface);
-  color: var(--color-heading);
-  text-align: center;
-  background-image: url("../images/sc19.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 55vh;
-}
-.hero-historical {
-  padding: var(--space-8) 0;
-  background-color: var(--color-surface);
-  color: var(--color-heading);
-  text-align: center;
-  background-image: url("../images/ach.jpg");
-  background-size: cover;
-  background-position: center;
-  min-height: 55vh;
-}
+
+
 /*end hero section*/
 
 /*home page introduction */
