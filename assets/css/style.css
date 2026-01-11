@@ -979,12 +979,39 @@ nav a:hover,
   white-space: nowrap;
   padding: var(--space-2) var(--space-4);
 }
+
+/*dark mode = sun */
+:root[data-theme="dark"] #theme-icon {
+  content: url("../svg/lightmode.svg");
+}
+
+/*make logo responsive */
+#logo img {
+  height: auto;
+  width: 50px;
+  max-width: 100%;
+  vertical-align: middle;
+  position: relative;
+  top: -6px;
+}
+.logo {
+  width: 50px;
+  height: auto;
+  display: block;
+  color: black;
+}
+[data-theme="dark"] .logo {
+  color: #fff;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between logo + title */
+}
 /*end of header navbar and utils section*/
 
-/**tony top to here done**/
-
 /*hero Section
-full use of tokens to follow site design
+reminder use of tokens to follow/create site design
 */
 .hero {
   padding: var(--space-8) 0;
@@ -1077,22 +1104,9 @@ full use of tokens to follow site design
   background-position: center;
   min-height: 55vh;
 }
+/*end hero section*/
 
-/* Dark mode = sun */
-:root[data-theme="dark"] #theme-icon {
-  content: url("../svg/lightmode.svg");
-}
-
-/* make logo responsive */
-#logo img {
-  height: auto;
-  width: 50px;
-  max-width: 100%;
-  vertical-align: middle;
-  position: relative;
-  top: -6px;
-}
-/* home page introduction */
+/*home page introduction */
 
 #intro img {
   height: 300px;
@@ -1121,8 +1135,9 @@ this is what is going to hold all of the content together
 .grid-3 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
+*/*end of grid section*/
 
-/*footer */
+/*footer section*/
 /***DEBUG not needed to be declared*comment
 #footer {
   /*place holder*comment
@@ -1184,23 +1199,21 @@ footer p {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  object-fit: contain; /* keeps the icon crisp */
-  image-rendering: auto; /* lets the browser smooth edges */
-  background-color: #000; /* optional: gives a clean circle backdrop */
+  object-fit: contain;
+  image-rendering: auto;
+  background-color: black;
 }
+/*end of footer section*/
 
 /*body styling*/
-
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   padding-top: var(--header-height);
 }
-/*paste4 up*/
-/*paste3 down*/
-/* modal for newsletter */
 
-/* Backdrop */
+/*modal for newsletter */
+/*backdrop */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -1211,8 +1224,7 @@ body {
   padding: var(--space-6);
   z-index: 999;
 }
-
-/* Modal container */
+/*modal container */
 .modal {
   background: var(--color-surface);
   color: var(--color-text);
@@ -1222,8 +1234,7 @@ body {
   overflow: hidden;
   animation: modal-in 0.2s ease-out;
 }
-
-/* Header */
+/*header */
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -1238,7 +1249,7 @@ body {
   color: var(--color-heading);
 }
 
-/* Close button */
+/*close button */
 .modal-close {
   background: none;
   border: none;
@@ -1248,12 +1259,12 @@ body {
   color: var(--color-heading);
 }
 
-/* Body */
+/*body */
 .modal-body {
   padding: var(--space-5);
 }
 
-/* Footer */
+/*footer */
 .modal-footer {
   display: flex;
   justify-content: flex-end;
@@ -1261,24 +1272,8 @@ body {
   padding: var(--space-4) var(--space-5);
   border-top: 1px solid var(--color-border);
 }
+/*end of modal section*/
 
-/* Default (light mode) */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; /* space between logo + title */
-}
-
-.logo {
-  width: 50px;
-  height: auto;
-  display: block;
-  color: black;
-}
-
-[data-theme="dark"] .logo {
-  color: #fff;
-}
 /*gallery grid system */
 .masonry {
   column-count: 4;
@@ -1300,7 +1295,7 @@ body {
   height: auto !important;
   object-fit: contain !important;
 }
-/* Responsive breakpoints for gallery*/
+/*responsive breakpoints for gallery*/
 @media (max-width: 1200px) {
   .masonry {
     column-count: 3;
@@ -1316,23 +1311,22 @@ body {
     column-count: 1;
   }
 }
-/*paste1 up*/
-/*paste2 down*/
 @media (max-width: 600px) {
   .logo {
     width: 45px;
   }
 }
-
 @media (min-width: 768px) {
-  /* hide hamburger */
+  /*hide hamburger */
   .nav-toggle {
     display: none;
   }
 }
+/*end gallery section*/
+/**tony top to here done**/
 /* DESKTOP */
 @media (min-width: 768px) {
-  /* show links in a row */
+  /*show links in a row */
   .nav-links {
     display: flex;
     flex-direction: row;
@@ -1346,7 +1340,7 @@ body {
     z-index: 10;
   }
 
-  /* hide hamburger */
+  /*hide hamburger */
   .nav-toggle {
     display: none;
   }
