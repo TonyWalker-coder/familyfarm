@@ -1102,6 +1102,16 @@ reminder use of tokens to follow/create site design
   background-position: center;
   min-height: 55vh;
 }
+.hero-historical {
+  padding: var(--space-8) 0;
+  background-color: var(--color-surface);
+  color: var(--color-heading);
+  text-align: center;
+  background-image: url("../images/ach.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 55vh;
+}
 /*end hero section*/
 
 /*home page introduction */
@@ -1136,11 +1146,6 @@ this is what is going to hold all of the content together
 /*end of grid section*/
 
 /*footer section*/
-/***DEBUG not needed to be declared*comment
-#footer {
-  /*place holder*comment
-}
-*/
 footer {
   background-color: var(--color-surface);
   border-top: 1px solid var(--color-border);
