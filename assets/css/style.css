@@ -1285,6 +1285,11 @@ footer p {
   image-rendering: auto;
   background-color: black;
 }
+.footer-styling {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
 /*end of footer section*/
 
 /*body styling*/
