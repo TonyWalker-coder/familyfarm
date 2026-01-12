@@ -159,10 +159,15 @@ if (page === "activities" || page === "seasonal") {
   });
 
   //close booking form
-  closeBooking?.addEventListener("click", () => {
+// close booking form (X button + Cancel button)
+document.querySelectorAll(".close-form").forEach(btn => {
+  btn.addEventListener("click", () => {
     bookingOverlay.classList.remove("active");
-    document.body.classList.remove("booking-open"); // unlock scroll
+    document.body.classList.remove("booking-open");
   });
+});
+
+
 
   //close when clicking outside the form
   bookingOverlay?.addEventListener("click", (e) => {

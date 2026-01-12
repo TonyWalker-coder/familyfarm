@@ -454,8 +454,8 @@ body.booking-open {
   padding-right: var(--scrollbar-width);
 }
 
-/*close button */
-.close-form {
+/* close button (visual styling only) */
+.close-button {
   position: absolute;
   top: var(--space-3);
   right: var(--space-3);
@@ -464,6 +464,8 @@ body.booking-open {
   font-size: var(--font-size-2xl);
   cursor: pointer;
 }
+
+
 
 /*form fields */
 .booking-form label {
@@ -490,13 +492,13 @@ body.booking-open {
   padding: var(--space-2) var(--space-4);
 
 }
-
+/*tony*/
 .booking-form-wrapper {
   max-width: 600px;
   margin: 1rem auto;   /* lifts it off the floor + centers it */
-  padding: 2rem;
+  padding: 1rem;
   background: var(--color-surface);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
 }
 
