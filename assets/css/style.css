@@ -1111,19 +1111,19 @@ reminder use of tokens to follow/create site design
   background-image: url("../images/hero.webp");
 }
 .hero-about {
-  background-image: url("../images/about.jpg");
+  background-image: url("../images/about.webp");
 }
 .hero-shop {
-  background-image: url("../images/sc19.jpg");
+  background-image: url("../images/sc19.webp");
 }
 .hero-activities {
-  background-image: url("../images/hero-activities2.jpg");
+  background-image: url("../images/hero-activities2.webp");
 }
 .hero-seasonal {
-  background-image: url("../images/hero-seasonal1.jpg");
+  background-image: url("../images/hero-seasonal1.webp");
 }
 .hero-gallery {
-  background-image: url("../images/hero-gallery2.jpg");
+  background-image: url("../images/hero-gallery2.webp");
 }
 
 .hero h1 {
