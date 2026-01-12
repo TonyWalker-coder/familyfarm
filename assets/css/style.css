@@ -97,6 +97,10 @@ reference www.w3schools.com if stuck
   --space-6: 2rem; /* 32px */
   --space-7: 3rem; /* 48px */
   --space-8: 4rem; /* 64px */
+
+  /* windows standard width of a scrollbar*/
+  --scrollbar-width: 17px;
+
   /*variable to set header height and body padding will keep both in sync
 even when the site adjusts for nav dropdown*/
   --nav1-height: 40px;
@@ -298,6 +302,15 @@ button:hover {
   background-color: var(--color-surface-hover);
 }
 
+/*feebback buitton contrast clash*/
+:root[data-theme="dark"] .button-special-border {
+  border: 1px solid var(--color-text);
+}
+.button-special-border:hover {
+  border: 1px solid var(--color-heading);
+}
+
+
 /* Make <button> visually match nav <a> links */
 .link-button {
   background: none;
@@ -324,6 +337,8 @@ button:hover {
   outline: 2px solid var(--focus-color, #005fcc);
   outline-offset: 2px;
 }
+
+
 /*end of button section*/
 
 /*form Inputs section
@@ -435,6 +450,8 @@ label {
 body.booking-open {
   overflow: hidden;
   height: 100%;
+/**DEBUG should fix page jump*/
+  padding-right: var(--scrollbar-width);
 }
 
 /*close button */
@@ -1405,7 +1422,7 @@ body {
   .dropdown-menu {
     position: absolute;
     top: 55%; /* sits directly below parent */
-    left: 100px; /* aligns left edge */
+    left: 138px; /* aligns left edge */
     margin: 0;
   }
 }
