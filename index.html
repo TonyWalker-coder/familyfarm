@@ -18,31 +18,31 @@
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
   <!--
-Restore the user's saved theme BEFORE loading the stylesheet.
-This ensures the correct data-theme is active on first paint
+restore the user's saved theme BEFORE loading the stylesheet.
+this ensures the correct data-theme is active on first paint
 -->
 
   <script>
-    // Check if this is the user's first visit
+    // check if this is the user's first visit
     const firstVisit = localStorage.getItem('firstVisit');
 
     if (!firstVisit) {
-      // First ever visit → clear any old theme
+      // first ever visit → clear any old theme
       localStorage.removeItem('theme');
 
-      // Apply OS theme
+      // apply OS theme
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
 
-      // Mark that first visit is complete
+      // mark that first visit is complete
       localStorage.setItem('firstVisit', 'done');
     } else {
-      // Not first visit → load saved theme if it exists
+      // not first visit → load saved theme if it exists
       const savedTheme = localStorage.getItem('theme');
       if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
       } else {
-        // No saved theme → still follow OS
+        // no saved theme → still follow OS
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
       }
@@ -54,7 +54,7 @@ This ensures the correct data-theme is active on first paint
 
 <body data-page="index">
 
-  <!-- Header / Navigation -->
+  <!-- header / navigation section-->
   <header>
 
     <div class="container nav-header">
@@ -92,7 +92,7 @@ This ensures the correct data-theme is active on first paint
     </nav>
   </header>
   <main id="main-content">
-    <!-- Hero Section -->
+    <!-- hero Section -->
     <section class="hero-gen hero">
 
       <div class="container">
@@ -100,7 +100,7 @@ This ensures the correct data-theme is active on first paint
       </div>
 
     </section>
-    <!-- Grid Section -->
+    <!-- grid Section -->
     <section class="container mt-4">
 
       <div class="grid grid-3">
@@ -169,7 +169,7 @@ This ensures the correct data-theme is active on first paint
         </div>
       </div>
     </section>
-    <!-- Footer -->
+    <!-- footer -->
     <footer id="footer">
       <div class="grid grid-3">
         <div class="text-center">
@@ -230,7 +230,7 @@ This ensures the correct data-theme is active on first paint
 
     </footer>
 
-    <!-- Modal Template -->
+    <!-- modal template NEWSLETTER-->
     <template id="newsletter-modal">
       <div class="modal-backdrop" data-modal>
         <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
@@ -258,10 +258,7 @@ This ensures the correct data-theme is active on first paint
         </div>
       </div>
     </template>
-
-
   </main>
-
   <script src="app.js"></script>
 </body>
 

@@ -238,6 +238,7 @@ All design decisions, colour palettes, and wireframes can be found here:
 - GitHub Project (user stories)
 - Copilot
 - Balsamiq
+- Code Institute (forms return status)
 
 ## Folder Structure
 
@@ -255,8 +256,10 @@ All design decisions, colour palettes, and wireframes can be found here:
     └── 📁docs
         ├── Changelog.md
         ├── Design.md
-        ├── wireframe.pdf
+        └── wireframe.pdf
     └── 📁screenshots
+    └── 📁docs
+        └── testing.md
     ├── .gitignore
     ├── about.html
     ├── activities.html
@@ -267,8 +270,7 @@ All design decisions, colour palettes, and wireframes can be found here:
     ├── LICENSE
     ├── README.md
     ├── seasonal.html
-    ├── shopandcafe.html
-    └── todolist.txt
+    └── shopandcafe.html
 ```
 
 ## Local Deployment

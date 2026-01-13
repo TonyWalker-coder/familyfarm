@@ -925,7 +925,7 @@ nav a,
   font-size: var(--body-size);
   font-weight: var(--font-weight-medium);
   color: var(--color-heading);
-  text-decoration: none;
+  /*text-decoration: none;*/
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-md);
   transition: background-color 0.2s ease, color 0.2s ease;
