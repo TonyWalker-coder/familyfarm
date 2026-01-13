@@ -903,6 +903,29 @@ don't make accessability look like an after thought follow the current theme
 .feedback-cancel {
   margin-left: var(--space-3);
 }
+.feedback-close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--color-text);
+  line-height: 1;
+  padding: var(--space-1);
+  transition: opacity 0.2s ease;
+}
+
+.feedback-close:hover {
+  opacity: 0.6;
+}
+
+.feedback-panel {
+  position: relative; /* required for absolute close button */
+}
+
+
 /*end feedback form section*/
 
 /* header, navbar, dropdown section */

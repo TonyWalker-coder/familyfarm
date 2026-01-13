@@ -87,45 +87,45 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   });
 });
 // ------------------------------
-//aboutus feedback form
+// aboutus feedback form
 // ------------------------------
 if (page === "about") {
   const feedbackToggle = document.querySelector(".feedback-toggle");
   const feedbackPanel = document.querySelector(".feedback-panel");
   const feedbackCancel = document.querySelector(".feedback-cancel");
+  const feedbackClose = document.querySelector(".feedback-close");
 
-  //ensure ARIA state is correct on load
-  if (feedbackPanel) {
-    feedbackPanel.hidden = true;
-    feedbackPanel.setAttribute("aria-hidden", "true");
+  feedbackPanel.hidden = true;
+  feedbackPanel.setAttribute("aria-hidden", "true");
+
+  function openFeedback() {
+    feedbackPanel.hidden = false;
+    feedbackPanel.classList.add("open");
+    feedbackPanel.setAttribute("aria-hidden", "false");
+    feedbackToggle.setAttribute("aria-expanded", "true");
   }
 
-  //open/close panel via toggle button
-  feedbackToggle?.addEventListener("click", () => {
-    const isOpen = feedbackPanel.classList.toggle("open");
-
-    feedbackPanel.hidden = !isOpen;
-    feedbackPanel.setAttribute("aria-hidden", String(!isOpen));
-
-    feedbackToggle.setAttribute("aria-expanded", String(isOpen));
-
-    if (isOpen) {
-      //move focus inside the panel for accessibility
-      const firstInput = feedbackPanel.querySelector("input, textarea, button");
-      firstInput?.focus();
-    }
-  });
-
-  //close panel via cancel button
-  feedbackCancel?.addEventListener("click", () => {
+  function closeFeedback() {
     feedbackPanel.classList.remove("open");
-    feedbackPanel.hidden = true;
     feedbackPanel.setAttribute("aria-hidden", "true");
-
     feedbackToggle.setAttribute("aria-expanded", "false");
 
-    //return focus to the toggle button
-    feedbackToggle?.focus();
+    setTimeout(() => {
+      feedbackPanel.hidden = true;
+    }, 350);
+  }
+
+  feedbackToggle.addEventListener("click", openFeedback);
+  feedbackCancel.addEventListener("click", closeFeedback);
+  feedbackClose.addEventListener("click", closeFeedback);
+
+  document.addEventListener("click", (event) => {
+    const isInside = feedbackPanel.contains(event.target);
+    const isToggle = event.target === feedbackToggle;
+
+    if (!isInside && !isToggle && feedbackPanel.classList.contains("open")) {
+      closeFeedback();
+    }
   });
 }
 // -----------------------------

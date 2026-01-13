@@ -27,6 +27,7 @@ This document ensures the site meets the expected standards for usability, acces
   - [Objective,Scope](#objective)
   - [Scope](#scope)
   - [Combined Visual Acceptance Matrix](#desktop-matrix)
+- [Chrome Lighthouse Stats](#chrome-lighthouse)
 
 ## Validation
 
@@ -45,7 +46,7 @@ validation-err-01
 
 The *aria-label* attribute was removed from the \<p> element because it was unnecessary. The visible text **‘The Waltons Farm’** is already fully descriptive for screen readers, and the *W3C validator* correctly flagged that *aria-label* must not be used on a \<p>  without a special role.
 
-#### Validation for index.html
+#### Final Validation for index.html
 
 Pass no errors
 
@@ -71,6 +72,20 @@ cut and paste error 2 role="" in the same section
 
 remove role="listitem"
 
+#### Final Validation for historical.html
+
+Pass no errors
+
+## Chrome Lighthouse
+
+Lighthouse audits are run at key milestones to confirm that performance, accessibility standards remain stable.
+
+![lighthouse](lighthouse%20light.png)
+**Light Theme**
+
+![lighthouse](lighthouse%20dark.png)
+**Dark Theme**
+
 ## Navigation
 
 ### Navigation Test
@@ -79,28 +94,32 @@ All navigation elements must direct users to their correct destinations. This in
 
 #### Desktop Links
 
-| Link | index.html | about.html |  
-| ----------- | ----------- | ----------
-| Home | [✓] | [ ] |
-| About Us | [✓] | [ ] |
-| Whats On | [✓] | [ ] |
-| Activities | [✓] | [ ] |
-| Seasonal | [✓] | [ ] |
-| Shop & Cafe | [✓] | [ ] |
-| Gallery | [✓] | [ ] |
-| Contact | [✓] | [ ] |
-| Dark theme toggle | [✓] | [ ] |
-| Leave Feedback | [✓] | [ ] |
-| Sign Up (newsletter) | [✓] | [ ] |
-| Newsletter Modal *'Cancel'* | [✓] | [ ] |
-| Newsletter Modal *'Subscribe'* | [✓] | [ ] |
-| Newsletter Modal 'X' | [✓] | [ ] |
+| Link                                    | index.html  | about.html |  
+| --------------------------------------- | ----------- | ----------
+| Home                                    | [✓]        | [ ] |
+| About Us                                | [✓] | [ ] |
+| Whats On                                | [✓] | [ ] |
+| Activities                              | [✓] | [ ] |
+| Seasonal                                | [✓] | [ ] |
+| Shop & Cafe                             | [✓] | [ ] |
+| Gallery                                 | [✓] | [ ] |
+| Contact                                 | [✓] | [ ] |
+| Dark theme toggle                       | [✓] | [ ] |
+| Sign Up (newsletter)                    | [✓] | [ ] |
+| Newsletter Modal *'Cancel'*             | [✓] | [ ] |
+| Newsletter Modal *'Subscribe'*          | [✓] | [ ] |
+| Newsletter Modal 'X'                    | [✓] | [ ] |
 | Newsletter Modal *'outside page click'* | [✓] | [ ] |
-| Facebook Icon | [✓] | [ ] |
-| Instagram Icon | [✓] | [ ] |
-| Twitter / 'X' Icon | [✓] | [ ] |
+| Facebook Icon                           | [✓] | [ ] |
+| Instagram Icon                          | [✓] | [ ] |
+| Twitter / 'X' Icon                      | [✓] | [ ] |
 | YouTube Icon | [✓] | [ ] |
 | Historical Link | N/A | [ ] |
+| Leave Feedback | N/A | [ ] |
+| Feedback Form *'Cancel'* | N/A | [ ] |
+| Feedback Form *'Subscribe'* | N/A | [ ] |
+| Feedback Form 'X' | N/A | [ ] |
+| Feedback Form *'outside page click'* | N/A | [ ] |
 
 ## Visual Acceptance Test
 
@@ -178,3 +197,6 @@ Pass/Fail Criteria
 |                               | Tablet       | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ |
 |                               | Mobile       | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ |
 
+
+
+The form was tested using the Code Institute formdump endpoint, which returns a simple POST‑echo page showing the submitted field names and values. Because the endpoint does not redirect or reload the original form, using the browser’s Back button returns to the form exactly as it was before submission, with all fields still populated. This is expected behaviour for a non‑redirecting POST test service and should not be interpreted as an error.
