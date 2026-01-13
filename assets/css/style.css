@@ -156,50 +156,49 @@ the site will also include a toggle switch
   --color-accent-hover: #8fa86a;
   --color-surface-hover: #3a4a5c;
 
-/***debug may be surplus***/
+  /***debug may be surplus***/
   --color-button-dark: #34465a;
   --color-button-text: #e0d2b8;
-  --color-button-hover-dark:#526479;
-
+  --color-button-hover-dark: #526479;
 }
-  /*layout Container 
+/*layout Container 
 keep all containers looking clean and centered
 */
-  .container {
-    max-width: 70rem; /* ~1120px */
-    margin: 0 auto;
-    padding: 0 var(--space-4);
-  }
+.container {
+  max-width: 70rem; /* ~1120px */
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
 
-  /*spacing 
+/*spacing 
 simple consistent size across the site 
 */
-  .m-0 {
-    margin: 0;
-  }
-  .mt-4 {
-    margin-top: var(--space-4);
-  }
-  .mb-4 {
-    margin-bottom: var(--space-4);
-  }
-  .pt-4 {
-    padding-top: var(--space-4);
-  }
-  .pb-4 {
-    padding-bottom: var(--space-4);
-  }
+.m-0 {
+  margin: 0;
+}
+.mt-4 {
+  margin-top: var(--space-4);
+}
+.mb-4 {
+  margin-bottom: var(--space-4);
+}
+.pt-4 {
+  padding-top: var(--space-4);
+}
+.pb-4 {
+  padding-bottom: var(--space-4);
+}
 
-  /*text Alignment */
-  .text-center {
-    text-align: center;
-  }
-  .text-right {
-    text-align: right;
-  }
-  .text-left {
-    text-align: left;
-  }
+/*text Alignment */
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
 /*defaults headings
 this will ensure all heading always look the same
 */
@@ -281,7 +280,6 @@ button:hover {
   background-color: var(--color-surface-hover);
 }
 
-
 :root[data-theme="dark"] button,
 :root[data-theme="dark"] .btn-primary {
   background-color: var(--color-button);
@@ -302,14 +300,13 @@ button:hover {
   background-color: var(--color-surface-hover);
 }
 
-/*feebback buitton contrast clash*/
+/*feedback button contrast clash*/
 :root[data-theme="dark"] .button-special-border {
   border: 1px solid var(--color-text);
 }
 .button-special-border:hover {
   border: 1px solid var(--color-heading);
 }
-
 
 /* Make <button> visually match nav <a> links */
 .link-button {
@@ -337,7 +334,6 @@ button:hover {
   outline: 2px solid var(--focus-color, #005fcc);
   outline-offset: 2px;
 }
-
 
 /*end of button section*/
 
@@ -450,7 +446,7 @@ label {
 body.booking-open {
   overflow: hidden;
   height: 100%;
-/**DEBUG should fix page jump*/
+  /**DEBUG should fix page jump*/
   padding-right: var(--scrollbar-width);
 }
 
@@ -464,8 +460,6 @@ body.booking-open {
   font-size: var(--font-size-2xl);
   cursor: pointer;
 }
-
-
 
 /*form fields */
 .booking-form label {
@@ -490,18 +484,16 @@ body.booking-open {
   width: 100%;
   margin-top: var(--space-4);
   padding: var(--space-2) var(--space-4);
-
 }
 /*tony*/
 .booking-form-wrapper {
   max-width: 600px;
-  margin: 1rem auto;   /* lifts it off the floor + centers it */
+  margin: 1rem auto; /* lifts it off the floor + centers it */
   padding: 1rem;
   background: var(--color-surface);
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
 }
-
 
 /* end of booking form section*/
 
@@ -671,6 +663,7 @@ several pages will use the same card system so there will be more then one group
 /*slideshow container */
 .slideshow-container {
   position: relative;
+  height: auto;
   max-width: 500px;
   width: 100%;
 }
@@ -778,7 +771,8 @@ several pages will use the same card system so there will be more then one group
 
 .slideshow .main-image img {
   max-width: 600px;
-  height: 350px;
+  height: auto;
+  width: 100%;
   display: block;
   border-radius: 4px;
 }
@@ -819,20 +813,22 @@ several pages will use the same card system so there will be more then one group
   -webkit-user-select: none; /* Safari, iOS Safari */
   user-select: none;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.4);
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 3px;
   transition: background 0.3s ease;
 }
 
 .slideshow .nav:hover {
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
-.slideshow .prev { left: 0; }
-.slideshow .next { right: 0; }
+.slideshow .prev {
+  left: 0;
+}
+.slideshow .next {
+  right: 0;
+}
 /*end of slideshow gallery section*/
-
-
 
 /***DEBUG delete on final pass if not needed
 /*visually hidden (accessible)
@@ -877,7 +873,7 @@ don't make accessability look like an after thought follow the current theme
 
 .feedback-panel.open {
   /* enough for the form */
-  max-height: 500px; 
+  max-height: 500px;
   opacity: 1;
 }
 
@@ -925,7 +921,6 @@ don't make accessability look like an after thought follow the current theme
   position: relative; /* required for absolute close button */
 }
 
-
 /*end feedback form section*/
 
 /* header, navbar, dropdown section */
@@ -961,7 +956,7 @@ nav a:hover,
 /*additional styling to the link on about.html*/
 .historical-link {
   margin-bottom: var(--space-3);
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 .nav {
@@ -1198,7 +1193,7 @@ reminder use of tokens to follow/create site design
   font-size: var(--body-size-large);
 }
 
-.hero-overlay::before  {
+.hero-overlay::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -1273,18 +1268,21 @@ footer p {
   margin: var(--space-2) 0; /* or 0 if you want it tight */
 }
 
-#socialmedia, .socialmedia {
+#socialmedia,
+.socialmedia {
   margin-top: var(--space-2);
 }
 
-#socialmedia a, .socialmedia a {
+#socialmedia a,
+.socialmedia a {
   color: var(--color-accent);
   text-decoration: none;
   font-weight: var(--font-weight-medium);
   padding-right: var(--space-2);
 }
 
-#socialmedia a:hover, .socialmedia a:hover {
+#socialmedia a:hover,
+.socialmedia a:hover {
   color: var(--light-accent-hover);
 }
 
@@ -1474,7 +1472,71 @@ body {
     --header-height: var(--nav1-height);
   }
 }
+@media (max-width: 400px) {
+  .hero-gen {
+    /* Reduce height so the phone isn't zooming into the middle */
+    min-height: 40vh;
 
+    /* Keep cover, but shift the crop upward for better composition */
+    background-position: center top;
+
+    /* Slightly reduce vertical padding so text fits comfortably */
+    padding: var(--space-6) 0;
+  }
+
+  /* If you want ALL hero variants to follow the same rule */
+  .hero,
+  .hero-about,
+  .hero-shop,
+  .hero-historical,
+  .hero-activities,
+  .hero-seasonal,
+  .hero-gallery {
+    min-height: 40vh;
+    background-position: center top;
+  }
+
+  /* Typography tuning for small screens */
+  .hero h1,
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: var(--space-3);
+  }
+
+  .hero p {
+    font-size: var(--body-size);
+    margin-bottom: var(--space-4);
+  }
+
+  /* Overlay text box refinement */
+  .hero-overlay .text-wrap {
+    padding: var(--space-2) var(--space-3);
+  }
+}
+@media (max-width: 360px) {
+  #farm {
+    line-height: 1.15;
+  }
+}
 body {
   padding-top: var(--header-height);
+}
+
+@media (max-width: 360px) {
+  header {
+    padding: 0.5rem var(--space-3);
+  }
+
+  .nav-header {
+    height: auto;
+  }
+
+  body {
+    padding-top: calc(var(--nav1-height) + 1.5rem);
+  }
+  .logo {
+    width: 70px;
+    height: auto; 
+  }
 }

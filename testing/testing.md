@@ -94,32 +94,32 @@ All navigation elements must direct users to their correct destinations. This in
 
 #### Desktop Links
 
-| Link                                    | index.html  | about.html |  
-| --------------------------------------- | ----------- | ----------
-| Home                                    | [✓]        | [ ] |
-| About Us                                | [✓] | [ ] |
-| Whats On                                | [✓] | [ ] |
-| Activities                              | [✓] | [ ] |
-| Seasonal                                | [✓] | [ ] |
-| Shop & Cafe                             | [✓] | [ ] |
-| Gallery                                 | [✓] | [ ] |
-| Contact                                 | [✓] | [ ] |
-| Dark theme toggle                       | [✓] | [ ] |
-| Sign Up (newsletter)                    | [✓] | [ ] |
-| Newsletter Modal *'Cancel'*             | [✓] | [ ] |
-| Newsletter Modal *'Subscribe'*          | [✓] | [ ] |
-| Newsletter Modal 'X'                    | [✓] | [ ] |
-| Newsletter Modal *'outside page click'* | [✓] | [ ] |
-| Facebook Icon                           | [✓] | [ ] |
-| Instagram Icon                          | [✓] | [ ] |
-| Twitter / 'X' Icon                      | [✓] | [ ] |
-| YouTube Icon | [✓] | [ ] |
-| Historical Link | N/A | [ ] |
-| Leave Feedback | N/A | [ ] |
-| Feedback Form *'Cancel'* | N/A | [ ] |
-| Feedback Form *'Subscribe'* | N/A | [ ] |
-| Feedback Form 'X' | N/A | [ ] |
-| Feedback Form *'outside page click'* | N/A | [ ] |
+| Link                                    | index.html  | about.html | Historical |
+| --------------------------------------- | ----------- | -----------|------------|
+| Home                                    | [✓]         | [✓]       | [✓]        |
+| About Us                                | [✓]         | [✓]       | [✓]        |
+| Whats On                                | [✓]         | [✓]       | [✓]        |
+| Activities                              | [✓]         | [✓]       | [✓]        |
+| Seasonal                                | [✓]         | [✓]       | [✓]        |
+| Shop & Cafe                             | [✓]         | [✓]       | [✓]        |
+| Gallery                                 | [✓]         | [✓]       | [✓]        |
+| Contact                                 | [✓]         | [✓]       | [✓]        |
+| Dark theme toggle                       | [✓]         | [✓]       | [✓]        |
+| Sign Up (newsletter)                    | [✓]         | [✓]       | [✓]        |
+| Newsletter Modal *'Cancel'*             | [✓]         | [✓]       | [✓]        |
+| Newsletter Modal *'Subscribe'*          | [✓]         | [✓]       | [✓]        |
+| Newsletter Modal 'X'                    | [✓]         | [✓]       | [✓]        |
+| Newsletter Modal *'outside page click'* | [✓]         | [✓]       | [✓]        |
+| Facebook Icon                           | [✓]         | [✓]       | [✓]        |
+| Instagram Icon                          | [✓]         | [✓]       | [✓]        |
+| Twitter / 'X' Icon                      | [✓]         | [✓]       | [✓]        |
+| YouTube Icon                            | [✓]         | [✓]       | [✓]        | 
+| Historical Link                         | [ ]         | [✓]
+| Leave Feedback                          | [ ]         | [✓]
+| Feedback Form *'Cancel'*                | [ ]         | [✓]
+| Feedback Form *'Subscribe'*             | [ ]         | [✓]
+| Feedback Form 'X'                       | [ ]         | [✓]
+| Feedback Form *'outside page click'*    | [ ]         | [✓]
 
 ## Visual Acceptance Test
 
