@@ -1,14 +1,13 @@
 // ------------------------------
-// page selector (**must be first**)
+//page selector (**must be first**)
 // ------------------------------
 const page = document.body.dataset.page;
-
 // ------------------------------
-// **GLOBAL** newsletter modal
+//**GLOBAL** newsletter modal
 // ------------------------------
 let lastFocusedElement = null;
 // ------------------------------
-// Shop & Cafe slideshows
+//shop & Cafe slideshows
 // ------------------------------
 if (page === "shopandcafe") {
   createSlideshow("#slideshow1");
@@ -43,7 +42,7 @@ document.addEventListener("click", (e) => {
 });
 
 // ------------------------------
-// **GLOBAL** theme toggle
+//**GLOBAL** theme toggle
 // ------------------------------
 const toggle = document.getElementById("theme-toggle");
 const root = document.documentElement;
@@ -57,7 +56,7 @@ toggle?.addEventListener("click", () => {
 });
 
 // ------------------------------
-// **GLOBAL** mobile nav toggle
+//**GLOBAL** mobile nav toggle
 // ------------------------------
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -69,7 +68,7 @@ navToggle?.addEventListener("click", () => {
 });
 
 // ------------------------------
-// **GLOBAL** desktop dropdown menus
+//**GLOBAL** desktop dropdown menus
 // ------------------------------
 document.querySelectorAll(".dropdown > button").forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -80,29 +79,28 @@ document.querySelectorAll(".dropdown > button").forEach((btn) => {
 });
 
 // ------------------------------
-// **GLOBAL** close mobile nav on link click
+//**GLOBAL** close mobile nav on link click
 // ------------------------------
 document.querySelectorAll(".nav-links a").forEach((link) => {
   link.addEventListener("click", () => {
     navLinks?.classList.remove("nav-open");
   });
 });
-//tony//
 // ------------------------------
-// aboutus feedback form
+//aboutus feedback form
 // ------------------------------
 if (page === "about") {
   const feedbackToggle = document.querySelector(".feedback-toggle");
   const feedbackPanel = document.querySelector(".feedback-panel");
   const feedbackCancel = document.querySelector(".feedback-cancel");
 
-  // Ensure ARIA state is correct on load
+  //ensure ARIA state is correct on load
   if (feedbackPanel) {
     feedbackPanel.hidden = true;
     feedbackPanel.setAttribute("aria-hidden", "true");
   }
 
-  // Open/close panel via toggle button
+  //open/close panel via toggle button
   feedbackToggle?.addEventListener("click", () => {
     const isOpen = feedbackPanel.classList.toggle("open");
 
@@ -112,13 +110,13 @@ if (page === "about") {
     feedbackToggle.setAttribute("aria-expanded", String(isOpen));
 
     if (isOpen) {
-      // Move focus inside the panel for accessibility
+      //move focus inside the panel for accessibility
       const firstInput = feedbackPanel.querySelector("input, textarea, button");
       firstInput?.focus();
     }
   });
 
-  // Close panel via cancel button
+  //close panel via cancel button
   feedbackCancel?.addEventListener("click", () => {
     feedbackPanel.classList.remove("open");
     feedbackPanel.hidden = true;
@@ -126,12 +124,12 @@ if (page === "about") {
 
     feedbackToggle.setAttribute("aria-expanded", "false");
 
-    // Return focus to the toggle button
+    //return focus to the toggle button
     feedbackToggle?.focus();
   });
 }
 // -----------------------------
-// shop slide show
+//shop slide show
 // -----------------------------
 function createSlideshow(containerSelector) {
   const container = document.querySelector(containerSelector);
@@ -183,7 +181,7 @@ if (page === "activities" || page === "seasonal") {
   });
 
   //close booking form
-  // close booking form (X button + Cancel button)
+  //close booking form (X button + cancel button)
   document.querySelectorAll(".close-form").forEach((btn) => {
     btn.addEventListener("click", () => {
       bookingOverlay.classList.remove("active");
@@ -200,23 +198,23 @@ if (page === "activities" || page === "seasonal") {
   });
 }
 // ------------------------------
-// historical slideshow gallery
+//historical slideshow gallery
 // ------------------------------
 
-// Find every .slideshow component on the page and initialise each one
+//find every .slideshow component on the page and initialise each one
 document.querySelectorAll(".slideshow").forEach(initThumbnailSlideshow);
 
 function initThumbnailSlideshow(slideshow) {
-  // Cache all the scoped elements inside this slideshow instance
+  //cache all the scoped elements inside this slideshow instance
   const mainImage = slideshow.querySelector(".main-image img");
   const thumbs = slideshow.querySelectorAll(".thumb");
   const prev = slideshow.querySelector(".prev");
   const next = slideshow.querySelector(".next");
 
-  // Track the currently displayed image index
+  //track the currently displayed image index
   let index = 0;
 
-  // Show a specific image, optionally triggered by user interaction
+  //show a specific image, optionally triggered by user interaction
   function show(i, userTriggered = false) {
     index = (i + thumbs.length) % thumbs.length;
 
@@ -240,15 +238,15 @@ function initThumbnailSlideshow(slideshow) {
     }
   }
 
-  // Clicking a thumbnail jumps directly to that image
+  //clicking a thumbnail jumps directly to that image
   thumbs.forEach((thumb, i) => {
     thumb.addEventListener("click", () => show(i, true));
   });
 
-  // Prev/next buttons move relative to the current index
+  //prev/next buttons move relative to the current index
   prev.addEventListener("click", () => show(index - 1, true));
   next.addEventListener("click", () => show(index + 1, true));
 
-  // Initialise the slideshow with the first image (no auto-scroll)
+  //initialise the slideshow with the first image (no auto-scroll)
   show(0);
 }

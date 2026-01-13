@@ -39,11 +39,9 @@ This document ensures the site meets the expected standards for usability, acces
 <a id="index"></a>
 ### index.html
 
-#### Errors
-
-![Homepage Screenshot](validator-index-e1.png)
-
-#### Fix
+![validator](validator-index-e1.png)
+validation-err-01
+#### Fix for validation-err-01
 
 The *aria-label* attribute was removed from the \<p> element because it was unnecessary. The visible text **‘The Waltons Farm’** is already fully descriptive for screen readers, and the *W3C validator* correctly flagged that *aria-label* must not be used on a \<p>  without a special role.
 
@@ -51,13 +49,27 @@ The *aria-label* attribute was removed from the \<p> element because it was unne
 
 Pass no errors
 
-![Homepage Screenshot](validator-index.png)
+![validator](validator-index.png)
 <a id="about"></a>
 ### about.html
 
 #### Validation for about.html
 
 Pass no errors
+<a id="historical"></a>
+### historical.html
+
+![validator](validator-index-e1.png)
+validation-02 **x12**
+
+#### Fix for Error validation-err-02
+
+cut and paste error 2 role="" in the same section  
+
+\<img src="assets/images/ach1.webp" alt="burial mound" class="thumb active" role="button" tabindex="0" aria-pressed="true" role="listitem"
+>
+
+remove role="listitem"
 
 ## Navigation
 
