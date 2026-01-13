@@ -96,14 +96,38 @@ if (page === "about") {
   const feedbackPanel = document.querySelector(".feedback-panel");
   const feedbackCancel = document.querySelector(".feedback-cancel");
 
+  // Ensure ARIA state is correct on load
+  if (feedbackPanel) {
+    feedbackPanel.hidden = true;
+    feedbackPanel.setAttribute("aria-hidden", "true");
+  }
+
+  // Open/close panel via toggle button
   feedbackToggle?.addEventListener("click", () => {
-    feedbackPanel.classList.toggle("open");
-    feedbackPanel.hidden = !feedbackPanel.classList.contains("open");
+    const isOpen = feedbackPanel.classList.toggle("open");
+
+    feedbackPanel.hidden = !isOpen;
+    feedbackPanel.setAttribute("aria-hidden", String(!isOpen));
+
+    feedbackToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen) {
+      // Move focus inside the panel for accessibility
+      const firstInput = feedbackPanel.querySelector("input, textarea, button");
+      firstInput?.focus();
+    }
   });
 
+  // Close panel via cancel button
   feedbackCancel?.addEventListener("click", () => {
     feedbackPanel.classList.remove("open");
     feedbackPanel.hidden = true;
+    feedbackPanel.setAttribute("aria-hidden", "true");
+
+    feedbackToggle.setAttribute("aria-expanded", "false");
+
+    // Return focus to the toggle button
+    feedbackToggle?.focus();
   });
 }
 // -----------------------------
@@ -159,15 +183,13 @@ if (page === "activities" || page === "seasonal") {
   });
 
   //close booking form
-// close booking form (X button + Cancel button)
-document.querySelectorAll(".close-form").forEach(btn => {
-  btn.addEventListener("click", () => {
-    bookingOverlay.classList.remove("active");
-    document.body.classList.remove("booking-open");
+  // close booking form (X button + Cancel button)
+  document.querySelectorAll(".close-form").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      bookingOverlay.classList.remove("active");
+      document.body.classList.remove("booking-open");
+    });
   });
-});
-
-
 
   //close when clicking outside the form
   bookingOverlay?.addEventListener("click", (e) => {
@@ -197,12 +219,18 @@ function initThumbnailSlideshow(slideshow) {
   // Show a specific image, optionally triggered by user interaction
   function show(i, userTriggered = false) {
     index = (i + thumbs.length) % thumbs.length;
+
     mainImage.src = thumbs[index].src;
+    mainImage.alt = thumbs[index].alt; // keep alt text in sync
 
-    thumbs.forEach((t) => t.classList.remove("active"));
+    thumbs.forEach((t, idx) => {
+      t.classList.remove("active");
+      t.setAttribute("aria-pressed", "false");
+    });
+
     thumbs[index].classList.add("active");
+    thumbs[index].setAttribute("aria-pressed", "true");
 
-    // Only auto-scroll thumbnails when the user interacts
     if (userTriggered) {
       thumbs[index].scrollIntoView({
         behavior: "smooth",

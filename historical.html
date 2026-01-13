@@ -99,63 +99,114 @@ This ensures the correct data-theme is active on first paint
       <div class="grid grid-2">
 
 <div class="slideshow" data-slideshow="achievements" role="region" aria-label="Historical site slideshow">
-
-  <!-- main image -->
   <div class="main-image">
-    <img src="assets/images/ach1.webp" alt="Burial mound" id="slideshow-main-image">
+    <img src="assets/images/ach1.webp" alt="burial mound">
   </div>
 
-  <!-- Thumbnails -->
   <div class="thumbnails" role="list">
-    <button class="thumb active" role="listitem" aria-label="Show image: burial mound" data-image="assets/images/ach1.webp">
-      <img src="assets/images/ach1.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: ancient wall ruins" data-image="assets/images/ach2.webp">
-      <img src="assets/images/ach2.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: aerial view of ruined castle" data-image="assets/images/ach3.webp">
-      <img src="assets/images/ach3.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: medieval stone ring" data-image="assets/images/ach4.webp">
-      <img src="assets/images/ach4.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: archaeologist tools" data-image="assets/images/ach5.webp">
-      <img src="assets/images/ach5.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: ruined castle" data-image="assets/images/ach6.webp">
-      <img src="assets/images/ach6.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: ancient wall" data-image="assets/images/ach7.webp">
-      <img src="assets/images/ach7.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: archaeologist working in excavation pit" data-image="assets/images/ach10.webp">
-      <img src="assets/images/ach10.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: burial mound in field" data-image="assets/images/ach11.webp">
-      <img src="assets/images/ach11.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: ancient stone wall in field" data-image="assets/images/ach12.webp">
-      <img src="assets/images/ach12.webp" alt="">
-    </button>
-
-    <button class="thumb" role="listitem" aria-label="Show image: archaeologist using trowel" data-image="assets/images/ach13.webp">
-      <img src="assets/images/ach13.webp" alt="">
-    </button>
+    <img
+      src="assets/images/ach1.webp"
+      alt="burial mound"
+      class="thumb active"
+      role="button"
+      tabindex="0"
+      aria-pressed="true"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach2.webp"
+      alt="part of an ancient wall ruins"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach3.webp"
+      alt="aerial view of ruined castle"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach4.webp"
+      alt="medieval stone ring"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach5.webp"
+      alt="archaeologist tools"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach6.webp"
+      alt="ruined castle"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach7.webp"
+      alt="ancient wall"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach10.webp"
+      alt="archaeologist working in a hole"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach11.webp"
+      alt="burial mound in a field"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach12.webp"
+      alt="ancient stone wall in field"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
+    <img
+      src="assets/images/ach13.webp"
+      alt="archaeologist working with a trowel"
+      class="thumb"
+      role="button"
+      tabindex="0"
+      aria-pressed="false"
+      role="listitem"
+    >
   </div>
 
-  <!-- navigation -->
-  <button class="nav prev" aria-label="Previous slide">&#10094;</button>
-  <button class="nav next" aria-label="Next slide">&#10095;</button>
-
+  <a class="nav prev" aria-label="Previous slide" role="button" tabindex="0">&#10094;</a>
+  <a class="nav next" aria-label="Next slide" role="button" tabindex="0">&#10095;</a>
 </div>
 
       </div>
