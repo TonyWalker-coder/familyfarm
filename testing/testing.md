@@ -20,6 +20,7 @@ This document ensures the site meets the expected standards for usability, acces
 - [Validation](#validation)
 - [Markup Validation](#markup-validation)
   - [index.html](#index)
+  - [ about.html](#about)
 - [Navigation](#navigation)
   - [Desktop Links](#desktop-links)
 - [Visual Acceptance Test](#visual-acceptance-test)
@@ -35,8 +36,8 @@ This document ensures the site meets the expected standards for usability, acces
 - Confirm no unused or broken attributes
 
 ## Markup Validation
-
-### index
+<a id="index"></a>
+### index.html
 
 #### Errors
 
@@ -46,9 +47,17 @@ This document ensures the site meets the expected standards for usability, acces
 
 The *aria-label* attribute was removed from the \<p> element because it was unnecessary. The visible text **‘The Waltons Farm’** is already fully descriptive for screen readers, and the *W3C validator* correctly flagged that *aria-label* must not be used on a \<p>  without a special role.
 
-#### Final Validation
+#### Validation for index.html
+
+Pass no errors
 
 ![Homepage Screenshot](validator-index.png)
+<a id="about"></a>
+### about.html
+
+#### Validation for about.html
+
+Pass no errors
 
 ## Navigation
 
