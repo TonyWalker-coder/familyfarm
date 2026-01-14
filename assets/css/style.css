@@ -1533,10 +1533,25 @@ body {
   }
 
   body {
-    padding-top: calc(var(--nav1-height) + 1.5rem);
+    padding-top: calc(var(--nav1-height) + 3.5rem);
   }
   .logo {
     width: 70px;
     height: auto; 
+    color:greenyellow;
+
+  }
+  .about-card__image-wrapper{
+    position: absolute;
+    top: -105px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: auto;
+    border-radius: var(--radius-xl-responsive);
+    overflow: hidden;
+    border: 6px solid var(--color-surface);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+    margin-top: 30px;
   }
 }
