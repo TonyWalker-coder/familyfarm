@@ -1483,19 +1483,51 @@ body {
     --header-height: var(--nav1-height);
   }
 }
+
+body {
+  padding-top: var(--header-height);
+}
+
+@media (max-width: 400px) {
+  
+  header {
+    padding: 1.5rem var(--space-3);
+  }
+
+  .nav-header {
+    height: auto;
+  }
+
+  body {
+    padding-top: calc(var(--nav1-height) + 3.5rem);
+  }
+
+  .about-card__image-wrapper{
+    position: absolute;
+    top: -105px;
+    left: 50%;
+    width: 220px;
+    height: auto;
+  }
+
+  #farm {
+    line-height: 1.15;
+  }
+
+}
 @media (max-width: 400px) {
   .hero-gen {
-    /* Reduce height so the phone isn't zooming into the middle */
+    /*reduce height so the phone isn't zooming into the middle */
     min-height: 40vh;
 
-    /* Keep cover, but shift the crop upward for better composition */
+    /*keep cover, but shift the crop upward for better composition */
     background-position: center top;
 
-    /* Slightly reduce vertical padding so text fits comfortably */
+    /*slightly reduce vertical padding so text fits comfortably */
     padding: var(--space-6) 0;
   }
 
-  /* If you want ALL hero variants to follow the same rule */
+  /*all hero variants to follow the same rule */
   .hero,
   .hero-about,
   .hero-shop,
@@ -1524,51 +1556,4 @@ body {
   .hero-overlay .text-wrap {
     padding: var(--space-2) var(--space-3);
   }
-}
-@media (max-width: 400px) {
-  #farm {
-    line-height: 1.15;
-  }
-}
-body {
-  padding-top: var(--header-height);
-}
-
-@media (max-width: 400px) {
-  header {
-    padding: 1.5rem var(--space-3);
-  }
-
-  .nav-header {
-    height: auto;
-  }
-
-  body {
-    padding-top: calc(var(--nav1-height) + 3.5rem);
-  }
-  .logo {
-    width: 70px;
-    height: auto; 
-    color:greenyellow;
-
-  }
-  .about-card__image-wrapper{
-    position: absolute;
-    top: -105px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    height: auto;
-    border-radius: var(--radius-xl-responsive);
-    overflow: hidden;
-    border: 6px solid var(--color-surface);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
-    margin-top: 30px;
-  }
-
-  body {
-    border: 4px solid greenyellow;
-  }
-
-
 }
