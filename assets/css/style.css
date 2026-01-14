@@ -1525,7 +1525,7 @@ body {
     padding: var(--space-2) var(--space-3);
   }
 }
-@media (max-width: 360px) {
+@media (max-width: 400px) {
   #farm {
     line-height: 1.15;
   }
@@ -1534,7 +1534,7 @@ body {
   padding-top: var(--header-height);
 }
 
-@media (max-width: 360px) {
+@media (max-width: 400px) {
   header {
     padding: 1.5rem var(--space-3);
   }
