@@ -35,6 +35,12 @@
 root tokens — colours, typography, spacing, radii etc
 */
 :root {
+  --build-version: "v0.0.23";
+
+
+
+
+
   /* Typography
 
 Create semantic tokens (--font-heading , --font-body )
@@ -160,6 +166,11 @@ the site will also include a toggle switch
   --color-button-dark: #34465a;
   --color-button-text: #e0d2b8;
   --color-button-hover-dark: #526479;
+}
+footer.version::after {
+  content: var(--build-version);
+  font-size: 10px;
+  opacity: 0.4;
 }
 /*layout Container 
 keep all containers looking clean and centered
