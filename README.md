@@ -247,7 +247,7 @@ All design decisions, colour palettes, and wireframes can be found here:
 └── 📁familyfarm
     └── 📁assets
         └── 📁css
-            ├── style.css
+            └── style.css
         └── 📁favicon
         └── 📁fonts
         └── 📁gallery
