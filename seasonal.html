@@ -110,12 +110,11 @@ This ensures the correct data-theme is active on first paint
             all have personality. Fresh air, muddy boots, and that “I found it!” moment make it a proper autumn day out.
             Take your pumpkin home for carving, decorating, or proudly guarding the doorstep for Halloween.
           </p>
-          <img src="assets/images/sea4.webp" alt="two children having a ride on the back of a tractor"
-            fetchpriority="high" class="overlay-image">
+          <img src="assets/images/sea4.webp" alt="" fetchpriority="high" class="overlay-image">
         </div>
 
         <div class="card">
-          <img src="assets/images/sea6.webp" fetchpriority="high" alt="happy child riding a child size tractor">
+          <img src="assets/images/sea6.webp" fetchpriority="high" alt="smiling girls with a pumpkin and doll">
         </div>
 
 
@@ -123,7 +122,7 @@ This ensures the correct data-theme is active on first paint
       <div class="grid grid-2">
 
         <div class="card">
-          <img src="assets/images/sea11.webp" fetchpriority="high" alt="market stall with all sorts of goods for sale">
+          <img src="assets/images/sea11.webp" fetchpriority="high" alt="fresh local produce for sale">
         </div>
 
         <div class="card overlay-card">
@@ -132,8 +131,7 @@ This ensures the correct data-theme is active on first paint
             place. Fresh produce, homemade treats, seasonal crafts, and the kind of conversations you only get when you
             meet the people who actually grow your food. It’s a relaxed, friendly day out where the community comes
             together, kids explore, and everyone goes home with something good in their basket.</p>
-          <img src="assets/images/sea10.webp" fetchpriority="high" alt="man inspecting the goods on a market stall"
-            class="overlay-image">
+          <img src="assets/images/sea10.webp" fetchpriority="high" alt="" class="overlay-image">
         </div>
 
 
@@ -146,12 +144,11 @@ This ensures the correct data-theme is active on first paint
             good food drifting through the air. Kids get the thrills, grown‑ups get the nostalgia, and everyone stays
             for the live music and fireworks as the sun goes down. It’s loud, lively, and the closest thing to a proper
             village show you’ll find</p>
-          <img src="assets/images/sea21.webp" alt="stoat standing on some logs for a vantage point"
-            class="overlay-image">
+          <img src="assets/images/sea21.webp" alt="" class="overlay-image">
         </div>
 
         <div class="card">
-          <img src="assets/images/sea20.webp" fetchpriority="high" alt="barn owl looking out a hole in a brick wall">
+          <img src="assets/images/sea20.webp" fetchpriority="high" alt="girl on a vintage fair ride">
         </div>
 
 
@@ -159,7 +156,7 @@ This ensures the correct data-theme is active on first paint
       <div class="grid grid-2">
 
         <div class="card">
-          <img src="assets/images/sea31.webp" fetchpriority="high" alt="market stall with all sorts of goods for sale">
+          <img src="assets/images/sea31.webp" fetchpriority="high" alt="couple inspecting a christmas tree">
         </div>
 
         <div class="card overlay-card">
@@ -168,8 +165,7 @@ This ensures the correct data-theme is active on first paint
             and the smell of chestnuts roasting in the cold air. Pick and cut your own tree straight from the field,
             then enjoy a hot drink while the kids explore the stalls and lights. It’s relaxed, cheerful, and everything
             you want from a countryside Christmas — simple, cosy, and full of that proper festive feeling.</p>
-          <img src="assets/images/sea30.webp" fetchpriority="high" alt="man inspecting the goods on a market stall"
-            class="overlay-image">
+          <img src="assets/images/sea30.webp" fetchpriority="high" alt="" class="overlay-image">
         </div>
 
 
@@ -181,11 +177,10 @@ This ensures the correct data-theme is active on first paint
     <!-- Booking Form Overlay -->
     <div class="booking-overlay" id="bookingOverlay">
       <div class="booking-form-wrapper">
-        <div class="booking-form ">
+        <div class="booking-form" role="dialog" aria-modal="true" aria-labelledby="booking-title">
           <button type="button" class="close-button close-form" id="closeBooking">×</button>
 
-          <h3>Book Your Visit</h3>
-
+          <h3 id="booking-title">Book Your Visit</h3>
 
           <form action="https://formdump.codeinstitute.net/" method="POST">
             <label>
@@ -227,7 +222,7 @@ This ensures the correct data-theme is active on first paint
             </label>
 
             <label>
-              Additional Notes (optional)
+              Additional Notes <span aria-hidden="true">(optional)</span>
               <textarea rows="3" id="txt" name="txt"></textarea>
             </label>
 
@@ -240,7 +235,7 @@ This ensures the correct data-theme is active on first paint
       </div>
     </div>
     <!-- Footer -->
-<!-- Footer -->
+    <!-- Footer -->
     <footer id="footer">
       <div class="grid grid-3">
         <div class="text-center">
