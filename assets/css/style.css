@@ -1525,7 +1525,7 @@ body {
 
 @media (max-width: 360px) {
   header {
-    padding: 0.5rem var(--space-3);
+    padding: 1.5rem var(--space-3);
   }
 
   .nav-header {
