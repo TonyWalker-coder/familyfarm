@@ -20,7 +20,10 @@ This document ensures the site meets the expected standards for usability, acces
 - [Validation](#validation)
 - [Markup Validation](#markup-validation)
   - [index.html](#index)
-  - [ about.html](#about)
+  - [about.html](#about)
+  - [historical.html](#historical)
+  - [activities.html](#activities)
+  - [seasonal.html](#seasonal)
 - [Navigation](#navigation)
   - [Desktop Links](#desktop-links)
 - [Visual Acceptance Test](#visual-acceptance-test)
@@ -38,27 +41,36 @@ This document ensures the site meets the expected standards for usability, acces
 - Confirm no unused or broken attributes
 
 ## Markup Validation
+
 <a id="index"></a>
+
 ### index.html
 
 ![validator](validator-index-e1.png)
+
 validation-err-01
+
 #### Fix for validation-err-01
 
 The *aria-label* attribute was removed from the \<p> element because it was unnecessary. The visible text **‘The Waltons Farm’** is already fully descriptive for screen readers, and the *W3C validator* correctly flagged that *aria-label* must not be used on a \<p>  without a special role.
 
 #### Final Validation for index.html
 
-Pass no errors
+<span style="color: green;">Pass no errors</span>
+
 
 ![validator](validator-index.png)
+
 <a id="about"></a>
+
 ### about.html
 
 #### Validation for about.html
 
-Pass no errors
+<span style="color: green;">Pass no errors</span>
+
 <a id="historical"></a>
+
 ### historical.html
 
 ![validator](validator-index-e1.png)
@@ -66,7 +78,7 @@ validation-02 **x12**
 
 #### Fix for Error validation-err-02
 
-cut and paste error 2 role="" in the same section  
+cut and paste error 2 x role="" in the same element  
 
 \<img src="assets/images/ach1.webp" alt="burial mound" class="thumb active" role="button" tabindex="0" aria-pressed="true" role="listitem"
 >
@@ -75,7 +87,21 @@ remove role="listitem"
 
 #### Final Validation for historical.html
 
-Pass no errors
+<span style="color: green;">Pass no errors</span>
+
+<a id="activities"></a>
+### activities.html
+
+#### Validation for activities.html
+
+<span style="color: green;">Pass no errors</span>
+
+<a id="seasonal"></a>
+### seasonal.html
+
+#### Validation for seasonal.html
+
+<span style="color: green;">Pass no errors</span>
 
 ## Chrome Lighthouse
 
@@ -95,32 +121,37 @@ All navigation elements must direct users to their correct destinations. This in
 
 #### Desktop Links
 
-| Link                                    | index.html  | about.html | Historical |
-| --------------------------------------- | ----------- | -----------|------------|
-| Home                                    | [✓]         | [✓]       | [✓]        |
-| About Us                                | [✓]         | [✓]       | [✓]        |
-| Whats On                                | [✓]         | [✓]       | [✓]        |
-| Activities                              | [✓]         | [✓]       | [✓]        |
-| Seasonal                                | [✓]         | [✓]       | [✓]        |
-| Shop & Cafe                             | [✓]         | [✓]       | [✓]        |
-| Gallery                                 | [✓]         | [✓]       | [✓]        |
-| Contact                                 | [✓]         | [✓]       | [✓]        |
-| Dark theme toggle                       | [✓]         | [✓]       | [✓]        |
-| Sign Up (newsletter)                    | [✓]         | [✓]       | [✓]        |
-| Newsletter Modal *'Cancel'*             | [✓]         | [✓]       | [✓]        |
-| Newsletter Modal *'Subscribe'*          | [✓]         | [✓]       | [✓]        |
-| Newsletter Modal 'X'                    | [✓]         | [✓]       | [✓]        |
-| Newsletter Modal *'outside page click'* | [✓]         | [✓]       | [✓]        |
-| Facebook Icon                           | [✓]         | [✓]       | [✓]        |
-| Instagram Icon                          | [✓]         | [✓]       | [✓]        |
-| Twitter / 'X' Icon                      | [✓]         | [✓]       | [✓]        |
-| YouTube Icon                            | [✓]         | [✓]       | [✓]        | 
-| Historical Link                         | [ ]         | [✓]
-| Leave Feedback                          | [ ]         | [✓]
-| Feedback Form *'Cancel'*                | [ ]         | [✓]
-| Feedback Form *'Subscribe'*             | [ ]         | [✓]
-| Feedback Form 'X'                       | [ ]         | [✓]
-| Feedback Form *'outside page click'*    | [ ]         | [✓]
+| **Link**            | **Index** | **About** | **Activities** | **Seasonal** | **Shop** | **Gallery** | **Historical** |
+|---------------------|-----------|-----------|----------------|--------------|----------|-------------|----------------|
+| Home                                    | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| About Us                                | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Whats On                                | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Activities                              | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Seasonal                                | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Shop & Cafe                             | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Gallery                                 | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Contact                                 | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Dark theme toggle                       | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Sign Up (newsletter)                    | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Newsletter Modal *'Cancel'*             | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Newsletter Modal *'Subscribe'*          | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Newsletter Modal 'X'                    | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Newsletter Modal *'outside page click'* | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Facebook Icon                           | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Instagram Icon                          | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Twitter / 'X' Icon                      | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| YouTube Icon                            | [✓] | [✓] | [✓] | [✓] | [✓] | [✓] | [✓]
+| Historical Link                         | [N/A] | [✓] | [N/A] | [N/A] | [N/A] | [N/A] | [N/A]
+| Leave Feedback                          | [N/A] | [✓] | [N/A] | [N/A] | [N/A] | [N/A] | [N/A]
+| Feedback Form *'Cancel'*                | [N/A] | [✓] | [N/A] | [N/A] | [N/A] | [N/A] | [N/A]
+| Feedback Form *'Subscribe'*             | [N/A] | [✓] | [N/A] | [N/A] | [N/A] | [N/A] | [N/A]
+| Feedback Form 'X'                       | [N/A] | [✓] | [N/A] | [N/A] | [N/A] | [N/A] | [N/A]
+| Feedback Form *'outside page click'*    | [N/A] | [✓] | [N/A] | [N/A] | [N/A] | [N/A] | [N/A]
+| Booking Form                            | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
+| Booking Form *'Cancel'*                 | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
+| Booking Form *'Subscribe'*              | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
+| Booking Form 'X'                        | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
+| Booking Form *'outside page click'*     | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
 
 ## Visual Acceptance Test
 
