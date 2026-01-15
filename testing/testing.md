@@ -24,6 +24,8 @@ This document ensures the site meets the expected standards for usability, acces
   - [historical.html](#historical)
   - [activities.html](#activities)
   - [seasonal.html](#seasonal)
+  - [shopandcafe.html](#shopandcafe)
+  - [gallery.html](#gallery)
 - [Navigation](#navigation)
   - [Desktop Links](#desktop-links)
 - [Visual Acceptance Test](#visual-acceptance-test)
@@ -103,6 +105,20 @@ remove role="listitem"
 
 <span style="color: green;">Pass no errors</span>
 
+<a id="shopandcafe"></a>
+### shopandcafe.html
+
+#### Validation for shopandcafe.html
+
+<span style="color: green;">Pass no errors</span>
+
+<a id="gallery"></a>
+### gallery.html
+
+#### Validation for gallery.html
+
+<span style="color: green;">not tested</span>
+
 ## Chrome Lighthouse
 
 Lighthouse audits are run at key milestones to confirm that performance, accessibility standards remain stable.
@@ -152,6 +168,7 @@ All navigation elements must direct users to their correct destinations. This in
 | Booking Form *'Subscribe'*              | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
 | Booking Form 'X'                        | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
 | Booking Form *'outside page click'*     | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
+| Slide show operation                    | [N/A] | [N/A] | [N/A] | [N/A] | [N/A] | [✓] | [N/A]
 
 ## Visual Acceptance Test
 

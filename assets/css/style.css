@@ -35,7 +35,6 @@
 root tokens — colours, typography, spacing, radii etc
 */
 :root {
-  --build-version: "v0.0.23";
 
 
 
@@ -167,11 +166,7 @@ the site will also include a toggle switch
   --color-button-text: #e0d2b8;
   --color-button-hover-dark: #526479;
 }
-footer.version::after {
-  content: var(--build-version);
-  font-size: 10px;
-  opacity: 0.4;
-}
+
 /*layout Container 
 keep all containers looking clean and centered
 */
@@ -1150,8 +1145,8 @@ nav a:hover,
 :root[data-theme="dark"] #theme-icon {
   content: url("../svg/lightmode.svg");
 }
-
-/*make logo responsive */
+/***debug  may be redundant**/
+/*make logo responsive 
 #logo img {
   height: auto;
   width: 50px;
@@ -1159,7 +1154,7 @@ nav a:hover,
   vertical-align: middle;
   position: relative;
   top: -6px;
-}
+}*/
 .logo {
   width: 50px;
   height: auto;
