@@ -117,7 +117,7 @@ remove role="listitem"
 
 #### Validation for gallery.html
 
-<span style="color: green;">not tested</span>
+<span style="color: green;">Pass no errors</span>
 
 ## Chrome Lighthouse
 
@@ -168,7 +168,11 @@ All navigation elements must direct users to their correct destinations. This in
 | Booking Form *'Subscribe'*              | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
 | Booking Form 'X'                        | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
 | Booking Form *'outside page click'*     | [N/A] | [N/A] | [✓] | [✓] | [N/A] | [N/A] | [N/A]
-| Slide show operation                    | [N/A] | [N/A] | [N/A] | [N/A] | [N/A] | [✓] | [N/A]
+| Slide show operation                    | [N/A] | [N/A] | [N/A] | [N/A] | [✓] | [N/A] | [✓]
+
+| Device              | **open** | **close** | **navigation** |
+|---------------------|----------|-----------|----------------|
+| Mobile (hamburger)  | [✓] | [✓] | [✓] |
 
 ## Visual Acceptance Test
 
