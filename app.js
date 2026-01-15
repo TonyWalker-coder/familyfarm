@@ -129,7 +129,7 @@ if (page === "about") {
   });
 }
 // -----------------------------
-//shop slide show
+// Shop slide show
 // -----------------------------
 function createSlideshow(containerSelector) {
   const container = document.querySelector(containerSelector);
@@ -150,12 +150,13 @@ function createSlideshow(containerSelector) {
     dots[index - 1].classList.add("active");
   }
 
+  // Corrected directions
   container.querySelector(".prev")?.addEventListener("click", () => {
-    show((index += 1));
+    show((index -= 1));
   });
 
   container.querySelector(".next")?.addEventListener("click", () => {
-    show((index -= 1));
+    show((index += 1));
   });
 
   dots.forEach((dot, i) => {
@@ -166,6 +167,12 @@ function createSlideshow(containerSelector) {
 
   show(index);
 }
+
+//initialise all slideshows
+createSlideshow("#slideshow1");
+createSlideshow("#slideshow2");
+createSlideshow("#slideshow3");
+
 // ------------------------------
 //activities booking form toggle
 // ------------------------------

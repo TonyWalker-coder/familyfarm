@@ -728,21 +728,46 @@ several pages will use the same card system so there will be more then one group
   margin-top: 10px;
 }
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  width: 1rem;
+  height: 1rem;
   border-radius: 50%;
+  background: #bbb;
+  border: none;
+  padding: 0;
+  margin: 10px 4px;
+  cursor: pointer;
   display: inline-block;
-  transition: background-color 0.6s ease;
-  text-align: center;
 }
 
-.slideshow-container .dot.active,
-.slideshow-container .dot:hover {
-  background-color: #717171;
+.dot.active {
+  background: #717171;
 }
+.slideshow-container .dot {
+  padding: 0 !important;
+}
+.slideshow-container .prev,
+.slideshow-container .next {
+  background: none;      
+  border: none;           
+  padding: 0;              
+  cursor: pointer;       
+  font-size: 2rem;         
+  color: inherit;        
+  line-height: 1;          
+}
+
+.slideshow-container .prev:focus,
+.slideshow-container .next:focus {
+  outline: 2px solid #333; 
+  outline-offset: 4px;
+}
+.slideshow-container .prev:hover,
+.slideshow-container .next:hover {
+  background-color: black;
+}
+
+
+
 
 /*fading animation */
 .fade {
