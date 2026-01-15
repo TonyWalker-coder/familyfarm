@@ -236,7 +236,7 @@ The idea behind this colour palette
 
 ## Light/Dark Theme Design Note
 
-The site uses a modern light/dark theme system built around CSS custom properties. Theme selection is primarily OS‑driven via **prefers-color-scheme,** ensuring the UI automatically matches the user’s system preference. A manual toggle switch will also be provided for users who want explicit control, overriding the OS setting when activated. All colors, surfaces, accents, and interactive states are defined through design tokens, so both themes remain visually consistent and easy to maintain.
+The site uses a modern light/dark theme system built around CSS custom properties. Theme selection is primarily OS‑driven via **prefers-color-scheme,** on first load ensuring the UI automatically matches the user’s system preference. A manual toggle switch will also be provided for users who want explicit control, overriding the OS setting when activated. All colors, surfaces, accents, and interactive states are defined through design tokens, so both themes remain visually consistent and easy to maintain.
 
 ## Logo Attribution
 
