@@ -26,14 +26,17 @@ This document ensures the site meets the expected standards for usability, acces
   - [seasonal.html](#seasonal)
   - [shopandcafe.html](#shopandcafe)
   - [gallery.html](#gallery)
+- [Chrome Lighthouse Stats](#chrome-lighthouse)
 - [Navigation](#navigation)
   - [Desktop Links](#desktop-links)
 - [Visual Acceptance Test](#visual-acceptance-test)
   - [Objective,Scope](#objective)
   - [Scope](#scope)
   - [Combined Visual Acceptance Matrix](#desktop-matrix)
-  - [Mobile and Bootstrap xs Breakpoint](#bsxs)
-- [Chrome Lighthouse Stats](#chrome-lighthouse)
+- [Visual Observation](#observation)
+  - [Form State After Submission](#vo1)
+  - [Mobile and Bootstrap xs Breakpoint](#vo2)
+
 
 ## Validation
 
@@ -251,9 +254,18 @@ Pass/Fail Criteria
 |                               | Mobile       | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ | ☐ |
 
 
+<a id="observation"></a>
+
+## <span style="color: red;">Visual Observations</span>
+
+<a id="vo1"></a>
+
+### Form State After Submission
 
 The form was tested using the Code Institute formdump endpoint, which returns a simple POST‑echo page showing the submitted field names and values. Because the endpoint does not redirect or reload the original form, using the browser’s Back button returns to the form exactly as it was before submission, with all fields still populated. This is expected behaviour for a non‑redirecting POST test service and should not be interpreted as an error.
-<a id="bsxs"></a>
-## Mobile and Bootstrap xs Breakpoint
+
+<a id="vo2"></a>
+
+### Mobile and Bootstrap xs Breakpoint
 
 After reviewing the layout on an actual mobile device, it became clear that Bootstrap’s default breakpoints weren’t accurately reflecting real‑world behaviour. The issue was amplified by the fact that DevTools emulation, while useful as a rough guide, failed to reproduce the true viewport dimensions and rendering quirks of the physical screen. Once the design was tested on a real handset, the mismatch became obvious, and a more realistic breakpoint was introduced at 400px to align the layout with how users actually experience the interface.
