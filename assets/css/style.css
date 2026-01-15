@@ -35,23 +35,18 @@
 root tokens — colours, typography, spacing, radii etc
 */
 :root {
+  /*typography
 
-
-
-
-
-  /* Typography
-
-Create semantic tokens (--font-heading , --font-body )
-Components will use these tokens, to change fonts later, so they only get updated here
+create semantic tokens (--font-heading , --font-body )
+components will use these tokens, to change fonts etc later they only get updated here
 
 */
   --font-heading: "Bree Serif", serif;
   --font-body: "Inter", sans-serif;
 
-  /* Typography Scale 
-A consistent scale and a predictable spacing between text
-A single source for all typography
+  /* typography scale 
+consistent scale and a predictable spacing between text
+single source for all typography
 */
 
   --font-size-xs: 0.75rem; /* 12px */
@@ -61,7 +56,7 @@ A single source for all typography
   --font-size-xl: 1.5rem; /* 24px */
   --font-size-2xl: 2rem; /* 32px */
   --font-size-3xl: 3rem; /* 48px */
-  /*A unitless line-height means it multiplies the element’s font size so font size x unit*/
+  /*a unitless line-height means it multiplies the element’s font size so font size x value */
   --line-height-tight: 1.1;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.7;
@@ -74,7 +69,7 @@ A single source for all typography
   --heading-weight: var(--font-weight-regular);
   --heading-font: var(--font-heading);
 
-  /* body Text Tokens
+  /* body text tokens
 fix text sizing here 
 */
   --body-font: var(--font-body);
@@ -163,11 +158,11 @@ the site will also include a toggle switch
 
   /***debug may be surplus***/
   --color-button-dark: #34465a;
-  --color-button-text: #e0d2b8;
+  --colo-heading-text-dark: #e0d2b8;
   --color-button-hover-dark: #526479;
 }
 
-/*layout Container 
+/*layout container 
 keep all containers looking clean and centered
 */
 .container {
@@ -195,7 +190,7 @@ simple consistent size across the site
   padding-bottom: var(--space-4);
 }
 
-/*text Alignment */
+/*text alignment */
 .text-center {
   text-align: center;
 }
@@ -291,19 +286,27 @@ button:hover {
   background-color: var(--color-button);
   color: var(--color-heading);
   border-color: var(--color-border);
+
+  border: 1px solid var(--color-text);
 }
 :root[data-theme="dark"] .btn-secondary {
   background-color: transparent;
   border-color: var(--color-border);
   color: var(--color-text);
+
+  border: 1px solid var(--color-text);
 }
 
 :root[data-theme="dark"] button:hover,
 :root[data-theme="dark"] .btn-primary:hover {
   background-color: var(--color-button-hover-dark);
+
+  border: 1px solid var(--color-text);
 }
 :root[data-theme="dark"] .btn-secondary:hover {
   background-color: var(--color-surface-hover);
+
+  border: 1px solid var(--color-text);
 }
 
 /*feedback button contrast clash*/
@@ -314,7 +317,7 @@ button:hover {
   border: 1px solid var(--color-heading);
 }
 
-/* Make <button> visually match nav <a> links */
+/* make <button> visually match nav <a> links */
 .link-button {
   background: none;
   border: none;
@@ -343,10 +346,7 @@ button:hover {
 
 /*end of button section*/
 
-/*form Inputs section
-
-**DEBUG this was moved from lower down lets make sure we have not caused a cascade collapse
-
+/*form inputs section
 forms designed to look like they are part of the same design using predefined tokens
 */
 input,
@@ -452,7 +452,6 @@ label {
 body.booking-open {
   overflow: hidden;
   height: 100%;
-  /**DEBUG should fix page jump*/
   padding-right: var(--scrollbar-width);
 }
 
@@ -708,7 +707,7 @@ several pages will use the same card system so there will be more then one group
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+/* on hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -742,27 +741,24 @@ several pages will use the same card system so there will be more then one group
 }
 .slideshow-container .prev,
 .slideshow-container .next {
-  background: none;      
-  border: none;           
-  padding: 0;              
-  cursor: pointer;       
-  font-size: 2rem;         
-  color: inherit;        
-  line-height: 1;          
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  color: inherit;
+  line-height: 1;
 }
 
 .slideshow-container .prev:focus,
 .slideshow-container .next:focus {
-  outline: 2px solid #333; 
+  outline: 2px solid #333;
   outline-offset: 4px;
 }
 .slideshow-container .prev:hover,
 .slideshow-container .next:hover {
   background-color: black;
 }
-
-
-
 
 /*fading animation */
 .fade {
@@ -865,7 +861,7 @@ several pages will use the same card system so there will be more then one group
 /*visually hidden (accessible)
 this hides content visually but keeps it available to screen readers,
 don't make accessability look like an after thought follow the current theme
-*/
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -876,7 +872,7 @@ don't make accessability look like an after thought follow the current theme
   clip: rect(0 0 0 0);
   white-space: nowrap;
   border: 0;
-}
+}*/
 
 /*feedback form */
 .feedback-toggle {
@@ -1060,7 +1056,7 @@ nav a:hover,
   flex-shrink: 0;
   margin-right: var(--space-4);
 }
-/* Icon */
+/* icon */
 #theme-toggle img {
   width: 35px;
   height: 35px;
@@ -1128,12 +1124,6 @@ nav a:hover,
   pointer-events: none;
   transition: opacity 0.15s ease, transform 0.15s ease;
 }
-/****DEBUG  no longer needed
-/*.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}*/
 
 .dropdown-menu a {
   display: block;
@@ -1171,7 +1161,7 @@ nav a:hover,
 }
 /*end of header navbar and utils section*/
 
-/*hero Section
+/*hero section
 reminder use of tokens to follow/create site design
 */
 .hero-gen {
@@ -1241,6 +1231,11 @@ reminder use of tokens to follow/create site design
   background: rgba(0, 0, 0, 0.1); /* tweak as needed */
   border-radius: var(--radius-md);
 }
+
+:root[data-theme="dark"] h1 {
+  color: var(--brand-barn-red);
+}
+
 /*end hero section*/
 
 /*home page introduction */
@@ -1254,7 +1249,7 @@ reminder use of tokens to follow/create site design
   top: -6px;
 }
 
-/*grid Layout
+/*grid layout
 this is what is going to hold all of the content together 
 */
 .grid {
@@ -1464,7 +1459,7 @@ body {
 }
 /*end gallery section*/
 
-/* DESKTOP */
+/* desktop */
 @media (min-width: 768px) {
   /*show links in a row */
   .nav-links {
@@ -1509,7 +1504,6 @@ body {
 }
 
 @media (max-width: 400px) {
-  
   header {
     padding: 1.5rem var(--space-3);
   }
@@ -1522,7 +1516,7 @@ body {
     padding-top: calc(var(--nav1-height) + 3.5rem);
   }
 
-  .about-card__image-wrapper{
+  .about-card__image-wrapper {
     position: absolute;
     top: -105px;
     left: 50%;
@@ -1533,7 +1527,6 @@ body {
   #farm {
     line-height: 1.15;
   }
-
 }
 @media (max-width: 400px) {
   .hero-gen {
@@ -1559,7 +1552,7 @@ body {
     background-position: center top;
   }
 
-  /* Typography tuning for small screens */
+  /* typography tuning for small screens */
   .hero h1,
   .hero-overlay h1 {
     font-size: 1.6rem;
@@ -1572,7 +1565,7 @@ body {
     margin-bottom: var(--space-4);
   }
 
-  /* Overlay text box refinement */
+  /* overlay text box refinement */
   .hero-overlay .text-wrap {
     padding: var(--space-2) var(--space-3);
   }

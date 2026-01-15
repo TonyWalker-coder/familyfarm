@@ -36,6 +36,8 @@ This document ensures the site meets the expected standards for usability, acces
 - [Visual Observation](#observation)
   - [Form State After Submission](#vo1)
   - [Mobile and Bootstrap xs Breakpoint](#vo2)
+  - [Hero Text](#hero-text)
+  - [Box Elements and Dark Theme](#box-elements-and-dark-theme)
 
 
 ## Validation
@@ -269,3 +271,11 @@ The form was tested using the Code Institute formdump endpoint, which returns a 
 ### Mobile and Bootstrap xs Breakpoint
 
 After reviewing the layout on an actual mobile device, it became clear that Bootstrap’s default breakpoints weren’t accurately reflecting real‑world behaviour. The issue was amplified by the fact that DevTools emulation, while useful as a rough guide, failed to reproduce the true viewport dimensions and rendering quirks of the physical screen. Once the design was tested on a real handset, the mismatch became obvious, and a more realistic breakpoint was introduced at 400px to align the layout with how users actually experience the interface.
+
+### Hero Text
+
+The **.hero h1** text was failing contrast requirements because the hero image doesn’t change between light and dark themes. That meant the **h1** became unreadable when the theme switched. To address this, the **.hero h1** styling is now kept consistent across theme toggles, ensuring the primary heading always maintains sufficient contrast against the static hero background.
+
+### Box Elements and Dark Theme
+
+To preserve clarity in dark mode, the colour‑themed box elements needed a non‑standard cream border. This ensured the components stayed sharp and well‑defined against the darker background, preventing them from visually collapsing into the theme.
