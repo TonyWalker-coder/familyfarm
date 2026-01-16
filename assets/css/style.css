@@ -422,7 +422,7 @@ label {
 /*visible state */
 .booking-overlay.active {
   opacity: 1;
-  pointer-events: auto;
+/* pointer-events: auto; 
 }
 
 /*form container */
@@ -1102,7 +1102,7 @@ nav a:hover,
 .dropdown.open .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
-  pointer-events: auto;
+  pointer-events:auto;
 }
 
 .dropdown-menu {

@@ -392,8 +392,8 @@ Since this isn’t a real commercial site, all the text on the pages was written
 
 ## Responsive Grid: Uneven Rows on Small Breakpoints
 
-Our layout uses a custom CSS Grid with responsive  values. At the  breakpoint (based on **Bootstrap‑style** sizing, but implemented in pure CSS), three cards naturally form a 2 + 1 layout. This happens because the available column width supports two cards per row, leaving the third to wrap onto its own line.  
-We intentionally keep this behavior. It avoids forced stretching, preserves consistent card proportions, and maintains predictable, readable layouts across breakpoints. At the smallest sizes (**xs**), cards stack vertically for clarity.
+The layout uses a custom CSS Grid with responsive values. At the  breakpoint (based on **Bootstrap‑style** sizing, but implemented in pure CSS), three cards naturally form a 2 + 1 layout. This happens because the available column width supports two cards per row, leaving the third to wrap onto its own line.  
+This feature has been intentionally kept. It avoids forced stretching, preserves consistent card proportions, and maintains predictable, readable layouts across breakpoints. At the smallest sizes (**xs**), cards stack vertically for clarity.
 
 lg:  
 [1][2][3]

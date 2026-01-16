@@ -14,6 +14,12 @@ See the full license in the [**LICENSE**](LICENSE) file for complete details
 
 This **README** is designed to guide the project from the very beginning, outlining the planning, structure, and development approach before and during the build. It isn’t intended to contain every asset or completed detail up front. Instead, it works alongside the project’s supporting documents — such as wireframes, design references, and testing documentation — which are developed and refined as the site evolves. Together, these documents form the full project record, with the **README** acting as the starting point.
 
+### Supporting Documentation
+
+[Wire Frames](docs/wireframe.pdf)  
+[Design Reference](docs/design.md)  
+[Testing Documentation](testing/testing.md)
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -71,7 +77,6 @@ It is important to the farm that they are seen as an essential part of the local
 
 - About us page containing farm information with images
 - Awareness of historical interest on the farm with images
-- Rare breeds information
 
 3 Area where both interest overlap
 The farming show is an ideal example where the farm act as a community event while still addressing its need for financial stability.
@@ -224,10 +229,11 @@ As a visitor interested in the farm’s historical sites, I want a page that pro
 
 ## Design Reference
 
-All design decisions, colour palettes, and wireframes can be found here:
+All design decisions, colour palettes, and wireframes and testing can be found here:
 
 [Wire Frames](docs/wireframe.pdf)  
-[Design Reference](docs/design.md)
+[Design Reference](docs/design.md)  
+[Testing Documentation](testing/testing.md)
 
 ## Tech Stack
 
@@ -237,8 +243,9 @@ All design decisions, colour palettes, and wireframes can be found here:
 - GitHub Pages (deployment)
 - GitHub Project (user stories)
 - Copilot
-- Balsamiq
+- Balsamiq (wireframes)
 - Code Institute (forms return status)
+- w3.org (validators)
 
 ## Folder Structure
 
