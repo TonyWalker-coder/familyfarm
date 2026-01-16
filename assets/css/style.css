@@ -422,7 +422,7 @@ label {
 /*visible state */
 .booking-overlay.active {
   opacity: 1;
-/* pointer-events: auto; 
+pointer-events: auto; 
 }
 
 /*form container */
