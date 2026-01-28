@@ -138,6 +138,9 @@ Lighthouse audits are run at key milestones to confirm that performance, accessi
 ![lighthouse](lighthouse%20dark.png)
 **Dark Theme**
 
+![lighthouse](mobile-lighthouse.png)
+**Mobile**
+
 ## CSS Validation
 
 ![css](css.png))
@@ -173,9 +176,9 @@ Warnings (25)
 |--------------|---------|-------------------|----------------|
 | CSS variables not statically checked | Validators can’t validate dynamic `var(--x)` values | No | Browsers resolve variables at runtime, and all modern engines fully support them. |
 | `pointer-events: auto` | Spec quirk, but fully supported in all major browsers | Optional | `auto` is the default behavior; every browser treats it correctly even if the spec wording is fuzzy. |
-| `-webkit-user-select` | Safari vendor prefix for text‑selection control | No | Safari still requires this prefix for consistent behavior. Using it is the correct cross‑browser pattern. |
-| `-webkit-backdrop-filter` | Safari vendor prefix for backdrop blur | No | Safari’s implementation is still prefixed. Including it ensures the effect works everywhere it’s supported. |  
-*explanations to warning can be found on w3.org documentation*
+| `-webkit-user-select` | Safari vendor prefix for text‑selection control | No | Safari still requires this prefix for consistent behavior. |
+| `-webkit-backdrop-filter` | Safari vendor prefix for backdrop blur | No | Safari still requires this prefix for consistent behavior. |  
+*explanations to warnings can be found on w3.org documentation*
 
 ## Navigation
 
