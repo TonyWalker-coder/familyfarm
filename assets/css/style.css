@@ -1508,6 +1508,8 @@ body {
   }
 }
 @media (max-width: 400px) {
+  .hero {
+  background-image: url("../images/hero-mobile.webp");
   .hero-gen {
     /*reduce height so the phone isn't zooming into the middle */
     min-height: 40vh;
