@@ -1,6 +1,7 @@
 # The Walton Family Farm
 
-![Homepage Screenshot](screenshots/homepage.webp)
+### Responsive Layout
+![Homepage Screenshot](screenshots/family-shot.png)
 
 [Deployed Website](https://tonywalker-coder.github.io/familyfarm/)
 

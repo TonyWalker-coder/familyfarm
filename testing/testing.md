@@ -40,6 +40,7 @@ This document ensures the site meets the expected standards for usability, acces
   - [Hero Text](#hero-text)
   - [Box Elements and Dark Theme](#box-elements-and-dark-theme)
 - [User Story Verification](#user-story-verification)
+- [Browser Verfication](#browsers)
 - [Known Bugs and Features](#known-bugs-and-features)
   - Responsive Grid: Uneven Rows on Small Breakpoints
 
@@ -428,6 +429,19 @@ As a visitor interested in the farm’s historical sites, I want a page that pro
 - The layout follows the existing site structure and styling for consistency.
 
 **<span style="color: green;">✓ This page follows the siste wide theme and layout and has its own interactive gallery</span>**
+
+<a id="browsers"></a>
+
+## Various Browser's Operation
+
+### Edge
+![edge](/testing/edge.png)
+### Chrome
+![chrome](/testing/chrome.png)
+### Firefox
+![chrome](/testing/fox.png)
+
+
 
 <span style="color: red;">
 

@@ -51,6 +51,7 @@
   - Body Text — *Nunito*
 - [Colour Palette](#colour-palette)
   - Brand Colours (*Shared Across Themes*)
+- [Light & Dark Theme](#lightdark)
   - Light Theme
   - Dark Theme
   - Semantic Tokens
@@ -174,6 +175,10 @@ The colour palette was chosen based on the images being used on the site to ensu
 <div style="width:60px; height:60px; background:#D8E4F0; border-radius:6px;"></div>
 <div style="width:60px; height:60px; background:#3A2A1E; border-radius:6px;"></div>
 </div>
+<a id="lightdark"></a>
+
+## Light & Dark Theme
+![Light & Dark Theme ](../screenshots/light-dark.png)
 
 ### Light Theme
 
