@@ -87,7 +87,7 @@
   - Surfaces
   - Borders
   - Headings & Text
-- [Java Scripts](java-scripts)
+- [Java Scripts](#java-scripts)
   - Ownership
   - Java resources
 - [Page Content](#page-content)
