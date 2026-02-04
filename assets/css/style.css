@@ -1,7 +1,8 @@
 /*loading fonts locally to keep the low load time*/
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter18pt-Regular.woff2") format("woff2"),
+  src:
+    url("../fonts/Inter18pt-Regular.woff2") format("woff2"),
     url("../fonts/Inter18pt-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -9,7 +10,8 @@
 }
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter18pt-Medium.woff2") format("woff2"),
+  src:
+    url("../fonts/Inter18pt-Medium.woff2") format("woff2"),
     url("../fonts/Inter18pt-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
@@ -17,7 +19,8 @@
 }
 @font-face {
   font-family: "Inter";
-  src: url("../fonts/Inter18pt-Bold.woff2") format("woff2"),
+  src:
+    url("../fonts/Inter18pt-Bold.woff2") format("woff2"),
     url("../fonts/Inter18pt-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
@@ -25,7 +28,8 @@
 }
 @font-face {
   font-family: "Bree Serif";
-  src: url("../fonts/BreeSerif-Regular.woff2") format("woff2"),
+  src:
+    url("../fonts/BreeSerif-Regular.woff2") format("woff2"),
     url("../fonts/BreeSerif-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
@@ -265,7 +269,9 @@ button {
   background-color: var(--color-accent);
   color: var(--color-heading);
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 button:hover {
   background-color: var(--light-accent-hover);
@@ -332,7 +338,9 @@ button:hover {
   cursor: pointer;
   text-decoration: none;
   border-radius: var(--radius-md); /* match nav a */
-  transition: background-color 0.2s ease, color 0.2s ease; /* match nav a */
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease; /* match nav a */
 }
 
 .link-button:hover,
@@ -369,7 +377,9 @@ select {
   width: 100%;
   box-sizing: border-box;
 
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 input:focus,
@@ -424,7 +434,7 @@ label {
 /*visible state */
 .booking-overlay.active {
   opacity: 1;
-pointer-events: auto; 
+  pointer-events: auto;
 }
 
 /*form container */
@@ -535,7 +545,9 @@ several pages will use the same card system so there will be more then one group
   margin-bottom: var(--space-6);
 
   box-shadow: 0 2px 4px color-mix(in srgb, var(--color-border) 20%, transparent);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .card:hover,
@@ -600,7 +612,9 @@ several pages will use the same card system so there will be more then one group
   text-align: center;
   padding: 0;
   margin: 110px 0 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 .activity-card__image {
@@ -627,7 +641,9 @@ several pages will use the same card system so there will be more then one group
   text-align: center;
   padding: 0 0 var(--space-4);
   margin: 110px 0 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(0, 0, 0, 0.08);
 }
 
 /*image wrapper — rectangular circle */
@@ -821,7 +837,9 @@ several pages will use the same card system so there will be more then one group
   cursor: pointer;
   opacity: 0.6;
   border-radius: 3px;
-  transition: opacity 0.3s ease, transform 0.2s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.2s ease;
 }
 
 .slideshow .thumbnails img.active {
@@ -876,11 +894,15 @@ several pages will use the same card system so there will be more then one group
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md-responsive);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06), 0 12px 28px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 12px 28px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.35s ease, opacity 0.25s ease;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease;
 }
 
 .feedback-panel.open {
@@ -958,7 +980,9 @@ nav a,
   text-decoration: none;
   padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-md);
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
 nav a:hover,
 .historical-link:hover {
@@ -1087,7 +1111,7 @@ nav a:hover,
 .dropdown.open .dropdown-menu {
   opacity: 1;
   transform: translateY(0);
-  pointer-events:auto;
+  pointer-events: auto;
 }
 
 .dropdown-menu {
@@ -1107,7 +1131,9 @@ nav a:hover,
   opacity: 0;
   transform: translateY(-4px);
   pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 
 .dropdown-menu a {
@@ -1237,14 +1263,14 @@ this is what is going to hold all of the content together
 }
 
 .grid-2 {
-  justify-items: center; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .grid-3 {
-  justify-items: center; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
-
-
 
 /*end of grid section*/
 
@@ -1509,45 +1535,46 @@ body {
 }
 @media (max-width: 400px) {
   .hero {
-  background-image: url("../images/hero-mobile.webp");
-  .hero-gen {
-    /*reduce height so the phone isn't zooming into the middle */
-    min-height: 40vh;
+    background-image: url("../images/hero-mobile.webp");
+    .hero-gen {
+      /*reduce height so the phone isn't zooming into the middle */
+      /*min-height: 40vh;*/
 
-    /*keep cover, but shift the crop upward for better composition */
-    background-position: center top;
+      /*keep cover, but shift the crop upward for better composition */
+      background-position: center top;
 
-    /*slightly reduce vertical padding so text fits comfortably */
-    padding: var(--space-6) 0;
-  }
+      /*slightly reduce vertical padding so text fits comfortably */
+      padding: var(--space-6) 0;
+    }
 
-  /*all hero variants to follow the same rule */
-  .hero,
-  .hero-about,
-  .hero-shop,
-  .hero-historical,
-  .hero-activities,
-  .hero-seasonal,
-  .hero-gallery {
-    min-height: 40vh;
-    background-position: center top;
-  }
+    /*all hero variants to follow the same rule */
+    .hero,
+    .hero-about,
+    .hero-shop,
+    .hero-historical,
+    .hero-activities,
+    .hero-seasonal,
+    .hero-gallery {
+      /*min-height: 40vh;*/
+      background-position: center top;
+    }
 
-  /* typography tuning for small screens */
-  .hero h1,
-  .hero-overlay h1 {
-    font-size: 1.6rem;
-    line-height: 1.2;
-    margin-bottom: var(--space-3);
-  }
+    /* typography tuning for small screens */
+    .hero h1,
+    .hero-overlay h1 {
+      font-size: 1.6rem;
+      line-height: 1.2;
+      margin-bottom: var(--space-3);
+    }
 
-  .hero p {
-    font-size: var(--body-size);
-    margin-bottom: var(--space-4);
-  }
+    .hero p {
+      font-size: var(--body-size);
+      margin-bottom: var(--space-4);
+    }
 
-  /* overlay text box refinement */
-  .hero-overlay .text-wrap {
-    padding: var(--space-2) var(--space-3);
+    /* overlay text box refinement */
+    .hero-overlay .text-wrap {
+      padding: var(--space-2) var(--space-3);
+    }
   }
 }
