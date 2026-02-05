@@ -587,7 +587,7 @@ several pages will use the same card system so there will be more then one group
 }
 /*end of normal cards*/
 
-/* the activity cards are meant to be visually exciting so we have create a whole set of 
+/* the activity cards are meant to be visually exciting so I have create a whole set of 
    wrappers just for them but still using the existing tokens */
 .activity-card__image-wrapper {
   position: absolute;
