@@ -18,7 +18,7 @@ This **README** is designed to guide the project from the very beginning, outlin
 ### Supporting Documentation
 
 [Wire Frames](docs/wireframe.pdf)  
-[Design Reference](docs/design.md)  
+[Design Reference](docs/Design.md)  
 [Testing Documentation](testing/testing.md)
 
 ## Table of Contents
