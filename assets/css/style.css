@@ -531,8 +531,10 @@ body.booking-open {
 /*end drop down menu pointer section*/
 
 /* content card / panel section 
-consistent content cards to mach design forms & cards should now blend into pages and not look detached
-several pages will use the same card system so there will be more then one group of classes using this section
+consistent content cards to mach design forms & cards
+should now blend into pages and not look detached
+several pages will use the same card system so there will 
+be more then one group of classes using this section
 */
 .card,
 .activity-card {
